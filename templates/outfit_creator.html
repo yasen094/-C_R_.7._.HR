@@ -1,0 +1,808 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👗 صانع الملابس - بوت Highrise EDX</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .outfit-preview {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .code-item {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 5px;
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            position: relative;
+        }
+        
+        .code-item .remove-btn {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 10px;
+            cursor: pointer;
+        }
+        
+        .test-outfit-btn {
+            background: linear-gradient(45deg, #ffd700, #ffb347);
+            border: none;
+            color: white;
+            border-radius: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        .test-outfit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.6);
+            color: white;
+        }
+        
+        .save-outfit-btn {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            border: none;
+            color: white;
+            border-radius: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+        
+        .save-outfit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(40, 167, 69, 0.6);
+            color: white;
+        }
+        
+        .add-code-input {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .category-badge {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            color: white;
+            margin-left: 5px;
+        }
+        
+        .cat-body { background: #6f42c1; }
+        .cat-hair { background: #fd7e14; }
+        .cat-face { background: #20c997; }
+        .cat-clothing { background: #0d6efd; }
+        .cat-accessory { background: #dc3545; }
+        .cat-shoes { background: #198754; }
+        .cat-background { background: #6c757d; }
+        
+        .status-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            min-width: 300px;
+        }
+        
+        .sent-codes-box {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .sent-codes-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 150px;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 2px solid #28a745;
+        }
+        
+        .sent-code-item {
+            background: linear-gradient(45deg, #e8f5e8, #f0f9f0);
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        
+        .sent-code-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+            background: linear-gradient(45deg, #d4edda, #e8f5e8);
+        }
+        
+        .sent-code-text {
+            flex-grow: 1;
+            color: #155724;
+            font-size: 14px;
+        }
+        
+        .sent-code-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .code-select-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .code-select-btn:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+        
+        .code-select-btn.selected {
+            background: #ffc107;
+            color: #212529;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
+        <div class="container">
+            <a class="navbar-brand text-white" href="/">
+                <i class="fas fa-robot"></i> بوت Highrise EDX
+            </a>
+            <div class="text-white">
+                <a href="/" class="btn btn-outline-light btn-sm me-2">
+                    <i class="fas fa-home"></i> الرئيسية
+                </a>
+                <a href="/outfits" class="btn btn-outline-light btn-sm me-2">
+                    <i class="fas fa-tshirt"></i> مدير الملابس
+                </a>
+                <i class="fas fa-magic"></i> صانع الملابس
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="text-center text-white mb-4">
+            🎨 صانع الملابس للبوت
+            <br><small class="text-light">اختبر وأضف أزياء جديدة</small>
+        </h1>
+
+        <!-- رسائل الحالة -->
+        <div id="statusMessages"></div>
+
+        <!-- معلومات الزي المرسل -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="outfit-preview">
+                    <h5 class="text-center text-white mb-3">
+                        <i class="fas fa-info-circle text-info"></i> معلومات الزي المرسل
+                    </h5>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <strong class="text-white">المطور:</strong>
+                            <span class="text-light" id="developerName">-</span>
+                        </div>
+                        <div class="col-md-4">
+                            <strong class="text-white">تاريخ الإرسال:</strong>
+                            <span class="text-light" id="sendDate">-</span>
+                        </div>
+                        <div class="col-md-4">
+                            <strong class="text-white">عدد الأكواد:</strong>
+                            <span class="text-light" id="codesCount">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- مربع الأكواد المرسلة بشكل واضح -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="sent-codes-box">
+                    <h5 class="text-center text-white mb-3">
+                        <i class="fas fa-envelope-open text-success"></i> الأكواد المرسلة من المطور
+                    </h5>
+                    <div id="sentCodesDisplay" class="sent-codes-content">
+                        <div class="text-center text-white-50">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p class="mt-2">جاري تحميل الأكواد المرسلة...</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-success btn-lg me-2" onclick="useAllSentCodes()">
+                            <i class="fas fa-check-double"></i> استخدام جميع الأكواد
+                        </button>
+                        <button class="btn btn-warning btn-lg" onclick="testSentCodesDirectly()">
+                            <i class="fas fa-play"></i> اختبار الأكواد المرسلة مباشرة
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- أكواد الملابس الحالية -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="outfit-preview">
+                    <h5 class="text-center text-white mb-3">
+                        <i class="fas fa-code text-warning"></i> أكواد الملابس
+                    </h5>
+                    <div id="outfitCodes" class="text-center">
+                        <p class="text-white-50">لا توجد أكواد محملة</p>
+                    </div>
+                    
+                    <!-- إضافة كود جديد -->
+                    <div class="row mt-3">
+                        <div class="col-md-8">
+                            <input type="text" class="form-control add-code-input" id="newCodeInput" 
+                                   placeholder="أدخل كود قطعة ملابس جديدة..." 
+                                   onkeypress="if(event.key==='Enter') addNewCode()">
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary w-100" onclick="addNewCode()">
+                                <i class="fas fa-plus"></i> إضافة كود
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- أزرار التحكم -->
+        <div class="row mb-4">
+            <div class="col-md-6 text-center">
+                <button class="test-outfit-btn w-100" onclick="testOutfit()">
+                    <i class="fas fa-play"></i> اختبار الزي
+                </button>
+            </div>
+            <div class="col-md-6 text-center">
+                <button class="save-outfit-btn w-100" onclick="saveOutfit()">
+                    <i class="fas fa-save"></i> حفظ الزي
+                </button>
+            </div>
+        </div>
+
+        <!-- معاينة النتيجة -->
+        <div class="row">
+            <div class="col-12">
+                <div class="outfit-preview">
+                    <h5 class="text-center text-white mb-3">
+                        <i class="fas fa-eye text-success"></i> معاينة النتيجة
+                    </h5>
+                    <div id="testResult" class="text-center">
+                        <p class="text-white-50">لم يتم اختبار الزي بعد</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- حفظ الزي -->
+        <div class="row mt-4" id="saveSection" style="display: none;">
+            <div class="col-12">
+                <div class="outfit-preview">
+                    <h5 class="text-center text-white mb-3">
+                        <i class="fas fa-save text-success"></i> حفظ الزي الجديد
+                    </h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label text-white">اسم الزي:</label>
+                            <input type="text" class="form-control" id="outfitName" placeholder="أدخل اسم الزي...">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label text-white">وصف الزي:</label>
+                            <input type="text" class="form-control" id="outfitDescription" placeholder="وصف قصير للزي...">
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-success btn-lg" onclick="confirmSaveOutfit()">
+                            <i class="fas fa-check"></i> تأكيد الحفظ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentOutfitCodes = [];
+        
+        // متغيرات للأكواد المرسلة والمختارة
+        let sentCodes = [];
+        let selectedSentCodes = [];
+        
+        // تحميل بيانات الزي من الرابط
+        function loadOutfitData() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const codes = urlParams.get('codes');
+                const developer = urlParams.get('developer');
+                const date = urlParams.get('date');
+                
+                console.log('URL Parameters:', { codes, developer, date });
+                
+                if (codes) {
+                    // فك تشفير الأكواد وتقسيمها
+                    const decodedCodes = decodeURIComponent(codes);
+                    console.log('Decoded codes:', decodedCodes);
+                    
+                    // تقسيم الأكواد (دعم الفواصل والمسافات)
+                    sentCodes = decodedCodes.split(',').map(code => code.trim()).filter(code => code.length > 0);
+                    currentOutfitCodes = [...sentCodes]; // نسخ الأكواد المرسلة للمجموعة الحالية
+                    console.log('Parsed codes:', sentCodes);
+                    
+                    // عرض الأكواد المرسلة في المربع الخاص
+                    displaySentCodes();
+                    updateCodesDisplay();
+                    showMessage(`تم تحميل ${sentCodes.length} كود بنجاح`, 'success');
+                } else {
+                    console.log('No codes found in URL');
+                    document.getElementById('sentCodesDisplay').innerHTML = `
+                        <div class="text-center text-muted">
+                            <i class="fas fa-exclamation-triangle" style="font-size: 48px; color: #ffc107;"></i>
+                            <p class="mt-2">لم يتم العثور على أكواد في الرابط</p>
+                        </div>
+                    `;
+                    showMessage('لم يتم العثور على أكواد في الرابط', 'warning');
+                }
+                
+                if (developer) {
+                    const decodedDeveloper = decodeURIComponent(developer);
+                    document.getElementById('developerName').textContent = decodedDeveloper;
+                    console.log('Developer:', decodedDeveloper);
+                }
+                
+                if (date) {
+                    try {
+                        const timestamp = parseInt(date);
+                        const dateObj = new Date(timestamp);
+                        document.getElementById('sendDate').textContent = dateObj.toLocaleString('ar-EG');
+                        console.log('Date:', dateObj);
+                    } catch (e) {
+                        console.error('Error parsing date:', e);
+                        document.getElementById('sendDate').textContent = 'تاريخ غير صحيح';
+                    }
+                }
+                
+            } catch (error) {
+                console.error('Error loading outfit data:', error);
+                showMessage('خطأ في تحميل بيانات الزي', 'danger');
+            }
+        }
+        
+        // عرض الأكواد المرسلة في المربع الخاص
+        function displaySentCodes() {
+            const container = document.getElementById('sentCodesDisplay');
+            
+            if (sentCodes.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center text-muted">
+                        <i class="fas fa-inbox" style="font-size: 48px; color: #6c757d;"></i>
+                        <p class="mt-2">لا توجد أكواد مرسلة</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '<div class="sent-codes-list">';
+            
+            sentCodes.forEach((code, index) => {
+                const category = getCodeCategory(code);
+                const isSelected = selectedSentCodes.includes(index);
+                
+                html += `
+                    <div class="sent-code-item" id="sentCode_${index}">
+                        <div class="sent-code-text">
+                            <span class="badge bg-secondary me-2">${index + 1}</span>
+                            <strong>${code}</strong>
+                            <small class="text-muted ms-2">(${category})</small>
+                        </div>
+                        <div class="sent-code-actions">
+                            <button class="code-select-btn ${isSelected ? 'selected' : ''}" 
+                                    onclick="toggleSentCodeSelection(${index})" 
+                                    title="اختيار هذا الكود">
+                                <i class="fas fa-${isSelected ? 'check' : 'plus'}"></i>
+                                ${isSelected ? 'مختار' : 'اختيار'}
+                            </button>
+                            <button class="code-select-btn" style="background: #17a2b8;" 
+                                    onclick="testSingleCode('${code}')" 
+                                    title="اختبار هذا الكود فقط">
+                                <i class="fas fa-play"></i> اختبار
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            container.innerHTML = html;
+            
+            console.log(`Displayed ${sentCodes.length} sent codes`);
+        }
+        
+        // تبديل اختيار كود مرسل
+        function toggleSentCodeSelection(index) {
+            const selectedIndex = selectedSentCodes.indexOf(index);
+            
+            if (selectedIndex > -1) {
+                // إزالة من الاختيار
+                selectedSentCodes.splice(selectedIndex, 1);
+            } else {
+                // إضافة للاختيار
+                selectedSentCodes.push(index);
+            }
+            
+            // تحديث العرض
+            displaySentCodes();
+            showMessage(`تم ${selectedIndex > -1 ? 'إلغاء اختيار' : 'اختيار'} الكود`, 'info');
+        }
+        
+        // استخدام جميع الأكواد المرسلة
+        function useAllSentCodes() {
+            if (sentCodes.length === 0) {
+                showMessage('لا توجد أكواد مرسلة لاستخدامها', 'warning');
+                return;
+            }
+            
+            currentOutfitCodes = [...sentCodes];
+            updateCodesDisplay();
+            showMessage(`تم استخدام جميع الأكواد المرسلة (${sentCodes.length} كود)`, 'success');
+        }
+        
+        // اختبار الأكواد المرسلة مباشرة
+        function testSentCodesDirectly() {
+            if (sentCodes.length === 0) {
+                showMessage('لا توجد أكواد مرسلة للاختبار', 'warning');
+                return;
+            }
+            
+            const codesToTest = selectedSentCodes.length > 0 ? 
+                selectedSentCodes.map(index => sentCodes[index]) : 
+                sentCodes;
+            
+            showMessage(`جاري اختبار ${codesToTest.length} كود...`, 'info');
+            
+            fetch('/api/test-outfit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    codes: codesToTest
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('testResult');
+                
+                if (data.success) {
+                    resultDiv.innerHTML = `
+                        <div class="alert alert-success">
+                            <h6><i class="fas fa-check-circle"></i> تم اختبار الأكواد المرسلة بنجاح!</h6>
+                            <p>${data.message}</p>
+                            <small>عدد القطع المختبرة: ${codesToTest.length}</small>
+                        </div>
+                    `;
+                    // نسخ الأكواد المختبرة للمجموعة الحالية
+                    currentOutfitCodes = [...codesToTest];
+                    updateCodesDisplay();
+                    document.getElementById('saveSection').style.display = 'block';
+                    showMessage('تم اختبار الأكواد المرسلة بنجاح!', 'success');
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="alert alert-danger">
+                            <h6><i class="fas fa-exclamation-triangle"></i> فشل في اختبار الأكواد</h6>
+                            <p>${data.error}</p>
+                        </div>
+                    `;
+                    showMessage('فشل في اختبار الأكواد: ' + data.error, 'danger');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showMessage('خطأ في الاتصال مع الخادم', 'danger');
+            });
+        }
+        
+        // اختبار كود واحد فقط
+        function testSingleCode(code) {
+            showMessage(`جاري اختبار الكود: ${code}`, 'info');
+            
+            fetch('/api/test-outfit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    codes: [code]
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showMessage(`تم اختبار الكود ${code} بنجاح!`, 'success');
+                } else {
+                    showMessage(`فشل في اختبار الكود ${code}: ${data.error}`, 'danger');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showMessage('خطأ في الاتصال مع الخادم', 'danger');
+            });
+        }
+        
+        // تحديث عرض الأكواد
+        function updateCodesDisplay() {
+            const container = document.getElementById('outfitCodes');
+            const countElement = document.getElementById('codesCount');
+            
+            // تحديث العداد
+            countElement.textContent = currentOutfitCodes.length;
+            
+            if (currentOutfitCodes.length === 0) {
+                container.innerHTML = '<div class="alert alert-warning text-center"><i class="fas fa-exclamation-triangle"></i> لا توجد أكواد محملة</div>';
+                return;
+            }
+            
+            let html = '<div class="row">';
+            currentOutfitCodes.forEach((code, index) => {
+                const category = getCodeCategory(code);
+                const categoryClass = getCategoryClass(category);
+                
+                html += `
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
+                        <div class="code-item">
+                            <button class="remove-btn" onclick="removeCode(${index})" title="حذف هذا الكود">&times;</button>
+                            <span class="category-badge ${categoryClass}">${category}</span>
+                            <br>
+                            <strong>${code}</strong>
+                            <br>
+                            <small class="text-muted">كود #${index + 1}</small>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            
+            container.innerHTML = html;
+            
+            console.log(`Updated display with ${currentOutfitCodes.length} codes`);
+        }
+        
+        // تحديد فئة الكود
+        function getCodeCategory(code) {
+            if (code.includes('body-')) return 'جسم';
+            if (code.includes('hair_')) return 'شعر';
+            if (code.includes('eye-') || code.includes('nose-') || code.includes('mouth-') || code.includes('eyebrow-')) return 'وجه';
+            if (code.includes('shirt-') || code.includes('pants-') || code.includes('dress-')) return 'ملابس';
+            if (code.includes('shoes-')) return 'أحذية';
+            if (code.includes('bg-')) return 'خلفية';
+            return 'إكسسوار';
+        }
+        
+        // الحصول على كلاس الفئة
+        function getCategoryClass(category) {
+            const classes = {
+                'جسم': 'cat-body',
+                'شعر': 'cat-hair',
+                'وجه': 'cat-face',
+                'ملابس': 'cat-clothing',
+                'أحذية': 'cat-shoes',
+                'خلفية': 'cat-background',
+                'إكسسوار': 'cat-accessory'
+            };
+            return classes[category] || 'cat-accessory';
+        }
+        
+        // إضافة كود جديد
+        function addNewCode() {
+            const input = document.getElementById('newCodeInput');
+            const code = input.value.trim();
+            
+            if (!code) {
+                showMessage('يرجى إدخال كود صحيح', 'warning');
+                return;
+            }
+            
+            if (currentOutfitCodes.includes(code)) {
+                showMessage('هذا الكود موجود بالفعل', 'warning');
+                return;
+            }
+            
+            currentOutfitCodes.push(code);
+            updateCodesDisplay();
+            input.value = '';
+            showMessage('تم إضافة الكود بنجاح', 'success');
+        }
+        
+        // حذف كود
+        function removeCode(index) {
+            currentOutfitCodes.splice(index, 1);
+            updateCodesDisplay();
+            showMessage('تم حذف الكود', 'info');
+        }
+        
+        // اختبار الزي
+        function testOutfit() {
+            if (currentOutfitCodes.length === 0) {
+                showMessage('لا توجد أكواد لاختبارها', 'warning');
+                return;
+            }
+            
+            showMessage('جاري اختبار الزي...', 'info');
+            
+            fetch('/api/test-outfit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    codes: currentOutfitCodes
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('testResult');
+                
+                if (data.success) {
+                    resultDiv.innerHTML = `
+                        <div class="alert alert-success">
+                            <h6><i class="fas fa-check-circle"></i> تم اختبار الزي بنجاح!</h6>
+                            <p>${data.message}</p>
+                            <small>عدد القطع المطبقة: ${data.applied_pieces || currentOutfitCodes.length}</small>
+                        </div>
+                    `;
+                    document.getElementById('saveSection').style.display = 'block';
+                    showMessage('تم اختبار الزي بنجاح!', 'success');
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="alert alert-danger">
+                            <h6><i class="fas fa-exclamation-triangle"></i> فشل في اختبار الزي</h6>
+                            <p>${data.error}</p>
+                        </div>
+                    `;
+                    showMessage('فشل في اختبار الزي: ' + data.error, 'danger');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showMessage('خطأ في الاتصال مع الخادم', 'danger');
+            });
+        }
+        
+        // حفظ الزي
+        function saveOutfit() {
+            const name = document.getElementById('outfitName').value.trim();
+            const description = document.getElementById('outfitDescription').value.trim();
+            
+            if (!name) {
+                showMessage('يرجى إدخال اسم للزي', 'warning');
+                return;
+            }
+            
+            if (currentOutfitCodes.length === 0) {
+                showMessage('لا توجد أكواد لحفظها', 'warning');
+                return;
+            }
+            
+            document.getElementById('saveSection').style.display = 'block';
+        }
+        
+        // تأكيد حفظ الزي
+        function confirmSaveOutfit() {
+            const name = document.getElementById('outfitName').value.trim();
+            const description = document.getElementById('outfitDescription').value.trim();
+            
+            if (!name) {
+                showMessage('يرجى إدخال اسم للزي', 'warning');
+                return;
+            }
+            
+            showMessage('جاري حفظ الزي...', 'info');
+            
+            fetch('/api/save-outfit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    description: description,
+                    codes: currentOutfitCodes,
+                    developer: document.getElementById('developerName').textContent
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showMessage('تم حفظ الزي بنجاح! سيتم إعادة توجيهك...', 'success');
+                    setTimeout(() => {
+                        window.location.href = '/outfits';
+                    }, 2000);
+                } else {
+                    showMessage('فشل في حفظ الزي: ' + data.error, 'danger');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showMessage('خطأ في الاتصال مع الخادم', 'danger');
+            });
+        }
+        
+        // عرض رسالة حالة
+        function showMessage(message, type) {
+            const alertClass = {
+                'success': 'alert-success',
+                'danger': 'alert-danger',
+                'warning': 'alert-warning',
+                'info': 'alert-info'
+            }[type] || 'alert-info';
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `alert ${alertClass} status-message`;
+            messageDiv.innerHTML = `
+                <button type="button" class="btn-close" onclick="this.parentElement.remove()"></button>
+                ${message}
+            `;
+            
+            document.getElementById('statusMessages').appendChild(messageDiv);
+            
+            // إزالة تلقائية بعد 5 ثوان
+            setTimeout(() => {
+                if (messageDiv.parentElement) {
+                    messageDiv.remove();
+                }
+            }, 5000);
+        }
+        
+        // تحميل البيانات عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', loadOutfitData);
+    </script>
+</body>
+</html>

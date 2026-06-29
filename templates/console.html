@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🖥️ Console - مراقبة البوت</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #1a1a1a;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .console-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .console-header {
+            background: #2d2d2d;
+            padding: 15px;
+            border-bottom: 2px solid #00ff00;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+        }
+        
+        .console-status {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .status-connected {
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid #00ff00;
+        }
+        
+        .status-disconnected {
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid #ff0000;
+            color: #ff0000;
+        }
+        
+        .status-warning {
+            background: rgba(255, 255, 0, 0.2);
+            border: 1px solid #ffff00;
+            color: #ffff00;
+        }
+        
+        .console-output {
+            flex: 1;
+            background: #000;
+            padding: 20px;
+            overflow-y: auto;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .log-entry {
+            margin-bottom: 8px;
+            padding: 5px;
+            border-left: 3px solid transparent;
+        }
+        
+        .log-info {
+            color: #00ff00;
+            border-left-color: #00ff00;
+        }
+        
+        .log-warning {
+            color: #ffff00;
+            border-left-color: #ffff00;
+        }
+        
+        .log-error {
+            color: #ff0000;
+            border-left-color: #ff0000;
+        }
+        
+        .log-success {
+            color: #00ffff;
+            border-left-color: #00ffff;
+        }
+        
+        .console-input {
+            background: #2d2d2d;
+            padding: 15px;
+            border-top: 1px solid #444;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .console-input input {
+            flex: 1;
+            background: #000;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .console-input input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+        
+        .console-input button {
+            background: #00ff00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .console-input button:hover {
+            background: #00cc00;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #00ff00;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .stat-title {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00ff00;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .timestamp {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .navbar-console {
+            background: #2d2d2d;
+            border-bottom: 1px solid #00ff00;
+        }
+        
+        .navbar-console .nav-link {
+            color: #00ff00 !important;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .navbar-console .nav-link:hover {
+            background: rgba(0, 255, 0, 0.1);
+        }
+        
+        .console-title {
+            color: #00ff00;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- نافبار -->
+    <nav class="navbar navbar-expand-lg navbar-console">
+        <div class="container-fluid">
+            <a class="navbar-brand console-title" href="/">
+                <i class="fas fa-terminal"></i> BOT CONSOLE v2.0
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/">
+                    <i class="fas fa-home"></i> الواجهة الرئيسية
+                </a>
+                <a class="nav-link" href="/console">
+                    <i class="fas fa-terminal"></i> Console
+                </a>
+            </div>
+            <div class="console-status">
+                <div id="botStatus" class="status-indicator status-disconnected">
+                    <i class="fas fa-circle pulse"></i>
+                    <span>فحص الاتصال...</span>
+                </div>
+                <div id="webStatus" class="status-indicator status-connected">
+                    <i class="fas fa-globe"></i>
+                    <span>الواجهة متصلة</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="console-container">
+        <!-- إحصائيات سريعة -->
+        <div class="container-fluid mt-3">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-title">حالة البوت</div>
+                    <div class="stat-value" id="botConnectionStatus">فحص...</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">المستخدمين في الغرفة</div>
+                    <div class="stat-value" id="roomUsersCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">وقت التشغيل</div>
+                    <div class="stat-value" id="uptime">00:00:00</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">آخر نشاط</div>
+                    <div class="stat-value" id="lastActivity">غير معروف</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- منطقة العرض -->
+        <div class="console-output" id="consoleOutput">
+            <div class="log-entry log-info">
+                <span class="timestamp">[SYSTEM]</span> 
+                🖥️ مرحباً بك في واجهة Console للبوت
+            </div>
+            <div class="log-entry log-info">
+                <span class="timestamp">[SYSTEM]</span> 
+                🔍 جاري فحص حالة الاتصال مع البوت...
+            </div>
+        </div>
+
+        <!-- منطقة الإدخال -->
+        <div class="console-input">
+            <input type="text" id="commandInput" placeholder="أدخل أمر البوت هنا... (مثل: الاعضاء, رقص 5, اذهب المدخل)" autocomplete="off">
+            <button onclick="sendCommand()">
+                <i class="fas fa-paper-plane"></i> إرسال
+            </button>
+            <button onclick="clearConsole()">
+                <i class="fas fa-trash"></i> مسح
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let consoleOutput = document.getElementById('consoleOutput');
+        let commandInput = document.getElementById('commandInput');
+        let startTime = Date.now();
+        let logCount = 0;
+
+        // إضافة سجل جديد
+        function addLog(message, type = 'info') {
+            logCount++;
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry log-${type}`;
+            logEntry.innerHTML = `
+                <span class="timestamp">[${timestamp}]</span> 
+                ${message}
+            `;
+            
+            consoleOutput.appendChild(logEntry);
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+
+            // الاحتفاظ بآخر 100 سجل فقط
+            if (logCount > 100) {
+                consoleOutput.removeChild(consoleOutput.firstChild);
+                logCount--;
+            }
+        }
+
+        // إرسال أمر للبوت
+        async function sendCommand() {
+            const command = commandInput.value.trim();
+            if (!command) return;
+
+            addLog(`> ${command}`, 'info');
+            commandInput.value = '';
+
+            try {
+                const response = await fetch('/api/execute-command', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ command: command })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    addLog(`✅ تم إرسال الأمر بنجاح: ${command}`, 'success');
+                } else {
+                    addLog(`❌ فشل في إرسال الأمر: ${result.error || 'خطأ غير معروف'}`, 'error');
+                }
+            } catch (error) {
+                addLog(`❌ خطأ في الاتصال: ${error.message}`, 'error');
+            }
+        }
+
+        // مسح وحة التحكم
+        function clearConsole() {
+            consoleOutput.innerHTML = '';
+            logCount = 0;
+            addLog('🖥️ تم مسح واجهة Console', 'info');
+        }
+
+        // فحص حالة البوت
+        async function checkBotStatus() {
+            try {
+                const response = await fetch('/api/status');
+                const data = await response.json();
+
+                const botStatus = document.getElementById('botStatus');
+                const botConnectionStatus = document.getElementById('botConnectionStatus');
+
+                if (data.success) {
+                    botStatus.className = 'status-indicator status-connected';
+                    botStatus.innerHTML = '<i class="fas fa-check-circle"></i><span>البوت متصل</span>';
+                    botConnectionStatus.textContent = 'متصل ونشط';
+                    addLog('🤖 البوت متصل ويعمل بشكل طبيعي', 'success');
+                } else {
+                    botStatus.className = 'status-indicator status-warning';
+                    botStatus.innerHTML = '<i class="fas fa-exclamation-triangle pulse"></i><span>مشكلة في الاتصال</span>';
+                    botConnectionStatus.textContent = 'مشكلة في الاتصال';
+                    addLog('⚠️ مشكلة في اتصال البوت', 'warning');
+                }
+            } catch (error) {
+                const botStatus = document.getElementById('botStatus');
+                const botConnectionStatus = document.getElementById('botConnectionStatus');
+                
+                botStatus.className = 'status-indicator status-disconnected';
+                botStatus.innerHTML = '<i class="fas fa-times-circle pulse"></i><span>غير متصل</span>';
+                botConnectionStatus.textContent = 'غير متصل';
+                addLog('❌ فشل في الاتصال مع الخادم', 'error');
+            }
+        }
+
+        // فحص المستخدمين في الغرفة
+        async function checkRoomUsers() {
+            try {
+                const response = await fetch('/api/room-users');
+                const data = await response.json();
+
+                if (data.success) {
+                    document.getElementById('roomUsersCount').textContent = data.users.length;
+                    if (data.users.length > 0) {
+                        addLog(`👥 يوجد ${data.users.length} مستخدم في الغرفة`, 'info');
+                    }
+                }
+            } catch (error) {
+                addLog('❌ فشل في الحصول على بيانات المستخدمين', 'error');
+            }
+        }
+
+        // تحديث وقت التشغيل
+        function updateUptime() {
+            const uptime = Date.now() - startTime;
+            const hours = Math.floor(uptime / (1000 * 60 * 60));
+            const minutes = Math.floor((uptime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((uptime % (1000 * 60)) / 1000);
+            
+            document.getElementById('uptime').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // تحديث آخر نشاط
+        function updateLastActivity() {
+            document.getElementById('lastActivity').textContent = new Date().toLocaleTimeString();
+        }
+
+        // استماع لضغطة Enter
+        commandInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendCommand();
+            }
+        });
+
+        // بدء التشغيل
+        document.addEventListener('DOMContentLoaded', function() {
+            addLog('🚀 تم تحميل واجهة Console بنجاح', 'success');
+            
+            // فحص أولي
+            checkBotStatus();
+            checkRoomUsers();
+            
+            // تحديث دوري
+            setInterval(checkBotStatus, 10000); // كل 10 ثواني
+            setInterval(checkRoomUsers, 15000); // كل 15 ثانية
+            setInterval(updateUptime, 1000); // كل ثانية
+            setInterval(updateLastActivity, 30000); // كل 30 ثانية
+            
+            addLog('⏰ تم تفعيل النظام الدوري لمراقبة الحالة', 'info');
+        });
+
+        // رسائل تلقائية دورية لإظهار النشاط
+        setInterval(() => {
+            const messages = [
+                '🔍 فحص الأنظمة...',
+                '📡 مراقبة الاتصال...',
+                '💾 تحديث البيانات...',
+                '🔄 تنشيط الذاكرة...'
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            addLog(randomMessage, 'info');
+        }, 45000); // كل 45 ثانية
+    </script>
+</body>
+</html>

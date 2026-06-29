@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 بوت Highrise - لوحة التحكم</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Cairo', sans-serif;
+            min-height: 100vh;
+        }
+        .card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 20px 20px 0 0 !important;
+            text-align: center;
+            font-weight: bold;
+        }
+        .btn-custom {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            border-radius: 15px;
+            margin: 5px;
+            transition: all 0.3s;
+        }
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+        .btn-dance {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border: none;
+            color: white;
+            border-radius: 10px;
+            margin: 2px;
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+        .btn-dance:hover {
+            transform: scale(1.05);
+            color: white;
+        }
+        .title {
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+        .dance-grid {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .command-item {
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        /* تأثيرات الأزرار السفلية */
+        .btn-lg:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .btn-lg:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand text-white" href="/">
+                <i class="fas fa-robot"></i> بوت Highrise EDX
+            </a>
+
+            <div class="text-white" id="botStatus">
+                <i class="fas fa-spinner fa-spin"></i> جاري التحقق من حالة البوت...
+            </div>
+        </div>
+    </nav></nav>
+
+    <div class="container mt-4">
+        <h1 class="title">
+            🤖 لوحة تحكم بوت Highrise المصري
+            <br><small class="text-light">من تطوير فريق EDX</small>
+        </h1>
+
+        <div class="row">
+            <!-- قسم الأوامر العامة -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-terminal"></i> الأوامر المتاحة</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="accordion" id="commandsAccordion">
+                            <!-- أوامر المستخدمين -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#userCommands">
+                                        <i class="fas fa-user"></i> أوامر المستخدمين
+                                    </button>
+                                </h2>
+                                <div id="userCommands" class="accordion-collapse collapse show" data-bs-parent="#commandsAccordion">
+                                    <div class="accordion-body">
+                                        <h6 class="text-primary">🔸 المعلومات العامة:</h6>
+                                        <div class="command-item">
+                                            <strong>🆔 اي دي</strong> - عرض معرف المستخدم
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>📊 معلوماتي</strong> - عرض معلوماتك
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>👤 نوعي</strong> - عرض نوع الحساب
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>👥 الاعضاء</strong> - عدد الأعضاء
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🤖 البوت</strong> - معلومات البوت
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>👋 مرحبا</strong> - تحية
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>☪️ السلام عليكم</strong> - رد إسلامي
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>📋 الاوامر | مساعدة</strong> - عرض جميع الأوامر
+                                        </div>
+
+                                        <h6 class="text-success mt-3">🔸 أوامر الرقصات:</h6>
+                                        <div class="command-item">
+                                            <strong>💃 الرقصات</strong> - عرض قائمة الرقصات (صفحة 1)
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>💃 الرقصات [رقم]</strong> - عرض صفحة معينة من الرقصات
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🕺 رقص [رقم]</strong> - بدء رقصة تلقائية بالرقم
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🕺 ارقص [رقم]</strong> - بدء رقصة تلقائية بالرقم
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🔢 [رقم مباشر]</strong> - رقصة تلقائية بكتابة الرقم فقط
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>⏹️ توقف</strong> - إيقاف الرقصة التلقائية
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🔍 ابحث رقصة [اسم]</strong> - البحث عن رقصة معينة
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🎲 رقصة عشوائية</strong> - رقصة عشوائية
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>📊 عدد الرقصات</strong> - عدد الرقصات المتاحة
+                                        </div>
+
+                                        <h6 class="text-warning mt-3">🔸 أوامر النقل (للجميع):</h6>
+                                        <div class="command-item">
+                                            <strong>🚶‍♂️ وديني @اسم</strong> - نقلك إلى المستخدم
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>📍 جيب @اسم</strong> - جلب المستخدم إليك
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🔄 اعكس @اسم</strong> - تبديل مكانك مع المستخدم
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- أوامر المشرفين -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#moderatorCommands">
+                                        👮‍♂️ أوامر المشرفين
+                                    </button>
+                                </h2>
+                                <div id="moderatorCommands" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <h6 class="text-info">🔸 أوامر النقل والإدارة:</h6>
+                                        <div class="command-item">
+                                            <strong>🚶‍♂️ اذهب</strong> - الذهاب لمكان محفوظ
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>📍 الاماكن</strong> - عرض الأماكن المحفوظة
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🔢 عدد الاماكن</strong> - عدد الأماكن المحفوظة
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🔄 اسحبهم</strong> - سحب المستخدمين حولك
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>📍 جيب @اسم</strong> - جلب مستخدم معين
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🔄 بدل @اسم</strong> - تبديل مكانك مع المستخدم
+                                        </div>
+
+                                        <h6 class="text-success mt-3">🔸 أوامر الرقص:</h6>
+                                        <div class="command-item">
+                                            <strong>🤖 رقص البوت</strong> - البوت يرقص عشوائياً
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>💃 رقص_الكل</strong> - رقصة جماعية
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>⏹️ ايقاف_الكل</strong> - إيقاف الرقص الجماعي
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>⏹️ ايقاف @اسم</strong> - إيقاف رقصة مستخدم معين
+                                        </div>
+                                        <h6 class="text-warning mt-3">🔸 أوامر الملاحقة:</h6>
+                                        <div class="command-item">
+                                            <strong>👁️ لاحق @اسم</strong> - ملاحقة مستخدم معين
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🛑 ايقاف_الملاحقة</strong> - إيقاف جميع عمليات الملاحقة
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>👥 المتابعين</strong> - عرض قائمة المستخدمين المتابعين
+                                        </div>
+
+                                        <h6 class="text-warning mt-3">🔸 أوامر التفاعل:</h6>
+                                        <div class="command-item">
+                                            <strong>❤️ ريأكشن [نوع] @اسم</strong> - إرسال ريأكشنز
+                                        </div>
+
+                                        <h6 class="text-primary mt-3">🔸 أوامر المعلومات:</h6>
+                                        <div class="command-item">
+                                            <strong>👮‍♂️ المشرفين</strong> - قائمة المشرفين
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🔍 فحص @اسم</strong> - فحص معلومات مستخدم
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🔍 فحصني</strong> - فحص معلوماتك
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>📊 احصائيات_الغرفة</strong> - إحصائيات شاملة
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>📊 غرفة</strong> - إحصائيات الغرفة والمشرفين
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🎯 الاوامر_المخصصة</strong> - عرض قائمة الأوامر المخصصة المتاحة
+                                        </div>
+
+                                        <h6 class="text-danger mt-3">🔸 أوامر التحكم:</h6>
+                                        <div class="command-item">
+                                            <strong>🔒 ثبت @اسم</strong> - تثبيت مستخدم في مكانه
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🔓 الغ ثبت @اسم</strong> - إلغاء تثبيت مستخدم
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>👥 المثبتين</strong> - قائمة المستخدمين المثبتين
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- أوامر المالك فقط -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ownerCommands">
+                                        👑 أوامر المالك فقط
+                                    </button>
+                                </h2>
+                                <div id="ownerCommands" class="accordion-collapse collapse">
+                                    <div class="accordion-body bg-dark text-light">
+                                        <div class="alert alert-danger" role="alert">
+                                            <strong>⚠️ تحذير:</strong> هذه الأوامر للمالك فقط 
+                                        </div>
+
+                                        <h6 class="text-warning">🔸 إدارة المشرفين:</h6>
+                                        <div class="command-item">
+                                            <strong>➕ اضافة_مشرف @اسم</strong> - تعيين مشرف جديد في الروم
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>➖ ازالة_مشرف @اسم</strong> - إلغاء إشراف مستخدم
+                                        </div>
+
+                                        <h6 class="text-success mt-3">🔸 نظام تتبع المواقع (جديد):</h6>
+                                        <div class="command-item">
+                                            <strong>📊 احصائيات_المواقع</strong> - عرض إحصائيات نظام تتبع المواقع
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>📍 موقع @اسم</strong> - عرض آخر موقع معروف للمستخدم
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>👥 اقرب_مستخدمين @اسم</strong> - عرض أقرب المستخدمين للشخص المحدد
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🧹 مسح_مواقع_قديمة</strong> - مسح المواقع القديمة (أكثر من 12 ساعة)
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>💥 تفريغ_نظام_المواقع</strong> - مسح جميع المواقع المحفوظة
+                                        </div>
+
+                                        <h6 class="text-primary mt-3">🔸 رسائل وتحكم:</h6>
+                                        <div class="command-item">
+                                            <strong>📢 رسالة_جماعية [نص]</strong> - إرسال رسالة جماعية للغرفة
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🎭 تغيير_اسم_البوت [اسم]</strong> - تغيير اسم البوت المعروض
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>💬 رسالة_ترحيب_مخصصة [نص]</strong> - تخصيص رسالة الترحيب
+                                        </div>
+
+                                        <div class="command-item">
+                                            <strong>🚀 انتقال_سري [x] [y] [z]</strong> - انتقال لإحداثيات محددة
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>👥 استدعاء_جميع_المستخدمين</strong> - جلب جميع المستخدمين للمالك
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>💃 رقص_البوت_خاص</strong> - رقصات حصرية للمالك فقط
+                                        </div>
+
+                                        <h6 class="text-danger mt-3">🔸 إدارة النظام:</h6>
+                                        <div class="command-item">
+                                            <strong>📈 احصائيات_كاملة</strong> - تقرير شامل عن حالة البوت
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>💾 نسخ_احتياطي</strong> - إنشاء نسخة احتياطية من البيانات
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🔄 اعادة_تشغيل</strong> - إعادة تشغيل النظام (يدوي)
+                                        </div>
+
+                                        <h6 class="text-info mt-3">🔸 إدارة الأماكن:</h6>
+                                        <div class="command-item">
+                                            <strong>🗑️ احذف مكان [اسم]</strong> - حذف مكان محفوظ نهائياً
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🧹 مسح_جميع_الاماكن</strong> - حذف كل الأماكن المحفوظة
+                                        </div>
+
+                                        <h6 class="text-danger mt-3">🔸 صلاحيات المالك الخاصة:</h6>
+                                        <div class="command-item">
+                                            <strong>👑 جميع أوامر المشرفين</strong> - صلاحيات كاملة
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>⚙️ تحكم شامل بالروم</strong> - إدارة كاملة للبوت والمستخدمين
+                                        </div>
+                                        <div class="command-item">
+                                            <strong>🛡️ حماية البوت والبيانات</strong> - صلاحيات الحماية والأمان
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم الأوامر النصية -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-terminal"></i> إرسال أوامر نصية</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- واجهة إرسال الأوامر -->
+                        <div class="mb-4">
+                            <h6><i class="fas fa-paper-plane"></i> إرسال أمر مباشر:</h6>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="commandInput" placeholder="اكتب الأمر هنا... (مثل: رقص 5 @اسم المستخدم)" dir="rtl">
+                                <button class="btn btn-primary" onclick="sendCommand()">
+                                    <i class="fas fa-paper-plane"></i> إرسال
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- أوامر سريعة للمالك -->
+                        <div class="mb-3">
+                            <h6><i class="fas fa-bolt"></i> أوامر سريعة:</h6>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button class="btn btn-outline-primary btn-sm w-100 mb-2" onclick="sendQuickCommand('الاعضاء')">
+                                        👥 عدد الأعضاء
+                                    </button>
+                                    <button class="btn btn-outline-success btn-sm w-100 mb-2" onclick="sendQuickCommand('اسحبهم')">
+                                        🏃 اسحب الجميع
+                                    </button>
+                                    <button class="btn btn-outline-warning btn-sm w-100 mb-2" onclick="sendQuickCommand('المشرفين')">
+                                        👮‍♂️ قائمة المشرفين
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <!-- قسم الحصول على ID مستخدم -->
+                                    <div class="mb-3">
+                                        <h6><i class="fas fa-id-card"></i> الحصول على ID مستخدم:</h6>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="userIdInput" placeholder="اكتب اسم المستخدم..." dir="rtl">
+                                            <button class="btn btn-outline-primary" onclick="getUserId()">
+                                                🆔 احصل على ID
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6"></div>
+                                <div class="col-6">
+                                    <button class="btn btn-outline-info btn-sm w-100 mb-2" onclick="sendQuickCommand('الاماكن')">
+                                        📍 الأماكن المحفوظة
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-sm w-100 mb-2" onclick="sendQuickCommand('bot_dance')">
+                                        🤖 رقص البوت
+                                    </button>
+                                    <button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="sendQuickCommand('تغيير')">
+                                        👕 تغيير ملابس البوت
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- إرسال رسائل مخصصة في الشات العام -->
+                        <div class="mb-3">
+                            <h6><i class="fas fa-bullhorn"></i> إرسال رسالة في الشات العام:</h6>
+                            <div class="input-group mb-2">
+                                <input type="text" class="form-control" id="publicMessageInput" placeholder="اكتب رسالتك هنا..." dir="rtl" maxlength="200">
+                                <button class="btn btn-primary" onclick="sendPublicMessage()">
+                                    <i class="fas fa-paper-plane"></i> إرسال
+                                </button>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button class="btn btn-outline-info btn-sm w-100 mb-1" onclick="sendQuickPublicMessage('🎉 مرحباً بالجميع في الغرفة!')">
+                                        🎉 ترحيب عام
+                                    </button>
+                                    <button class="btn btn-outline-success btn-sm w-100 mb-1" onclick="sendQuickPublicMessage('💃 وقت الرقص! دعونا نستمتع!')">
+                                        💃 دعوة للرقص
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-outline-warning btn-sm w-100 mb-1" onclick="sendQuickPublicMessage('📢 يرجى احترام قوانين الغرفة')">
+                                        📢 تذكير بالقوانين
+                                    </button>
+                                    <button class="btn btn-outline-secondary btn-sm w-100 mb-1" onclick="sendQuickPublicMessage('🌟 استمتعوا بوقتكم في الغرفة!')">
+                                        🌟 رسالة إيجابية
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- أوامر التحكم في المستخدمين -->
+                        <div class="mb-3">
+                            <h6><i class="fas fa-lock"></i> أوامر التحكم في المستخدمين:</h6>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <select class="form-select form-select-sm mb-2" id="controlUsername">
+                                        <option value="">🎮 اختر مستخدم للتحكم...</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-warning btn-sm w-100 mb-1" onclick="freezeUser()">
+                                        🔒 تثبيت
+                                    </button>
+                                    <button class="btn btn-success btn-sm w-100 mb-1" onclick="unfreezeUser()">
+                                        🔓 إلغاء تثبيت
+                                    </button>
+                                    <button class="btn btn-danger btn-sm w-100" onclick="jailUser()">
+                                        ⛓️ سجن
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- أوامر الرقصات المتقدمة -->
+                        <div class="mb-3">
+                            <h6><i class="fas fa-dance"></i> أوامر الرقص المتقدمة:</h6>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <input type="number" class="form-control form-control-sm mb-2" id="danceNumber" placeholder="رقم الرقصة (1-183)" min="1" max="183">
+                                </div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-warning btn-sm w-100 mb-2" onclick="sendDanceAllCommand()">
+                                        💃 رقص الجميع
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="form-select form-select-sm mb-2" id="targetUser">
+                                        <option value="">🎯 اختر الهدف...</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <button class="btn btn-info btn-sm w-100 mb-2" onclick="sendUserDanceCommand()">
+                                        🕺 رقص مستخدم
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- سجل الأوامر المرسلة -->
+                        <div class="mb-3">
+                            <h6><i class="fas fa-history"></i> سجل الأوامر:</h6>
+                            <div id="commandLog" class="border rounded p-2" style="height: 150px; overflow-y: auto; background-color: #f8f9fa; font-size: 12px;">
+                                <div class="text-muted">سيتم عرض الأوامر المرسلة هنا...</div>
+                            </div>
+                        </div>
+
+                        <!-- تعليمات -->
+                        <div class="alert alert-info alert-sm">
+                            <small>
+                                <strong>💡 أمثلة على الأوامر:</strong><br>
+                                • <code>رقص 15 @اسم_المستخدم</code> - جعل مستخدم يرقص<br>
+                                • <code>جيب @اسم_المستخدم</code> - إحضار مستخدم<br>
+                                • <code>حفظ اسم_المكان</code> - حفظ مكان جديد<br>
+                                • <code>اذهب اسم_المكان</code> - الذهاب لمكان محفوظ
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- قسم عرض المستخدمين -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-users"></i> المستخدمين المتصلين</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <div class="row text-center">
+                                <div class="col-3">
+                                    <div class="badge bg-warning text-dark">
+                                        <i class="fas fa-crown"></i> مالكين
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="badge bg-primary">
+                                        <i class="fas fa-shield-alt"></i> مشرفين
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="badge bg-info">
+                                        <i class="fas fa-robot"></i> بوتات
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="badge bg-secondary">
+                                        <i class="fas fa-user"></i> أعضاء
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control form-control-sm" id="userSearchInput" 
+                                   placeholder="البحث عن مستخدم..." onkeyup="filterUsersDisplay()">
+                        </div>
+
+                        <div id="usersDisplaySection" style="max-height: 400px; overflow-y: auto;">
+                            <div class="text-center">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">جاري تحميل المستخدمين...</span>
+                                </div>
+                                <p class="mt-2">جاري تحميل قائمة المستخدمين...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم الرقصات -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-music"></i> مدير الرقصات (183 رقصة)</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- أزرار التحكم في الرقصات -->
+                        <div class="mb-4">
+                            <h6><i class="fas fa-gamepad"></i> أزرار التحكم:</h6>
+
+                            <!-- الزر الأول: تفعيل الرقص التلقائي للبوت -->
+                            <div class="mb-2">
+                                <button class="btn btn-success btn-sm me-2" id="botAutoEmoteBtn" onclick="toggleBotAutoEmote()">
+                                    <i class="fas fa-robot"></i> تفعيل الرقص التلقائي للبوت
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="stopBotAutoEmote()">
+                                    <i class="fas fa-stop"></i> إيقاف رقص البوت
+                                </button>
+                                    </div>
+
+                                    <!-- إدارة الراديو -->
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-info text-white">
+                                            <h5 class="mb-0"><i class="fas fa-radio"></i> إدارة الراديو</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row mb-3">
+                                                <div class="col-md-8">
+                                                    <input type="url" id="radioUrl" class="form-control" placeholder="أدخل رابط محطة الراديو..." 
+                                                           title="مثال: https://stream.example.com/radio">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-success btn-sm me-2" onclick="changeRadioStation()">
+                                                        <i class="fas fa-play"></i> تشغيل الراديو
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div class="btn-group" role="group">
+                                                <button class="btn btn-danger btn-sm" onclick="executeCommand('ايقاف_الراديو')">
+                                                    <i class="fas fa-stop"></i> إيقاف الراديو
+                                                </button>
+                                                <button class="btn btn-info btn-sm" onclick="executeCommand('حالة_الراديو')">
+                                                    <i class="fas fa-info-circle"></i> حالة الراديو
+                                                </button>
+                                            </div>
+                                        </div>
+
+                            <!-- أزرار الريأكشنز -->
+                            <div class="mb-3">
+                                <h6><i class="fas fa-heart"></i> إرسال ريأكشنز للجميع:</h6>
+                                <div class="btn-group" role="group">
+                                    <button class="btn btn-outline-danger btn-sm" onclick="sendReactionToAll('heart')">
+                                        ❤️ قلب
+                                    </button>
+                                    <button class="btn btn-outline-primary btn-sm" onclick="sendReactionToAll('wave')">
+                                        👋 تحية
+                                    </button>
+                                    <button class="btn btn-outline-success btn-sm" onclick="sendReactionToAll('thumbs')">
+                                        👍 إعجاب
+                                    </button>
+                                    <button class="btn btn-outline-warning btn-sm" onclick="sendReactionToAll('clap')">
+                                        👏 تصفيق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- بحث الرقصات -->
+                        <div class="mb-3">
+                            <h6><i class="fas fa-search"></i> البحث في الرقصات:</h6>
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="emoteSearchInput" placeholder="ابحث عن رقصة...">
+                                <button class="btn btn-outline-secondary" onclick="filterEmotes()">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <button class="btn btn-outline-secondary" onclick="clearEmoteFilter()">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- قائمة جميع الرقصات -->
+                        <div class="mb-3">
+                            <h6><i class="fas fa-list"></i> جميع الرقصات (183):</h6>
+                            <div class="emotes-container" style="max-height: 300px; overflow-y: auto; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
+                                <div id="emotesList">
+                                    <!-- سيتم تحميل الرقصات هنا بواسطة JavaScript -->
+                                    <div class="text-center">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">جاري التحميل...</span>
+                                        </div>
+                                        <p class="mt-2">جاري تحميل قائمة الرقصات...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- معلومات سريعة -->
+                        <div class="alert alert-info alert-sm">
+                            <small>
+                                <strong>💡 نصائح:</strong><br>
+                                • انقر على اسم الرقصة لنسخ رقمها<br>
+                                • استخدم البحث للعثور على رقصة معينة<br>
+                                • الرقص المتكرر يستمر حتى الإيقاف
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- إحصائيات -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-chart-bar"></i> إحصائيات البوت</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <div class="card bg-primary text-white">
+                                    <div class="card-body">
+                                        <h3>183</h3>
+                                        <p>رقصة متاحة</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card bg-success text-white">
+                                    <div class="card-body">
+                                        <h3>∞</h3>
+                                        <p>أوامر تفاعلية</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card bg-warning text-white">
+                                    <div class="card-body">
+                                        <h3>24/7</h3>
+                                        <p>متاح دائماً</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card bg-info text-white">
+                                    <div class="card-body">
+                                        <h3>EDX</h3>
+                                        <p>فريق التطوير</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+                            <h6><i class="fas fa-info-circle"></i> معلومات النظام:</h6>
+                            <div class="small text-muted">
+                                <p>🔹 البوت متصل ويعمل بشكل طبيعي</p>
+                                <p>🔹 آخر تحديث: <span id="lastUpdate">منذ قليل</span></p>
+                                <p>🔹 حالة الاتصال: <span class="text-success">متصل</span></p>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <h6><i class="fas fa-clock"></i> معلومات أوقات الرقصات:</h6>
+                            <div class="small" id="emoteTimingInfo">
+                                <p class="text-muted">🔄 جاري تحميل المعلومات...</p>
+                            </div>
+                        </div>
+
+                        <!-- أزرار الأدوات والمميزات -->
+                        <div class="mt-4 text-center">
+                            <h4 class="text-white mb-4">🛠️ أدوات ومميزات البوت</h4>
+                            <div class="row justify-content-center">
+                                <!-- الصف الأول -->
+                                <div class="col-md-4 mb-3">
+                                    <a href="/ai-assistant" class="btn btn-lg w-100" style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; border: none; border-radius: 25px; padding: 15px 20px; text-decoration: none; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); transition: all 0.3s ease;">
+                                        <i class="fas fa-robot"></i> 🤖 AI Assistant
+                                        <br><small style="font-size: 11px; opacity: 0.9;">مساعد ذكي متطور</small>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <!-- تم حذف رابط المترجم -->
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <a href="/updates" class="btn btn-lg w-100" style="background: linear-gradient(45deg, #28a745, #20c997); color: white; border: none; border-radius: 25px; padding: 15px 20px; text-decoration: none; box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3); transition: all 0.3s ease;">
+                                        <i class="fas fa-download"></i> 📥 التحديثات
+                                        <br><small style="font-size: 11px; opacity: 0.9;">آخر التحديثات والتحسينات</small>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <!-- الصف الثاني -->
+                                <div class="col-md-4 mb-3">
+                                    <a href="/outfits" class="btn btn-lg w-100" style="background: linear-gradient(45deg, #e91e63, #f06292); color: white; border: none; border-radius: 25px; padding: 15px 20px; text-decoration: none; box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3); transition: all 0.3s ease;">
+                                        <i class="fas fa-tshirt"></i> 👕 الملابس
+                                        <br><small style="font-size: 11px; opacity: 0.9;">إدارة ملابس البوت</small>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <a href="/outfit-creator" class="btn btn-lg w-100" style="background: linear-gradient(45deg, #9c27b0, #ba68c8); color: white; border: none; border-radius: 25px; padding: 15px 20px; text-decoration: none; box-shadow: 0 8px 25px rgba(156, 39, 176, 0.3); transition: all 0.3s ease;">
+                                        <i class="fas fa-magic"></i> ✨ صانع الملابس
+                                        <br><small style="font-size: 11px; opacity: 0.9;">إنشاء ملابس مخصصة</small>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <a href="/responses" class="btn btn-lg w-100" style="background: linear-gradient(45deg, #ff9800, #ffb74d); color: white; border: none; border-radius: 25px; padding: 15px 20px; text-decoration: none; box-shadow: 0 8px 25px rgba(255, 152, 0, 0.3); transition: all 0.3s ease;">
+                                        <i class="fas fa-comments"></i> 💬 إدارة الردود
+                                        <br><small style="font-size: 11px; opacity: 0.9;">تخصيص ردود البوت</small>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <!-- الصف الثالث -->
+                                <div class="col-md-4 mb-3">
+                                    <a href="/command-builder" class="btn btn-lg w-100" style="background: linear-gradient(45deg, #795548, #a1887f); color: white; border: none; border-radius: 25px; padding: 15px 20px; text-decoration: none; box-shadow: 0 8px 25px rgba(121, 85, 72, 0.3); transition: all 0.3s ease;">
+                                        <i class="fas fa-tools"></i> 🔧 مصنع الأوامر
+                                        <br><small style="font-size: 11px; opacity: 0.9;">إنشاء أوامر مخصصة</small>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <a href="/console" class="btn btn-lg w-100" style="background: linear-gradient(45deg, #607d8b, #90a4ae); color: white; border: none; border-radius: 25px; padding: 15px 20px; text-decoration: none; box-shadow: 0 8px 25px rgba(96, 125, 139, 0.3); transition: all 0.3s ease;">
+                                        <i class="fas fa-terminal"></i> 💻 Console
+                                        <br><small style="font-size: 11px; opacity: 0.9;">وحدة التحكم المتقدمة</small>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <a href="/" class="btn btn-lg w-100" style="background: linear-gradient(45deg, #3f51b5, #7986cb); color: white; border: none; border-radius: 25px; padding: 15px 20px; text-decoration: none; box-shadow: 0 8px 25px rgba(63, 81, 181, 0.3); transition: all 0.3s ease;">
+                                        <i class="fas fa-home"></i> 🏠 الرئيسية
+                                        <br><small style="font-size: 11px; opacity: 0.9;">العودة للصفحة الرئيسية</small>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+    </div>
+
+    <!-- Toast للإشعارات -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="copyToast" class="toast" role="alert">
+            <div class="toast-header bg-success text-white">
+                <strong class="me-auto">✅ تم النسخ</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="toastBody">
+                تم نسخ الأمر إلى الحافظة!
+            </div>
+        </div>
+    </div>
+
+    <!-- أيقونة المعلومات العائمة -->
+    <div class="floating-info-container">
+        <div id="aboutBtn" class="floating-about-btn" onclick="toggleAboutIcon()">
+            <i class="fas fa-info-circle"></i>
+        </div>
+        <div id="infoIcon" class="floating-info-icon" onclick="openAboutModal()">
+            <i class="fas fa-book"></i>
+        </div>
+        <div id="outfitIcon" class="floating-outfit-icon onclick="openOutfitPage()">
+            <i class="fas fa-tshirt"></i>
+        </div>
+        <div id="timingIcon" class="floating-timing-icon" onclick="openTimingPage()">
+            <i class="fas fa-clock"></i>
+        </div>
+        <div class="floating-responses-icon" id="responsesIcon" onclick="window.open('/responses', '_blank')" title="إدارة الردود التلقائية">
+                <i class="fas fa-comments"></i>
+            </div>
+    </div>
+
+    <!-- نافذة معلومات البوت -->
+    <div class="modal fade" id="aboutModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-robot"></i> معلومات البوت</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-robot fa-4x text-primary mb-3"></i>
+                        <h3>بوت Highrise المصري</h3>
+                        <p class="text-muted">من تطوير فريق EDX</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-star"></i> الميزات الرئيسية:</h6>
+                            <ul class="list-unstyled">
+                                <li>• 🎭 نظام رقصات متقدم (183+ رقصة)</li>
+                                <li>• 👮‍♂️ إدارة المشرفين التلقائية</li>
+                                <li>• 📍 حفظ واستدعاع الأماكن</li>
+                                <li>• 🔄 رقص تلقائي ذكي</li>
+                                <li>• 👥 تتبع المستخدمين</li>
+                                <li>• 🌐 واجهة ويب متطورة</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-code"></i> التقنيات المستخدمة:</h6>
+                            <ul class="list-unstyled">
+                                <li>• Python + Highrise API</li>
+                                <li>• Flask Web Framework</li>
+                                <li>• Bootstrap 5 UI</li>
+                                <li>• Real-time Updates</li>
+                                <li>• JSON Data Storage</li>
+                                <li>• Responsive Design</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <p class="text-info">
+                            <i class="fas fa-heart"></i> مصنوع بحب في مصر
+                        </p>
+                        <small class="text-muted">الإصدار 3.0 - محدث باستمرار</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة أوامر الهاك المتقدمة -->
+    <div class="modal fade" id="hackControlModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="background: linear-gradient(135deg, #1a1a1a, #2d1b69); color: #00ff00; border: 2px solid #ff0000;">
+                <div class="modal-header" style="border-bottom: 2px solid #ff0000;">
+                    <h5 class="modal-title" style="color: #ff0000; text-shadow: 0 0 10px #ff0000;">
+                        <i class="fas fa-skull-crossbones"></i> 💀 نظام التحكم المتقدم - HACKER MODE 💀
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <div style="color: #ff0000; font-family: 'Courier New', monospace; text-shadow: 0 0 10px #ff0000;">
+                            <h4>⚠️ WARNING: UNAUTHORIZED ACCESS DETECTED ⚠️</h4>
+                            <p style="color: #00ff00;">System compromised... Gaining control over targets...</p>
+                        </div>
+                    </div>
+
+                    <!-- اختيار الهدف -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <label style="color: #ff0000;">🎯 اختر الهدف:</label>
+                            <select class="form-select" id="hackTargetUser" style="background: #000; color: #00ff00; border: 1px solid #ff0000;">
+                                <option value="">💀 اختر المستخدم المراد اختراقه...</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label style="color: #ff0000;">🎭 اختر الرقصة للتحكم:</label>
+                            <select class="form-select" id="hackEmoteSelect" style="background: #000; color: #00ff00; border: 1px solid #ff0000;">
+                                <option value="">💃 اختر رقصة للسيطرة...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- إحداثيات التحكم -->
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <label style="color: #ff0000;">📍 X:</label>
+                            <input type="number" class="form-control" id="hackPosX" placeholder="0.0" step="0.1" style="background: #000; color: #00ff00; border: 1px solid #ff0000;">
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: #ff0000;">📍 Y:</label>
+                            <input type="number" class="form-control" id="hackPosY" placeholder="0.0" step="0.1" style="background: #000; color: #00ff00; border: 1px solid #ff0000;">
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: #ff0000;">📍 Z:</label>
+                            <input type="number" class="form-control" id="hackPosZ" placeholder="0.0" step="0.1" style="background: #000; color: #00ff00; border: 1px solid #ff0000;">
+                        </div>
+                    </div>
+
+                    <!-- أوامر الهاك -->
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <button class="btn w-100" onclick="executeHackCommand('dance')" style="background: linear-gradient(45deg, #ff0000, #8b0000); color: white; border: none; padding: 15px; font-size: 16px; text-shadow: 0 0 5px #ff0000;">
+                                🎭 اختراق الرقص
+                            </button>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <button class="btn w-100" onclick="executeHackCommand('teleport_to_bot')" style="background: linear-gradient(45deg, #00ff00, #006400); color: black; border: none; padding: 15px; font-size: 16px; text-shadow: 0 0 5px #00ff00;">
+                                🚀 سحب للبوت
+                            </button>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <button class="btn w-100" onclick="executeHackCommand('teleport_to_coords')" style="background: linear-gradient(45deg, #ff8c00, #ff4500); color: white; border: none; padding: 15px; font-size: 16px; text-shadow: 0 0 5px #ff8c00;">
+                                📍 نقل لإحداثيات
+                            </button>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <button class="btn w-100" onclick="executeHackCommand('freeze')" style="background: linear-gradient(45deg, #0080ff, #004080); color: white; border: none; padding: 15px; font-size: 16px; text-shadow: 0 0 5px #0080ff;">
+                                🔒 تجميد الهدف
+                            </button>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <button class="btn w-100" onclick="executeHackCommand('jail')" style="background: linear-gradient(45deg, #8b008b, #4b0082); color: white; border: none; padding: 15px; font-size: 16px; text-shadow: 0 0 5px #8b008b;">
+                                ⛓️ سجن الهدف
+                            </button>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <button class="btn w-100" onclick="executeHackCommand('stop_emote')" style="background: linear-gradient(45deg, #666, #333); color: white; border: none; padding: 15px; font-size: 16px; text-shadow: 0 0 5px #666;">
+                                ⏹️ إيقاف التحكم
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- شاشة الحالة -->
+                    <div class="mt-4" style="background: #000; border: 2px solid #00ff00; padding: 15px; border-radius: 5px;">
+                        <h6 style="color: #00ff00;">📟 شاشة الحالة:</h6>
+                        <div id="hackStatusDisplay" style="font-family: 'Courier New', monospace; color: #00ff00; height: 150px; overflow-y: auto;">
+                            > System ready...<br>
+                            > Waiting for target selection...<br>
+                            > All systems operational<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/app.js"></script>
+    <script>
+        function copyCommand(command) {
+            navigator.clipboard.writeText(command).then(function() {
+                document.getElementById('toastBody').textContent = `تم نسخ الأمر: ${command}`;
+                var toast = new bootstrap.Toast(document.getElementById('copyToast'));
+                toast.show();
+            }).catch(function(err) {
+                console.error('فشل في نسخ الأمر:', err);
+                // محاولة بديلة للنسخ
+                const textArea = document.createElement('textarea');
+                textArea.value = command;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+
+                document.getElementById('toastBody').textContent = `تم نسخ الأمر: ${command}`;
+                var toast = new bootstrap.Toast(document.getElementById('copyToast'));
+                toast.show();
+            });
+        }
+
+        // New function to execute command
+        function executeCommand(command) {
+            // Implement the logic to send the command to the bot here
+            // For example, you can use fetch API to send the command to your backend
+            console.log(`Executing command: ${command}`);
+
+            // Display a confirmation message (you can customize this)
+            document.getElementById('toastBody').textContent = `تم إرسال الأمر: ${command}`;
+            var toast = new bootstrap.Toast(document.getElementById('copyToast'));
+            toast.show();
+        }
+
+        // فتح صفحة الملابس
+        function openOutfitPage() {
+            // إخفاء جميع الأيقونات أولاً
+            const infoIcon = document.getElementById('infoIcon');
+            const outfitIcon = document.getElementById('outfitIcon');
+            const timingIcon = document.getElementById('timingIcon');
+            const aboutBtn = document.getElementById('aboutBtn');
+
+            if (infoIcon && outfitIcon && timingIcon) {
+                infoIcon.classList.remove('show');
+                outfitIcon.classList.remove('show');
+                timingIcon.classList.remove('show');
+                aboutBtn.style.transform = 'scale(1) rotate(0deg)';
+            }
+
+            // فتح صفحة الملابس في نافذة جديدة أو نفس النافذة
+            window.open('/outfits', '_blank');
+
+            // تأثير بصري للزر الرئيسي
+            if (aboutBtn) {
+                aboutBtn.style.background = 'linear-gradient(45deg, #e91e63, #f06292)';
+                setTimeout(() => {
+                    aboutBtn.style.background = 'linear-gradient(45deg, #ff8c00, #ffa500)';
+                }, 300);
+            }
+        }
+
+        // فتح صفحة إدارة أوقات الرقصات
+        function openTimingPage() {
+            // إخفاء جميع الأيقونات أولاً
+            const infoIcon = document.getElementById('infoIcon');
+            const outfitIcon = document.getElementById('outfitIcon');
+            const timingIcon = document.getElementById('timingIcon');
+            const responsesIcon = document.getElementById('responsesIcon');
+            const aboutBtn = document.getElementById('aboutBtn');
+
+            if (infoIcon && outfitIcon && timingIcon && responsesIcon) {
+                infoIcon.classList.remove('show');
+                outfitIcon.classList.remove('show');
+                timingIcon.classList.remove('show');
+                responsesIcon.classList.remove('show');
+                aboutBtn.style.transform = 'scale(1) rotate(0deg)';
+            }
+
+            // فتح صفحة إدارة الأوقات في نافذة جديدة
+            window.open('/emote-timing', '_blank');
+
+            // تأثير بصري للزر الرئيسي
+            if (aboutBtn) {
+                aboutBtn.style.background = 'linear-gradient(45deg, #6f42c1, #8a63d2)';
+                setTimeout(() => {
+                    aboutBtn.style.background = 'linear-gradient(45deg, #ff8c00, #ffa500)';
+                }, 300);
+            }
+        }
+
+        // فتح صفحة إدارة الردود
+        function openResponsesPage() {
+            // إخفاء جميع الأيقونات أولاً
+            const infoIcon = document.getElementById('infoIcon');
+            const outfitIcon = document.getElementById('outfitIcon');
+            const timingIcon = document.getElementById('timingIcon');
+            const responsesIcon = document.getElementById('responsesIcon');
+            const aboutBtn = document.getElementById('aboutBtn');
+
+            if (infoIcon && outfitIcon && timingIcon && responsesIcon) {
+                infoIcon.classList.remove('show');
+                outfitIcon.classList.remove('show');
+                timingIcon.classList.remove('show');
+                responsesIcon.classList.remove('show');
+                aboutBtn.style.transform = 'scale(1) rotate(0deg)';
+            }
+
+            // فتح صفحة إدارة الردود في نافذة جديدة
+            window.open('/responses', '_blank');
+
+            // تأثير بصري للزر الرئيسي
+            if (aboutBtn) {
+                aboutBtn.style.background = 'linear-gradient(45deg, #28a745, #20c997)';
+                setTimeout(() => {
+                    aboutBtn.style.background = 'linear-gradient(45deg, #ff8c00, #ffa500)';
+                }, 300);
+            }
+        }
+
+        function toggleAboutIcon() {
+            const infoIcon = document.getElementById('infoIcon');
+            const outfitIcon = document.getElementById('outfitIcon');
+            const timingIcon = document.getElementById('timingIcon');
+            const responsesIcon = document.getElementById('responsesIcon');
+            const aboutBtn = document.getElementById('aboutBtn');
+
+            if (infoIcon.classList.contains('show')) {
+                // إخفاء الأيقونات
+                infoIcon.classList.remove('show');
+                outfitIcon.classList.remove('show');
+                timingIcon.classList.remove('show');
+                responsesIcon.classList.remove('show');
+                aboutBtn.style.transform = 'scale(1) rotate(0deg)';
+                aboutBtn.style.background = 'linear-gradient(45deg, #ff8c00, #ffa500)';
+            } else {
+                // إظهار الأيقونات
+                infoIcon.classList.add('show');
+                outfitIcon.classList.add('show');
+                timingIcon.classList.add('show');
+                responsesIcon.classList.add('show');
+                aboutBtn.style.transform = 'scale(0.9) rotate(45deg)';
+
+                // تأثير صوتي بصري
+                aboutBtn.style.background = 'linear-gradient(45deg, #ffa500, #ff7f00)';
+                setTimeout(() => {
+                    aboutBtn.style.background = 'linear-gradient(45deg, #ff8c00, #ffa500)';
+                }, 200);
+            }
+        }
+
+        // إضافة مؤثرات صوتية بصرية
+        document.addEventListener('DOMContentLoaded', function() {
+            // تحريك العناصر عند التحميل
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+
+                }, index * 200);
+            });
+        });
+
+        // البحث عند الضغط على Enter
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchDance();
+            }
+        });
+    </script>
+</body>
+</html>

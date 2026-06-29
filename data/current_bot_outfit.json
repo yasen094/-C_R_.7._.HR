@@ -1,0 +1,80 @@
+{
+  "outfit": [
+    {
+      "id": "body-flesh",
+      "type": "clothing",
+      "amount": 1
+    },
+    {
+      "id": "hair_front-n_casualteenskypass2021shortcurls",
+      "type": "clothing",
+      "amount": 1
+    },
+    {
+      "id": "hair_back-n_casualteenskypass2021shortcurls",
+      "type": "clothing",
+      "amount": 1
+    },
+    {
+      "id": "nose-n_01",
+      "type": "clothing",
+      "amount": 1
+    },
+    {
+      "id": "eyebrow-n_dailyquest2024cutbrows",
+      "type": "clothing",
+      "amount": 1
+    },
+    {
+      "id": "mouth-n_aprilfoolsinvisible2020mouth",
+      "type": "clothing",
+      "amount": 1
+    },
+    {
+      "id": "shirt-n_landsalegrab1oversizedjacket",
+      "type": "clothing",
+      "amount": 1
+    },
+    {
+      "id": "pants-n_landsalegrab1sportypants",
+      "type": "clothing",
+      "amount": 1
+    },
+    {
+      "id": "shoes-n_landsalegrab1sneaker",
+      "type": "clothing",
+      "amount": 1
+    },
+    {
+      "id": "eye-n_decturquoise2020turquoiseeyes",
+      "type": "clothing",
+      "amount": 1
+    },
+    {
+      "id": "freckle-n_registrationavatars2023contour",
+      "type": "clothing",
+      "amount": 1
+    },
+    {
+      "id": "hat-n_demonacademiaskypass2022demonblindfold",
+      "type": "clothing",
+      "amount": 1
+    }
+  ],
+  "saved_at": "2026-06-27T16:09:52.971875",
+  "total_items": 12,
+  "items_list": [
+    "body-flesh",
+    "hair_front-n_casualteenskypass2021shortcurls",
+    "hair_back-n_casualteenskypass2021shortcurls",
+    "nose-n_01",
+    "eyebrow-n_dailyquest2024cutbrows",
+    "mouth-n_aprilfoolsinvisible2020mouth",
+    "shirt-n_landsalegrab1oversizedjacket",
+    "pants-n_landsalegrab1sportypants",
+    "shoes-n_landsalegrab1sneaker",
+    "eye-n_decturquoise2020turquoiseeyes",
+    "freckle-n_registrationavatars2023contour",
+    "hat-n_demonacademiaskypass2022demonblindfold"
+  ]
+}

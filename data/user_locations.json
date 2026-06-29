@@ -1,0 +1,8454 @@
+{
+  "657a06ae5f8a5ec3ff16ec1b": {
+    "position": {
+      "type": "Position",
+      "x": 15.5,
+      "y": 0.0,
+      "z": 6.0,
+      "facing": "FrontRight"
+    },
+    "username": "NVuM_1",
+    "last_update": "2025-07-20T11:22:30.088526",
+    "x": 15.5,
+    "y": 0.0,
+    "z": 6.0
+  },
+  "66d98887c03b0eb7e37f6090": {
+    "position": {
+      "type": "Position",
+      "x": 5.5,
+      "y": 0.0,
+      "z": 8.5,
+      "facing": "FrontRight"
+    },
+    "username": "Aboud_B52",
+    "last_update": "2025-07-19T18:33:52.997067",
+    "x": 5.5,
+    "y": 0.0,
+    "z": 8.5
+  },
+  "676af79b646378bdd015195e": {
+    "position": {
+      "type": "Position",
+      "x": 12.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "R.4l8",
+    "last_update": "2025-07-18T14:40:46.736917",
+    "x": 12.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "6856ceae9185d7034a7a92fc": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "4d6f95b1990ca1cca46bacaa",
+      "anchor_ix": 0
+    },
+    "username": "Zezo127",
+    "last_update": "2025-06-23T14:23:57.781608",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "64d154086d6c54e9f63f3f82": {
+    "position": {
+      "type": "Position",
+      "x": 15.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontRight"
+    },
+    "username": "VitaminM",
+    "last_update": "2025-06-22T23:04:29.154808",
+    "x": 15.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6858695733f87dcb0d43c4f1": {
+    "position": {
+      "type": "Position",
+      "x": 17.0,
+      "y": 0.019999999552965164,
+      "z": 19.0,
+      "facing": "FrontRight"
+    },
+    "username": "MOLAR._.M",
+    "last_update": "2025-06-23T10:06:33.210624",
+    "x": 17.0,
+    "y": 0.019999999552965164,
+    "z": 19.0
+  },
+  "67fe070945990a6fbcd32e4d": {
+    "position": {
+      "type": "Position",
+      "x": 7.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "itz._.Ahmed",
+    "last_update": "2025-06-23T12:20:15.086096",
+    "x": 7.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "684d5c090b11a8c4f2d361ea": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "a_a05",
+    "last_update": "2025-06-23T10:17:58.338236",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "678bc202fa40fcfd34cb7d76": {
+    "position": {
+      "type": "Position",
+      "x": 18.0,
+      "y": 0.019999999552965164,
+      "z": 18.0,
+      "facing": "FrontRight"
+    },
+    "username": "HAB7BA",
+    "last_update": "2025-07-18T13:28:54.782588",
+    "x": 18.0,
+    "y": 0.019999999552965164,
+    "z": 18.0
+  },
+  "685922b5a7ba0164bb8db98e": {
+    "position": {
+      "type": "Position",
+      "x": 12.5,
+      "y": 0.0,
+      "z": 12.0,
+      "facing": "FrontRight"
+    },
+    "username": "TLN103",
+    "last_update": "2025-06-23T10:35:15.842179",
+    "x": 12.5,
+    "y": 0.0,
+    "z": 12.0
+  },
+  "68592f9327da7a1b81888556": {
+    "position": {
+      "type": "Position",
+      "x": 12.0,
+      "y": 0.0,
+      "z": 18.5,
+      "facing": "FrontRight"
+    },
+    "username": "Nai__2",
+    "last_update": "2025-06-23T11:16:22.386573",
+    "x": 12.0,
+    "y": 0.0,
+    "z": 18.5
+  },
+  "68581411eede0b05919652bf": {
+    "position": {
+      "type": "Position",
+      "x": 12.5,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontRight"
+    },
+    "username": "Khokha111",
+    "last_update": "2025-06-23T11:09:06.280826",
+    "x": 12.5,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "68591f6d82a3738b8731343e": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "409f54876d3f456bab29b2a6",
+      "anchor_ix": 0
+    },
+    "username": "___jk45",
+    "last_update": "2025-06-23T11:17:49.545387",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "674a3bf1a9abff24dc1b95c1": {
+    "position": {
+      "type": "Position",
+      "x": 13.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "Noshaaa_",
+    "last_update": "2025-06-23T12:58:06.071877",
+    "x": 13.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "6859455918f7be3f9e1b2fa0": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Hayam234",
+    "last_update": "2025-06-23T12:30:56.650480",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "67b8b928618cb3424721cbf5": {
+    "position": {
+      "type": "Position",
+      "x": 11.5,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontRight"
+    },
+    "username": "HumblenessSale",
+    "last_update": "2025-07-12T14:43:12.070622",
+    "x": 11.5,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "67e3a4b1db46ddc093268103": {
+    "position": {
+      "type": "Position",
+      "x": 11.0,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontRight"
+    },
+    "username": "mimi__diaa",
+    "last_update": "2025-07-12T14:49:51.734077",
+    "x": 11.0,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "6829d5a8d8849d5694d0c482": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 10.5,
+      "facing": "FrontRight"
+    },
+    "username": "Sajjad_Ah2005",
+    "last_update": "2025-07-12T14:42:46.352166",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 10.5
+  },
+  "614be0ee6a7996240afb3c67": {
+    "position": {
+      "type": "Position",
+      "x": 19.0,
+      "y": 0.0,
+      "z": 7.5,
+      "facing": "BackRight"
+    },
+    "username": "BOY___SAD",
+    "last_update": "2025-06-23T14:34:52.456783",
+    "x": 19.0,
+    "y": 0.0,
+    "z": 7.5
+  },
+  "6859439ba7ba0164bb8f8850": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "9ecc94b18a43269882d28c23",
+      "anchor_ix": 0
+    },
+    "username": "vvv_12",
+    "last_update": "2025-06-23T13:47:18.758973",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "673a6ceffdaf6dcee2b47666": {
+    "position": {
+      "type": "Position",
+      "x": 11.5,
+      "y": 0.0,
+      "z": 2.0,
+      "facing": "FrontRight"
+    },
+    "username": "VIP._.Nova",
+    "last_update": "2025-06-24T23:18:43.284941",
+    "x": 11.5,
+    "y": 0.0,
+    "z": 2.0
+  },
+  "68595317705b9ea6efd4b2bb": {
+    "position": {
+      "type": "Position",
+      "x": 12.0,
+      "y": 0.0,
+      "z": 4.0,
+      "facing": "BackLeft"
+    },
+    "username": "nof677",
+    "last_update": "2025-06-30T21:49:24.607930",
+    "x": 12.0,
+    "y": 0.0,
+    "z": 4.0
+  },
+  "67aa08c7b954f44556f00886": {
+    "position": {
+      "type": "Position",
+      "x": 6.5,
+      "y": 16.5,
+      "z": 5.5,
+      "facing": "FrontRight"
+    },
+    "username": "123456789082828",
+    "last_update": "2025-07-18T14:58:08.673935",
+    "x": 6.5,
+    "y": 16.5,
+    "z": 5.5
+  },
+  "66f41e618a2cffb440745829": {
+    "position": {
+      "type": "Position",
+      "x": 18.5,
+      "y": 0.0,
+      "z": 4.5,
+      "facing": "BackLeft"
+    },
+    "username": "Mot_44",
+    "last_update": "2025-06-23T13:32:40.765280",
+    "x": 18.5,
+    "y": 0.0,
+    "z": 4.5
+  },
+  "682858edf81627337acf42be": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 19.0,
+      "facing": "BackLeft"
+    },
+    "username": "yay81111",
+    "last_update": "2025-07-03T22:22:36.057167",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 19.0
+  },
+  "68308b9ea5e97a52d67cbac8": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "A___A19",
+    "last_update": "2025-06-23T13:44:30.385150",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6544cae0bc165f06bd7f8718": {
+    "position": {
+      "type": "Position",
+      "x": 16.0,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Rahlili",
+    "last_update": "2025-07-06T20:01:21.496129",
+    "x": 16.0,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "65d0ac73835ff62cd0c3a9fb": {
+    "position": {
+      "type": "Position",
+      "x": 17.0,
+      "y": 0.0,
+      "z": 8.0,
+      "facing": "BackLeft"
+    },
+    "username": "Rosas97",
+    "last_update": "2025-07-19T18:16:26.776515",
+    "x": 17.0,
+    "y": 0.0,
+    "z": 8.0
+  },
+  "682972958cef89177f4cb0f0": {
+    "position": {
+      "type": "Position",
+      "x": 3.5,
+      "y": 0.0,
+      "z": 15.0,
+      "facing": "FrontRight"
+    },
+    "username": "Ruqyyah1133",
+    "last_update": "2025-07-20T10:59:00.558760",
+    "x": 3.5,
+    "y": 0.0,
+    "z": 15.0
+  },
+  "66f09a55b62586460f376fa0": {
+    "position": {
+      "type": "Position",
+      "x": 5.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "R__Q._N",
+    "last_update": "2025-07-18T14:22:06.506365",
+    "x": 5.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "67d854b05c126220ddfb35ab": {
+    "position": {
+      "type": "Position",
+      "x": 4.0,
+      "y": 0.0,
+      "z": 19.0,
+      "facing": "FrontRight"
+    },
+    "username": "ramigamer0",
+    "last_update": "2025-07-05T18:10:58.815535",
+    "x": 4.0,
+    "y": 0.0,
+    "z": 19.0
+  },
+  "6699ff0db36ac6613d154028": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "MR_WOLF2",
+    "last_update": "2025-06-27T22:07:50.634038",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "66a8ffcc51e0c65d8e49af7f": {
+    "position": {
+      "type": "Position",
+      "x": 8.0,
+      "y": 0.0,
+      "z": 19.0,
+      "facing": "BackLeft"
+    },
+    "username": "omar12177",
+    "last_update": "2025-07-19T18:57:32.658875",
+    "x": 8.0,
+    "y": 0.0,
+    "z": 19.0
+  },
+  "6853bb3e58a46bd9023d3cc6": {
+    "position": {
+      "type": "Position",
+      "x": 6.5,
+      "y": 0.0,
+      "z": 16.0,
+      "facing": "FrontRight"
+    },
+    "username": "iss__No__or",
+    "last_update": "2025-06-30T22:06:38.289711",
+    "x": 6.5,
+    "y": 0.0,
+    "z": 16.0
+  },
+  "659d09bf0c69e96b5ec78e23": {
+    "position": {
+      "type": "Position",
+      "x": 6.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontLeft"
+    },
+    "username": "diana.o.o",
+    "last_update": "2025-06-23T20:59:52.653057",
+    "x": 6.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "67fa30fea5375d346a807036": {
+    "position": {
+      "type": "Position",
+      "x": 5.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontLeft"
+    },
+    "username": "BESHIR_______BSR",
+    "last_update": "2025-07-05T18:33:59.109653",
+    "x": 5.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "61852744cdd7c068cae192aa": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "2d1757490711e0c5902b9dda",
+      "anchor_ix": 0
+    },
+    "username": "Ehab_123",
+    "last_update": "2025-07-11T16:33:51.649870",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "6828f66df81627337ad0c97a": {
+    "position": {
+      "type": "Position",
+      "x": 11.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "x.sa2",
+    "last_update": "2025-06-23T20:59:43.731322",
+    "x": 11.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "630f952a6c958524261dd130": {
+    "position": {
+      "type": "Position",
+      "x": 16.5,
+      "y": 0.0,
+      "z": 6.0,
+      "facing": "FrontRight"
+    },
+    "username": "VECTOR000",
+    "last_update": "2025-07-20T11:28:09.034842",
+    "x": 16.5,
+    "y": 0.0,
+    "z": 6.0
+  },
+  "684306b4d638c0257d81beaf": {
+    "position": {
+      "type": "Position",
+      "x": 10.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "Hsoo99",
+    "last_update": "2025-06-23T21:31:26.343005",
+    "x": 10.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "685abe5e8624092381374442": {
+    "position": {
+      "type": "Position",
+      "x": 16.5,
+      "y": 0.0,
+      "z": 8.5,
+      "facing": "BackLeft"
+    },
+    "username": "vue4",
+    "last_update": "2025-06-24T15:16:00.636821",
+    "x": 16.5,
+    "y": 0.0,
+    "z": 8.5
+  },
+  "67bbb6c68c6dc949d2a1d350": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "9ecc94b18a43269882d28c23",
+      "anchor_ix": 1
+    },
+    "username": "ROON42",
+    "last_update": "2025-06-24T15:09:54.167673",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "685abe485223b35c97f38b5b": {
+    "position": {
+      "type": "Position",
+      "x": 17.5,
+      "y": 0.0,
+      "z": 7.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Bsv3",
+    "last_update": "2025-06-24T15:15:56.132456",
+    "x": 17.5,
+    "y": 0.0,
+    "z": 7.5
+  },
+  "65ff8daeaf5398a1a009b96f": {
+    "position": {
+      "type": "Position",
+      "x": 15.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "MALA__K123",
+    "last_update": "2025-07-10T13:02:38.239978",
+    "x": 15.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "6853363f82c610d3cbe3aa1e": {
+    "position": {
+      "type": "Position",
+      "x": 17.5,
+      "y": 0.019999999552965164,
+      "z": 19.5,
+      "facing": "FrontLeft"
+    },
+    "username": "ZiZ_0",
+    "last_update": "2025-06-24T17:32:42.418594",
+    "x": 17.5,
+    "y": 0.019999999552965164,
+    "z": 19.5
+  },
+  "68590a0a8bf02c80af1c1609": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "1074817631d73f3b08b3bcb6",
+      "anchor_ix": 0
+    },
+    "username": "aboo46",
+    "last_update": "2025-06-24T17:43:05.647824",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "673e6687571cdf9ba291f999": {
+    "position": {
+      "type": "Position",
+      "x": 17.0,
+      "y": 0.019999999552965164,
+      "z": 17.5,
+      "facing": "BackRight"
+    },
+    "username": "Taqiyya1",
+    "last_update": "2025-07-03T19:13:23.240429",
+    "x": 17.0,
+    "y": 0.019999999552965164,
+    "z": 17.5
+  },
+  "68400f0c2fecbaf7a24d1ff0": {
+    "position": {
+      "type": "Position",
+      "x": 11.0,
+      "y": 0.0,
+      "z": 11.5,
+      "facing": "FrontRight"
+    },
+    "username": "Abo_fla1",
+    "last_update": "2025-07-18T17:00:08.914408",
+    "x": 11.0,
+    "y": 0.0,
+    "z": 11.5
+  },
+  "67e76cb0bbd01b251a4d5d12": {
+    "position": {
+      "type": "Position",
+      "x": 3.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontLeft"
+    },
+    "username": "motaz_13",
+    "last_update": "2025-07-18T15:10:56.230358",
+    "x": 3.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "6539f5aa816ead875f07b15d": {
+    "position": {
+      "type": "Position",
+      "x": 5.5,
+      "y": 0.0,
+      "z": 17.5,
+      "facing": "FrontLeft"
+    },
+    "username": "HSEN_3131",
+    "last_update": "2025-07-20T11:21:33.523662",
+    "x": 5.5,
+    "y": 0.0,
+    "z": 17.5
+  },
+  "6851dc038e4dc252a45352b2": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "E_lknas",
+    "last_update": "2025-06-24T18:26:11.683220",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "65707278a9b23535d41d00e1": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "M_OO_D",
+    "last_update": "2025-06-24T18:35:37.412496",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "65185facbedb7bd333ef3de4": {
+    "position": {
+      "type": "Position",
+      "x": 16.5,
+      "y": 0.0,
+      "z": 10.5,
+      "facing": "BackRight"
+    },
+    "username": "mahmmed20",
+    "last_update": "2025-06-24T19:42:25.681237",
+    "x": 16.5,
+    "y": 0.0,
+    "z": 10.5
+  },
+  "68121e4acd49278e2a23a0ba": {
+    "position": {
+      "type": "Position",
+      "x": 5.5,
+      "y": 0.0,
+      "z": 8.5,
+      "facing": "FrontLeft"
+    },
+    "username": "LNA_4",
+    "last_update": "2025-07-19T18:34:17.435102",
+    "x": 5.5,
+    "y": 0.0,
+    "z": 8.5
+  },
+  "6835ea6ecf0e88ae71fb5e2b": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 18.5,
+      "facing": "FrontRight"
+    },
+    "username": "sugar_73",
+    "last_update": "2025-06-24T19:53:47.100636",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 18.5
+  },
+  "6839dd30f99e57196a11d04e": {
+    "position": {
+      "type": "Position",
+      "x": 18.0,
+      "y": 0.019999999552965164,
+      "z": 17.5,
+      "facing": "BackRight"
+    },
+    "username": "Voldemort_3",
+    "last_update": "2025-07-05T00:23:46.877417",
+    "x": 18.0,
+    "y": 0.019999999552965164,
+    "z": 17.5
+  },
+  "67c3bc98254cfe3153de2285": {
+    "position": {
+      "type": "Position",
+      "x": 16.5,
+      "y": 0.0,
+      "z": 9.0,
+      "facing": "FrontRight"
+    },
+    "username": "Abu_Nasser_711_",
+    "last_update": "2025-07-20T11:22:53.861677",
+    "x": 16.5,
+    "y": 0.0,
+    "z": 9.0
+  },
+  "68374c9dd997af0ed5e4c883": {
+    "position": {
+      "type": "Position",
+      "x": 7.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "UrgePlow",
+    "last_update": "2025-06-24T23:18:03.003285",
+    "x": 7.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "685087f2d4cf51ba295f6f05": {
+    "position": {
+      "type": "Position",
+      "x": 12.0,
+      "y": 0.0,
+      "z": 15.5,
+      "facing": "FrontRight"
+    },
+    "username": "AWYTE1",
+    "last_update": "2025-06-24T23:20:36.747360",
+    "x": 12.0,
+    "y": 0.0,
+    "z": 15.5
+  },
+  "67935aff66b55a458dd593ad": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 6.5,
+      "facing": "FrontLeft"
+    },
+    "username": "A._n2",
+    "last_update": "2025-06-24T23:17:19.090437",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 6.5
+  },
+  "6850a999c579aa396c80a4d5": {
+    "position": {
+      "type": "Position",
+      "x": 14.5,
+      "y": 0.0,
+      "z": 16.0,
+      "facing": "FrontRight"
+    },
+    "username": "Amer_1079",
+    "last_update": "2025-06-24T23:21:03.972722",
+    "x": 14.5,
+    "y": 0.0,
+    "z": 16.0
+  },
+  "685af8dea7ba0164bb9522e6": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "PollsterLegibleo_13337",
+    "last_update": "2025-06-24T23:17:28.384370",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6858bb0e86240923812b7295": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Soobinahh",
+    "last_update": "2025-06-24T23:28:46.110392",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6852bf71e9951fa5264a77ee": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Sama1249",
+    "last_update": "2025-06-24T23:33:45.069197",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6815c7129681e46caa8dcbe2": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Serro20",
+    "last_update": "2025-07-10T17:42:07.408964",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "685c0d015fd934de3783fe23": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "a7bc8a95538976b491a99524",
+      "anchor_ix": 0
+    },
+    "username": "Zooe35",
+    "last_update": "2025-06-25T20:17:38.540873",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "66ed7cb8ae59cc19708a0db7": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 11.5,
+      "facing": "FrontLeft"
+    },
+    "username": "SESO_7",
+    "last_update": "2025-06-25T20:17:57.608779",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 11.5
+  },
+  "6701a58dc48dd94f77d3148d": {
+    "position": {
+      "type": "Position",
+      "x": 12.0,
+      "y": 0.0,
+      "z": 17.5,
+      "facing": "FrontRight"
+    },
+    "username": "IndifferenceOverbid",
+    "last_update": "2025-06-25T20:17:55.845338",
+    "x": 12.0,
+    "y": 0.0,
+    "z": 17.5
+  },
+  "6859d69e0793e2faa6e5ab88": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "409f54876d3f456bab29b2a6",
+      "anchor_ix": 0
+    },
+    "username": "Moon_301",
+    "last_update": "2025-06-25T20:18:47.229055",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "68348821bbe5ecc0b66b1290": {
+    "position": {
+      "type": "Position",
+      "x": 11.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "MR_220",
+    "last_update": "2025-06-25T20:19:15.650908",
+    "x": 11.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "685ce51d0461c13399e5ecb8": {
+    "position": {
+      "type": "Position",
+      "x": 5.0,
+      "y": 0.0,
+      "z": 10.5,
+      "facing": "FrontLeft"
+    },
+    "username": "names_9",
+    "last_update": "2025-06-27T15:25:30.422033",
+    "x": 5.0,
+    "y": 0.0,
+    "z": 10.5
+  },
+  "65fb45bd78ecf9d1bf49c500": {
+    "position": {
+      "type": "Position",
+      "x": 18.0,
+      "y": 0.0,
+      "z": 10.0,
+      "facing": "FrontRight"
+    },
+    "username": "Dana_1_2_",
+    "last_update": "2025-07-11T14:51:21.103023",
+    "x": 18.0,
+    "y": 0.0,
+    "z": 10.0
+  },
+  "684cb2c90b11a8c4f2d16980": {
+    "position": {
+      "type": "Position",
+      "x": 17.0,
+      "y": 0.0,
+      "z": 10.0,
+      "facing": "FrontRight"
+    },
+    "username": "TrustlessBill",
+    "last_update": "2025-07-12T14:36:29.232559",
+    "x": 17.0,
+    "y": 0.0,
+    "z": 10.0
+  },
+  "682f2ad282221938f3cab5d9": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 11.5,
+      "facing": "FrontLeft"
+    },
+    "username": "E_H2",
+    "last_update": "2025-06-26T15:27:16.536114",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 11.5
+  },
+  "6807e930de6d011cc9990935": {
+    "position": {
+      "type": "Position",
+      "x": 13.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "S_T10",
+    "last_update": "2025-07-20T11:21:30.642555",
+    "x": 13.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "681ce92049f5553be734ce5f": {
+    "position": {
+      "type": "Position",
+      "x": 2.5,
+      "y": 0.0,
+      "z": 6.0,
+      "facing": "FrontRight"
+    },
+    "username": "s_t14",
+    "last_update": "2025-06-30T22:03:47.547910",
+    "x": 2.5,
+    "y": 0.0,
+    "z": 6.0
+  },
+  "6858354b0e20fad1c2dc1268": {
+    "position": {
+      "type": "Position",
+      "x": 5.0,
+      "y": 0.0,
+      "z": 0.5,
+      "facing": "BackRight"
+    },
+    "username": "mohand45",
+    "last_update": "2025-06-26T15:26:32.084509",
+    "x": 5.0,
+    "y": 0.0,
+    "z": 0.5
+  },
+  "683ed3210b5e62b4e5a96edb": {
+    "position": {
+      "type": "Position",
+      "x": 18.0,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontRight"
+    },
+    "username": "WreckageDemitasse",
+    "last_update": "2025-07-20T11:08:40.272060",
+    "x": 18.0,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "63ce99574116f85a0e3aa905": {
+    "position": {
+      "type": "Position",
+      "x": 12.0,
+      "y": 0.0,
+      "z": 14.0,
+      "facing": "FrontRight"
+    },
+    "username": "lozan_cute",
+    "last_update": "2025-06-26T15:27:04.641862",
+    "x": 12.0,
+    "y": 0.0,
+    "z": 14.0
+  },
+  "682bc2bc9fb4dce9e7cd4bd1": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "ASDFGH2025",
+    "last_update": "2025-07-20T11:25:40.725190",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "683ed25929758027e6954a8e": {
+    "position": {
+      "type": "Position",
+      "x": 16.0,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "mariam9901",
+    "last_update": "2025-07-18T13:08:11.663384",
+    "x": 16.0,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "68396d5b8dcd62ca62e0235f": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 8.0,
+      "facing": "BackLeft"
+    },
+    "username": "Ammar2.alyafie",
+    "last_update": "2025-07-19T18:16:22.436387",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 8.0
+  },
+  "654a8d7f4bc421572510f61b": {
+    "position": {
+      "type": "Position",
+      "x": 5.0,
+      "y": 0.0,
+      "z": 10.0,
+      "facing": "FrontRight"
+    },
+    "username": "i_hate.u.818",
+    "last_update": "2025-06-27T17:56:46.673093",
+    "x": 5.0,
+    "y": 0.0,
+    "z": 10.0
+  },
+  "6602f1ce5dbc159bdb7b715b": {
+    "position": {
+      "type": "Position",
+      "x": 4.5,
+      "y": 0.25,
+      "z": 5.5,
+      "facing": "FrontRight"
+    },
+    "username": "TEAM__M__MAFAI",
+    "last_update": "2025-06-27T18:42:38.511229",
+    "x": 4.5,
+    "y": 0.25,
+    "z": 5.5
+  },
+  "681a83a5e75a0e79412ee47b": {
+    "position": {
+      "type": "Position",
+      "x": 5.5,
+      "y": 0.0,
+      "z": 19.0,
+      "facing": "FrontRight"
+    },
+    "username": "AwakeHeedless",
+    "last_update": "2025-07-12T14:51:53.469637",
+    "x": 5.5,
+    "y": 0.0,
+    "z": 19.0
+  },
+  "666e300fae58562a9787a357": {
+    "position": {
+      "type": "Position",
+      "x": 18.5,
+      "y": 7.75,
+      "z": 2.5,
+      "facing": "BackLeft"
+    },
+    "username": "xc73",
+    "last_update": "2025-06-27T18:00:34.851808",
+    "x": 18.5,
+    "y": 7.75,
+    "z": 2.5
+  },
+  "685ed11175bb5bec07fa59ef": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "4a8a6c4d4bf3e47cf42c86ce",
+      "anchor_ix": 0
+    },
+    "username": "TopsailOutspreadnajmharith",
+    "last_update": "2025-06-27T21:23:26.318233",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "67a24b8dd73bc3234be29d92": {
+    "position": {
+      "type": "Position",
+      "x": 17.5,
+      "y": 16.5,
+      "z": 2.5,
+      "facing": "FrontRight"
+    },
+    "username": "N__a14",
+    "last_update": "2025-06-28T15:45:15.433883",
+    "x": 17.5,
+    "y": 16.5,
+    "z": 2.5
+  },
+  "66e85ca2238ef6b54285893b": {
+    "position": {
+      "type": "Position",
+      "x": 8.5,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontRight"
+    },
+    "username": "bro_haitham",
+    "last_update": "2025-06-27T22:05:30.075021",
+    "x": 8.5,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "684dfa521644780132b88671": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Kim_Marina_San7",
+    "last_update": "2025-06-27T18:21:58.245660",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "684337efc2acd977c22be0e7": {
+    "position": {
+      "type": "Position",
+      "x": 12.0,
+      "y": 0.0,
+      "z": 10.0,
+      "facing": "FrontRight"
+    },
+    "username": "SH_.X",
+    "last_update": "2025-06-27T18:23:47.327918",
+    "x": 12.0,
+    "y": 0.0,
+    "z": 10.0
+  },
+  "656381e3e6ccfb17402f262c": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "b97ad6434679a4ace2c491df",
+      "anchor_ix": 0
+    },
+    "username": "io_26",
+    "last_update": "2025-06-27T18:48:46.599153",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "682e68734510896f5b17df4a": {
+    "position": {
+      "type": "Position",
+      "x": 17.0,
+      "y": 0.0,
+      "z": 5.5,
+      "facing": "BackLeft"
+    },
+    "username": "m_r_a_m___77",
+    "last_update": "2025-06-27T19:13:39.661459",
+    "x": 17.0,
+    "y": 0.0,
+    "z": 5.5
+  },
+  "6794bd7c6c0259ecabcf8fee": {
+    "position": {
+      "type": "Position",
+      "x": 12.0,
+      "y": 0.0,
+      "z": 7.5,
+      "facing": "FrontRight"
+    },
+    "username": "T0KA_",
+    "last_update": "2025-06-27T19:12:04.885226",
+    "x": 12.0,
+    "y": 0.0,
+    "z": 7.5
+  },
+  "683c8401d0ca401b65666730": {
+    "position": {
+      "type": "Position",
+      "x": 14.5,
+      "y": 16.5,
+      "z": 12.0,
+      "facing": "FrontLeft"
+    },
+    "username": "samy_115",
+    "last_update": "2025-07-11T15:39:49.263531",
+    "x": 14.5,
+    "y": 16.5,
+    "z": 12.0
+  },
+  "6469f890544317fea636dee6": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "AA_SF",
+    "last_update": "2025-06-27T19:09:12.843006",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "67750329d16667f49793f6b7": {
+    "position": {
+      "type": "Position",
+      "x": 9.0,
+      "y": 0.0,
+      "z": 10.5,
+      "facing": "FrontRight"
+    },
+    "username": "SOSO.05",
+    "last_update": "2025-07-04T23:54:42.946343",
+    "x": 9.0,
+    "y": 0.0,
+    "z": 10.5
+  },
+  "67645a650f8bad8478f2a46c": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontLeft"
+    },
+    "username": "u_y2",
+    "last_update": "2025-06-27T19:13:11.004143",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "6638048d89234a5895a878df": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "7b.k",
+    "last_update": "2025-07-04T21:24:32.315823",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6851518451c4dbccee0e2553": {
+    "position": {
+      "type": "Position",
+      "x": 19.0,
+      "y": 0.0,
+      "z": 8.5,
+      "facing": "FrontLeft"
+    },
+    "username": "ghf42",
+    "last_update": "2025-06-27T19:13:00.813298",
+    "x": 19.0,
+    "y": 0.0,
+    "z": 8.5
+  },
+  "649ecc00842d07a04838275b": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "_DRIP_991",
+    "last_update": "2025-06-27T21:01:46.142867",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "612ce69a2cd264dd7ac95269": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "y_on",
+    "last_update": "2025-06-27T21:10:38.571499",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "65f51f31891d3f079b5257a5": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "i7x3",
+    "last_update": "2025-06-27T21:13:47.064580",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6859a45d3515bfc7e9d0f208": {
+    "position": {
+      "type": "Position",
+      "x": 18.0,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "BackRight"
+    },
+    "username": "StereoParenthood",
+    "last_update": "2025-06-27T21:21:24.197435",
+    "x": 18.0,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6839f7ae747ccc0c30268b89": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 7.5,
+      "facing": "BackLeft"
+    },
+    "username": "A__64",
+    "last_update": "2025-07-05T17:43:43.434332",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 7.5
+  },
+  "66e7fe1a53ff604eabe39f4a": {
+    "position": {
+      "type": "Position",
+      "x": 14.5,
+      "y": 16.5,
+      "z": 8.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Janooosch_",
+    "last_update": "2025-07-11T16:34:53.905947",
+    "x": 14.5,
+    "y": 16.5,
+    "z": 8.5
+  },
+  "685f0b70b934607ee65ec0fd": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "mahm32",
+    "last_update": "2025-06-27T21:58:57.230500",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "685acd840bd2517bb3402fe2": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "e6ec8c9a2bafef0fa58bab74",
+      "anchor_ix": 0
+    },
+    "username": "mayor_10",
+    "last_update": "2025-06-27T21:33:30.404732",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "6837186705a122fffe9da226": {
+    "position": {
+      "type": "Position",
+      "x": 15.5,
+      "y": 0.0,
+      "z": 15.5,
+      "facing": "FrontRight"
+    },
+    "username": "MusicologistSlick",
+    "last_update": "2025-06-27T21:43:12.598087",
+    "x": 15.5,
+    "y": 0.0,
+    "z": 15.5
+  },
+  "685efe9cead06d8cd55f0f6c": {
+    "position": {
+      "type": "Position",
+      "x": 19.0,
+      "y": 7.75,
+      "z": 17.5,
+      "facing": "BackLeft"
+    },
+    "username": "Ahmed.252",
+    "last_update": "2025-06-27T22:12:34.255385",
+    "x": 19.0,
+    "y": 7.75,
+    "z": 17.5
+  },
+  "68600a59466a0e0500437ef5": {
+    "position": {
+      "type": "Position",
+      "x": 12.5,
+      "y": 0.0,
+      "z": 12.0,
+      "facing": "FrontLeft"
+    },
+    "username": "e__6h",
+    "last_update": "2025-06-28T15:55:46.598779",
+    "x": 12.5,
+    "y": 0.0,
+    "z": 12.0
+  },
+  "68600dceead06d8cd561ee86": {
+    "position": {
+      "type": "Position",
+      "x": 14.0,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontRight"
+    },
+    "username": "Abu_Nasser_711",
+    "last_update": "2025-07-20T11:34:23.000158",
+    "x": 14.0,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "679a1c2285c04f1a7e590463": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontLeft"
+    },
+    "username": "aaaaaaaa94",
+    "last_update": "2025-06-28T16:19:36.506220",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "67ef2a0dc54671a3541c15a3": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 8.5,
+      "facing": "FrontLeft"
+    },
+    "username": "l_.mar",
+    "last_update": "2025-06-28T15:53:57.417494",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 8.5
+  },
+  "652d608a15a28eaca7631ceb": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 18.5,
+      "facing": "FrontRight"
+    },
+    "username": "meme418",
+    "last_update": "2025-06-28T16:08:09.557601",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 18.5
+  },
+  "679ba4cf283605dceb9e370a": {
+    "position": {
+      "type": "Position",
+      "x": 17.0,
+      "y": 0.0,
+      "z": 8.0,
+      "facing": "FrontRight"
+    },
+    "username": "samr44",
+    "last_update": "2025-07-04T23:38:17.133622",
+    "x": 17.0,
+    "y": 0.0,
+    "z": 8.0
+  },
+  "66c0c88d2d63a040f54cd974": {
+    "position": {
+      "type": "Position",
+      "x": 15.5,
+      "y": 0.0,
+      "z": 8.5,
+      "facing": "BackRight"
+    },
+    "username": "OSA._",
+    "last_update": "2025-06-28T16:27:03.109767",
+    "x": 15.5,
+    "y": 0.0,
+    "z": 8.5
+  },
+  "675bd199f924fea61d90767c": {
+    "position": {
+      "type": "Position",
+      "x": 16.5,
+      "y": 0.0,
+      "z": 9.0,
+      "facing": "BackLeft"
+    },
+    "username": "GXG26",
+    "last_update": "2025-06-28T16:26:24.532869",
+    "x": 16.5,
+    "y": 0.0,
+    "z": 9.0
+  },
+  "63b48b7e314ea63693db985a": {
+    "position": {
+      "type": "Position",
+      "x": 6.0,
+      "y": 0.0,
+      "z": 16.0,
+      "facing": "FrontRight"
+    },
+    "username": "O8mo",
+    "last_update": "2025-07-05T20:37:19.588506",
+    "x": 6.0,
+    "y": 0.0,
+    "z": 16.0
+  },
+  "65c4a495561393db02e8afe3": {
+    "position": {
+      "type": "Position",
+      "x": 12.5,
+      "y": 0.0,
+      "z": 10.0,
+      "facing": "FrontLeft"
+    },
+    "username": "Hala__22",
+    "last_update": "2025-07-12T14:56:30.292525",
+    "x": 12.5,
+    "y": 0.0,
+    "z": 10.0
+  },
+  "68126e8d7df87b75e6f467b8": {
+    "position": {
+      "type": "Position",
+      "x": 17.5,
+      "y": 0.0,
+      "z": 10.0,
+      "facing": "FrontRight"
+    },
+    "username": "gh90v",
+    "last_update": "2025-06-30T22:16:53.607893",
+    "x": 17.5,
+    "y": 0.0,
+    "z": 10.0
+  },
+  "5f7b86efa208fa861690b18b": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Solomonic",
+    "last_update": "2025-06-30T22:04:40.721248",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "685d6bd9089aac3d05af0000": {
+    "position": {
+      "type": "Position",
+      "x": 14.0,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontRight"
+    },
+    "username": "L5II",
+    "last_update": "2025-06-30T22:19:10.410716",
+    "x": 14.0,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "681ce48c2a6c96a24a62e2fb": {
+    "position": {
+      "type": "Position",
+      "x": 13.5,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontRight"
+    },
+    "username": "S_AS_H",
+    "last_update": "2025-06-30T22:19:09.944000",
+    "x": 13.5,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "6862d6e721fbc97b81109a27": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "crazy_julieit",
+    "last_update": "2025-06-30T22:07:17.302475",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "670598ecee6d6de67d6a7906": {
+    "position": {
+      "type": "Position",
+      "x": 16.0,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "seeufan55",
+    "last_update": "2025-06-30T22:09:49.985938",
+    "x": 16.0,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6841e596f0278bfd9e34e806": {
+    "position": {
+      "type": "Position",
+      "x": 12.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontRight"
+    },
+    "username": "Lildidy0",
+    "last_update": "2025-06-30T22:18:01.429434",
+    "x": 12.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "685caf38089aac3d05ad6f2d": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "AHMED_2UZO",
+    "last_update": "2025-07-05T18:02:43.289873",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "648a0957bf63c521acbccd6f": {
+    "position": {
+      "type": "Position",
+      "x": 13.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontRight"
+    },
+    "username": "vanilla519",
+    "last_update": "2025-06-30T22:13:59.617376",
+    "x": 13.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "66b50082cd089b698765856e": {
+    "position": {
+      "type": "Position",
+      "x": 11.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontRight"
+    },
+    "username": "rere15_",
+    "last_update": "2025-06-30T22:18:37.929187",
+    "x": 11.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "686472c6ca80bc4047f1b90c": {
+    "position": {
+      "type": "Position",
+      "x": 6.0,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontRight"
+    },
+    "username": "wy77",
+    "last_update": "2025-07-19T18:56:32.428647",
+    "x": 6.0,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "66b792cf9510a502c6782bcd": {
+    "position": {
+      "type": "Position",
+      "x": 10.5,
+      "y": 0.0,
+      "z": 10.0,
+      "facing": "FrontRight"
+    },
+    "username": "ROODE4",
+    "last_update": "2025-07-03T18:53:36.295182",
+    "x": 10.5,
+    "y": 0.0,
+    "z": 10.0
+  },
+  "6866d0e416d878ef4e4eb409": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "k_k28",
+    "last_update": "2025-07-03T18:54:01.471845",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "63c9112a00eed688b4be6504": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "jesuisce",
+    "last_update": "2025-07-03T18:54:49.171600",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6866cebf16d878ef4e4eb17a": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 17.0,
+      "facing": "BackLeft"
+    },
+    "username": "11_SUJOOD_11",
+    "last_update": "2025-07-03T18:59:35.994494",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 17.0
+  },
+  "626d399dcaf37b4e64c0bd03": {
+    "position": {
+      "type": "Position",
+      "x": 17.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "MEMaljytghh",
+    "last_update": "2025-07-03T18:56:33.375756",
+    "x": 17.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6851bfb1be53e9eaede432b4": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Nay_A3",
+    "last_update": "2025-07-03T19:04:45.896405",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "66eaffd34926e0e7c6992ef4": {
+    "position": {
+      "type": "Position",
+      "x": 17.0,
+      "y": 0.0,
+      "z": 8.5,
+      "facing": "FrontRight"
+    },
+    "username": "ritedj._",
+    "last_update": "2025-07-03T19:00:13.353505",
+    "x": 17.0,
+    "y": 0.0,
+    "z": 8.5
+  },
+  "68157c6caa40ab14bd798383": {
+    "position": {
+      "type": "Position",
+      "x": 17.5,
+      "y": 0.0,
+      "z": 10.5,
+      "facing": "FrontRight"
+    },
+    "username": "Reda68",
+    "last_update": "2025-07-03T19:03:03.875483",
+    "x": 17.5,
+    "y": 0.0,
+    "z": 10.5
+  },
+  "6702888ba80e775658dd59e5": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "m.4l8",
+    "last_update": "2025-07-03T19:06:43.789364",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "682fbfc22ab5cdd5087de94c": {
+    "position": {
+      "type": "Position",
+      "x": 5.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "M__R__S__E",
+    "last_update": "2025-07-05T20:38:13.224866",
+    "x": 5.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "686168f738bec3b5e13ff0c6": {
+    "position": {
+      "type": "Position",
+      "x": 12.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "BackRight"
+    },
+    "username": "gojo_112",
+    "last_update": "2025-07-19T18:05:51.821310",
+    "x": 12.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "6814d855b595be2c21a417ac": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "614076330d3f4670b51187ab",
+      "anchor_ix": 0
+    },
+    "username": "ShadowInconsolable",
+    "last_update": "2025-07-04T23:10:49.872062",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "67b0f4c4265cafb014eb9116": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Zx.y",
+    "last_update": "2025-07-18T14:28:07.449677",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "66f861da69bbdb490715313b": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 19.0,
+      "facing": "FrontLeft"
+    },
+    "username": "s.zv",
+    "last_update": "2025-07-04T23:46:11.482757",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 19.0
+  },
+  "68577bdaa1da91d392a6e2c4": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 18.5,
+      "facing": "FrontRight"
+    },
+    "username": "MODE1V",
+    "last_update": "2025-07-04T22:18:05.387723",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 18.5
+  },
+  "6663b1f447a4871740bda895": {
+    "position": {
+      "type": "Position",
+      "x": 2.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "A1ym",
+    "last_update": "2025-07-04T22:18:37.554186",
+    "x": 2.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "66df6cd9390e8bd9af99c332": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Fun181",
+    "last_update": "2025-07-04T22:25:57.029460",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6501a895bc1333999e2a3e2a": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 9.0,
+      "facing": "FrontRight"
+    },
+    "username": "Nasro530",
+    "last_update": "2025-07-04T22:32:20.824504",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 9.0
+  },
+  "64ecfd877d56167db44e6c85": {
+    "position": {
+      "type": "Position",
+      "x": 3.0,
+      "y": 0.0,
+      "z": 16.0,
+      "facing": "FrontRight"
+    },
+    "username": "Mariam46467",
+    "last_update": "2025-07-04T22:29:17.273476",
+    "x": 3.0,
+    "y": 0.0,
+    "z": 16.0
+  },
+  "686717630de7e578fc2c2669": {
+    "position": {
+      "type": "Position",
+      "x": 15.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "siham64",
+    "last_update": "2025-07-10T14:02:16.201610",
+    "x": 15.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "67f91313d184fc5fb9306586": {
+    "position": {
+      "type": "Position",
+      "x": 19.0,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "marslyn__xx",
+    "last_update": "2025-07-18T13:32:43.264997",
+    "x": 19.0,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6868443bb1f60323905fa2fa": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "65323685755a05a381089716",
+      "anchor_ix": 0
+    },
+    "username": "FilamentousNostalgia",
+    "last_update": "2025-07-04T22:44:23.692378",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "685bc94f4e5d247efb36c766": {
+    "position": {
+      "type": "Position",
+      "x": 17.5,
+      "y": 0.0,
+      "z": 9.0,
+      "facing": "BackLeft"
+    },
+    "username": "Il_ha_m1812",
+    "last_update": "2025-07-05T18:27:33.532137",
+    "x": 17.5,
+    "y": 0.0,
+    "z": 9.0
+  },
+  "6868570853d1f4dff9227d47": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "malana121",
+    "last_update": "2025-07-04T22:48:52.502715",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6861c18eee03c781f7c9cddf": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Tbo110",
+    "last_update": "2025-07-04T22:49:01.845488",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "668c2a205cf54e7d1e4979c2": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Area46",
+    "last_update": "2025-07-04T22:50:14.486394",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "679a9811e965eb485e0a2c2b": {
+    "position": {
+      "type": "Position",
+      "x": 4.5,
+      "y": 0.0,
+      "z": 16.0,
+      "facing": "FrontRight"
+    },
+    "username": "1cesix",
+    "last_update": "2025-07-04T22:59:51.527143",
+    "x": 4.5,
+    "y": 0.0,
+    "z": 16.0
+  },
+  "6862aeb597bf0a85f0d85cae": {
+    "position": {
+      "type": "Position",
+      "x": 5.0,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontRight"
+    },
+    "username": "_M_i_r_o",
+    "last_update": "2025-07-05T00:26:37.966695",
+    "x": 5.0,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "66ec46133267603497cc4368": {
+    "position": {
+      "type": "Position",
+      "x": 14.5,
+      "y": 16.5,
+      "z": 16.5,
+      "facing": "FrontLeft"
+    },
+    "username": "roze_wr",
+    "last_update": "2025-07-04T23:34:58.182439",
+    "x": 14.5,
+    "y": 16.5,
+    "z": 16.5
+  },
+  "677e4ed949491f31df1fa4fd": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "w8_",
+    "last_update": "2025-07-05T01:10:43.840751",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6671df3f4795141d869dbfca": {
+    "position": {
+      "type": "Position",
+      "x": 8.5,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontLeft"
+    },
+    "username": "momo_116",
+    "last_update": "2025-07-04T23:35:49.355273",
+    "x": 8.5,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "686654d0bdb150b84aadf76e": {
+    "position": {
+      "type": "Position",
+      "x": 7.0,
+      "y": 0.0,
+      "z": 3.0,
+      "facing": "BackLeft"
+    },
+    "username": "Kholud2",
+    "last_update": "2025-07-05T00:16:46.462770",
+    "x": 7.0,
+    "y": 0.0,
+    "z": 3.0
+  },
+  "685a71e582a3738b87369d1b": {
+    "position": {
+      "type": "Position",
+      "x": 5.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontLeft"
+    },
+    "username": "F__H__D25_",
+    "last_update": "2025-07-05T01:18:01.989835",
+    "x": 5.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "64ec890b368dd2637da96512": {
+    "position": {
+      "type": "Position",
+      "x": 7.0,
+      "y": 0.0,
+      "z": 3.5,
+      "facing": "FrontRight"
+    },
+    "username": "Ahmed26784",
+    "last_update": "2025-07-05T00:15:27.815262",
+    "x": 7.0,
+    "y": 0.0,
+    "z": 3.5
+  },
+  "68666e5b64acf0b4a7fbf983": {
+    "position": {
+      "type": "Position",
+      "x": 6.0,
+      "y": 0.0,
+      "z": 10.5,
+      "facing": "BackRight"
+    },
+    "username": "AirdropCamel",
+    "last_update": "2025-07-05T00:19:28.394784",
+    "x": 6.0,
+    "y": 0.0,
+    "z": 10.5
+  },
+  "68367f5cc195299e65cb6fea": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "a7bc8a95538976b491a99524",
+      "anchor_ix": 0
+    },
+    "username": "AqdaA",
+    "last_update": "2025-07-04T23:50:14.201064",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "686864e0cfaccf4880bb122f": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "1074817631d73f3b08b3bcb6",
+      "anchor_ix": 0
+    },
+    "username": "h_a2.2",
+    "last_update": "2025-07-04T23:48:28.369211",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "6868478db3b86ee65be4dad4": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "409f54876d3f456bab29b2a6",
+      "anchor_ix": 1
+    },
+    "username": "Wesso2",
+    "last_update": "2025-07-05T18:37:05.922748",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "67ed430b378ad53ab4fb3462": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 11.5,
+      "facing": "FrontLeft"
+    },
+    "username": "kenan98",
+    "last_update": "2025-07-04T23:53:32.406341",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 11.5
+  },
+  "68337996113afd27c2fbb9c6": {
+    "position": {
+      "type": "Position",
+      "x": 18.5,
+      "y": 0.019999999552965164,
+      "z": 17.5,
+      "facing": "FrontRight"
+    },
+    "username": "Tita_92",
+    "last_update": "2025-07-05T00:24:19.143258",
+    "x": 18.5,
+    "y": 0.019999999552965164,
+    "z": 17.5
+  },
+  "6868630a4dd9f97f43ef3f37": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Kxhfudo",
+    "last_update": "2025-07-05T00:03:30.202961",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "62a337854c189818b895dba2": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "074e99f1f7354c11a392b737",
+      "anchor_ix": 0
+    },
+    "username": "o6_",
+    "last_update": "2025-07-05T00:11:41.431198",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "6859e7f007e8e19de8a889e9": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "1fdc3ae01fb13f0a0e718bae",
+      "anchor_ix": 1
+    },
+    "username": "Ahmed_shaheen",
+    "last_update": "2025-07-05T00:19:07.191830",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "657de5003c5fc56e1d4a1124": {
+    "position": {
+      "type": "Position",
+      "x": 12.0,
+      "y": 0.0,
+      "z": 14.5,
+      "facing": "FrontRight"
+    },
+    "username": "Mg8l",
+    "last_update": "2025-07-05T00:15:13.908726",
+    "x": 12.0,
+    "y": 0.0,
+    "z": 14.5
+  },
+  "6297c877016c4ec08531a096": {
+    "position": {
+      "type": "Position",
+      "x": 14.0,
+      "y": 0.0,
+      "z": 10.5,
+      "facing": "FrontRight"
+    },
+    "username": "Mro7a",
+    "last_update": "2025-07-05T00:31:41.420824",
+    "x": 14.0,
+    "y": 0.0,
+    "z": 10.5
+  },
+  "6265f1fe34ce9b0af6cfd09a": {
+    "position": {
+      "type": "Position",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 18.5,
+      "facing": "FrontRight"
+    },
+    "username": "zahraa_JK",
+    "last_update": "2025-07-06T20:01:38.376110",
+    "x": 1.0,
+    "y": 0.0,
+    "z": 18.5
+  },
+  "67e409b29747a6e895657060": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "L7N.Y",
+    "last_update": "2025-07-12T14:03:29.474146",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6807e6ce5acb84a7260a734c": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "sa___leh",
+    "last_update": "2025-07-05T00:59:45.728316",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "67cd089ffa0dedc9fff6fe5e": {
+    "position": {
+      "type": "Position",
+      "x": 2.0,
+      "y": 0.0,
+      "z": 19.0,
+      "facing": "FrontRight"
+    },
+    "username": "Read63",
+    "last_update": "2025-07-05T01:05:31.951891",
+    "x": 2.0,
+    "y": 0.0,
+    "z": 19.0
+  },
+  "682f4793b46d514a5d7095a0": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "aDemyst2",
+    "last_update": "2025-07-05T17:39:44.116294",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "65eb04a26b2056380fe8d163": {
+    "position": {
+      "type": "Position",
+      "x": 16.0,
+      "y": 0.0,
+      "z": 9.0,
+      "facing": "BackLeft"
+    },
+    "username": "CodStubbornness",
+    "last_update": "2025-07-05T17:40:17.539923",
+    "x": 16.0,
+    "y": 0.0,
+    "z": 9.0
+  },
+  "678f362e50a6cd455d79a4d7": {
+    "position": {
+      "type": "Position",
+      "x": 11.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "k2_____96h",
+    "last_update": "2025-07-05T17:52:31.538840",
+    "x": 11.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "680fbb46da05437fed2816fd": {
+    "position": {
+      "type": "Position",
+      "x": 6.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "gogo_lol2",
+    "last_update": "2025-07-11T15:08:18.267240",
+    "x": 6.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "6698cf64c4d9ed275cedbfb8": {
+    "position": {
+      "type": "Position",
+      "x": 17.5,
+      "y": 0.019999999552965164,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "jllr",
+    "last_update": "2025-07-10T12:56:14.384239",
+    "x": 17.5,
+    "y": 0.019999999552965164,
+    "z": 19.5
+  },
+  "627d30ca85c03bcfadd81e35": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 18.0,
+      "facing": "FrontLeft"
+    },
+    "username": "4QB",
+    "last_update": "2025-07-05T18:32:44.977881",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 18.0
+  },
+  "6815f62ce9f06565eaf374b6": {
+    "position": {
+      "type": "Position",
+      "x": 18.5,
+      "y": 0.0,
+      "z": 8.5,
+      "facing": "FrontLeft"
+    },
+    "username": "fofo_456",
+    "last_update": "2025-07-05T18:28:34.913714",
+    "x": 18.5,
+    "y": 0.0,
+    "z": 8.5
+  },
+  "68515ffc96b930cb5e7c9b5d": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "Elknas",
+    "last_update": "2025-07-05T18:36:58.484715",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "6820afca88d438ac77745b64": {
+    "position": {
+      "type": "Position",
+      "x": 5.5,
+      "y": 0.0,
+      "z": 17.0,
+      "facing": "FrontRight"
+    },
+    "username": "IYAD43",
+    "last_update": "2025-07-20T11:29:13.613603",
+    "x": 5.5,
+    "y": 0.0,
+    "z": 17.0
+  },
+  "6867ce6f1fddd687ed101269": {
+    "position": {
+      "type": "Position",
+      "x": 15.0,
+      "y": 0.0,
+      "z": 10.0,
+      "facing": "FrontRight"
+    },
+    "username": "j_4k3",
+    "last_update": "2025-07-20T11:33:32.794514",
+    "x": 15.0,
+    "y": 0.0,
+    "z": 10.0
+  },
+  "6836d1a59556349c69e9d1c2": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "ImmersionZit",
+    "last_update": "2025-07-05T20:20:35.845169",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "683a4b03f5afc31d1bd39b84": {
+    "position": {
+      "type": "Position",
+      "x": 17.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "idrisCh",
+    "last_update": "2025-07-05T20:28:22.318627",
+    "x": 17.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "684e3b1224829a795a974471": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "yafea_Vip_",
+    "last_update": "2025-07-05T20:46:50.016618",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "652bdcbb9a70fe5bd730e8cb": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Sarah___2007",
+    "last_update": "2025-07-06T19:36:04.282435",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "686988ec3e41a5384304f229": {
+    "position": {
+      "type": "Position",
+      "x": 14.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontRight"
+    },
+    "username": "7aoxv",
+    "last_update": "2025-07-05T20:48:38.379179",
+    "x": 14.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "677fe02b18b730ee88e5d586": {
+    "position": {
+      "type": "Position",
+      "x": 17.0,
+      "y": 16.5,
+      "z": 19.5,
+      "facing": "BackRight"
+    },
+    "username": "Abu_Jarrah",
+    "last_update": "2025-07-05T20:50:38.173327",
+    "x": 17.0,
+    "y": 16.5,
+    "z": 19.5
+  },
+  "681b6d58508e9a6bbb5ddcd7": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontRight"
+    },
+    "username": "RomaniYourAncle",
+    "last_update": "2025-07-05T20:52:01.327212",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "686877bd734d2642abdd254f": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "LITICIA10",
+    "last_update": "2025-07-10T12:17:32.961551",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "68698ef93e41a5384304f9bd": {
+    "position": {
+      "type": "Position",
+      "x": 13.5,
+      "y": 0.0,
+      "z": 13.5,
+      "facing": "FrontRight"
+    },
+    "username": "livlove.xo",
+    "last_update": "2025-07-05T20:55:20.154926",
+    "x": 13.5,
+    "y": 0.0,
+    "z": 13.5
+  },
+  "67aa33b02441806e3e4c0efb": {
+    "position": {
+      "type": "Position",
+      "x": 18.5,
+      "y": 7.75,
+      "z": 19.5,
+      "facing": "FrontLeft"
+    },
+    "username": "unl5n_",
+    "last_update": "2025-07-05T21:03:50.598834",
+    "x": 18.5,
+    "y": 7.75,
+    "z": 19.5
+  },
+  "65fc38dcfcced1672b6858ac": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Htfhfe",
+    "last_update": "2025-07-06T19:45:08.849085",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "686aa2fde879d69b62aaab40": {
+    "position": {
+      "type": "Position",
+      "x": 11.0,
+      "y": 0.0,
+      "z": 15.5,
+      "facing": "FrontRight"
+    },
+    "username": "MARIM55552",
+    "last_update": "2025-07-06T19:17:27.919025",
+    "x": 11.0,
+    "y": 0.0,
+    "z": 15.5
+  },
+  "62cc72e24fb1471641bb575e": {
+    "position": {
+      "type": "Position",
+      "x": 11.5,
+      "y": 16.5,
+      "z": 3.5,
+      "facing": "BackLeft"
+    },
+    "username": "B__B___",
+    "last_update": "2025-07-12T14:12:39.153633",
+    "x": 11.5,
+    "y": 16.5,
+    "z": 3.5
+  },
+  "65edfffa28bc556d5e82d504": {
+    "position": {
+      "type": "Position",
+      "x": 12.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "Mohamed_2u",
+    "last_update": "2025-07-06T19:49:55.195686",
+    "x": 12.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "66892c9869f49cc5e3fd9b75": {
+    "position": {
+      "type": "Position",
+      "x": 12.5,
+      "y": 0.0,
+      "z": 14.0,
+      "facing": "FrontRight"
+    },
+    "username": "hisoka_moro",
+    "last_update": "2025-07-06T19:37:48.623943",
+    "x": 12.5,
+    "y": 0.0,
+    "z": 14.0
+  },
+  "6256e9d12d2291e8cec5276c": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "lamees112",
+    "last_update": "2025-07-06T19:40:18.129323",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "667ed4c45fdfda1b37ed10bb": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "luna_broo",
+    "last_update": "2025-07-11T15:11:18.662012",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "681775ae717d163fcb9e3b77": {
+    "position": {
+      "type": "Position",
+      "x": 18.5,
+      "y": 0.0,
+      "z": 7.5,
+      "facing": "BackRight"
+    },
+    "username": "L_L42",
+    "last_update": "2025-07-11T16:00:11.605724",
+    "x": 18.5,
+    "y": 0.0,
+    "z": 7.5
+  },
+  "67236881cf6a170a9c278ec5": {
+    "position": {
+      "type": "Position",
+      "x": 2.0,
+      "y": 0.0,
+      "z": 19.0,
+      "facing": "FrontLeft"
+    },
+    "username": "8_0H",
+    "last_update": "2025-07-06T20:00:40.321134",
+    "x": 2.0,
+    "y": 0.0,
+    "z": 19.0
+  },
+  "686a9b059929b7b6d2cce939": {
+    "position": {
+      "type": "Position",
+      "x": 2.0,
+      "y": 0.0,
+      "z": 17.0,
+      "facing": "FrontRight"
+    },
+    "username": "Marina_M11",
+    "last_update": "2025-07-06T20:14:28.509122",
+    "x": 2.0,
+    "y": 0.0,
+    "z": 17.0
+  },
+  "6846116fbbe43397eff1f10b": {
+    "position": {
+      "type": "Position",
+      "x": 3.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "InhumanRedaction",
+    "last_update": "2025-07-10T12:08:36.008761",
+    "x": 3.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "686279c6e421e72e8a3ce66a": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "caa1a7e3eefc2929697ab57f",
+      "anchor_ix": 0
+    },
+    "username": "Hamoudi_22",
+    "last_update": "2025-07-12T13:49:07.923769",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "685fd8d2b934607ee65fe16e": {
+    "position": {
+      "type": "Position",
+      "x": 11.0,
+      "y": 0.0,
+      "z": 10.5,
+      "facing": "FrontLeft"
+    },
+    "username": "M10101zzz1",
+    "last_update": "2025-07-10T11:35:59.759778",
+    "x": 11.0,
+    "y": 0.0,
+    "z": 10.5
+  },
+  "6857b11feede0b05919395e6": {
+    "position": {
+      "type": "Position",
+      "x": 4.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "name_459",
+    "last_update": "2025-07-11T16:55:06.147821",
+    "x": 4.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "686e308f3c69cd4029c91862": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 16.5,
+      "facing": "FrontRight"
+    },
+    "username": "sahem_1123",
+    "last_update": "2025-07-11T16:17:24.383495",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 16.5
+  },
+  "685fd6bc9519ee374d41992c": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "SHAMMA__45",
+    "last_update": "2025-07-10T11:35:46.980123",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "686fa65a1f86e4d0b0029c84": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.25,
+      "z": 5.5,
+      "facing": "BackLeft"
+    },
+    "username": "NerdPostwar",
+    "last_update": "2025-07-10T11:54:29.264564",
+    "x": 19.5,
+    "y": 0.25,
+    "z": 5.5
+  },
+  "684c48541189ac0bc5ff51aa": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "PassablyLongitudinal",
+    "last_update": "2025-07-10T11:53:26.986053",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6725b061cb424cf5d4101e6e": {
+    "position": {
+      "type": "Position",
+      "x": 16.5,
+      "y": 7.75,
+      "z": 10.5,
+      "facing": "BackLeft"
+    },
+    "username": "Fkktt",
+    "last_update": "2025-07-10T12:07:39.003945",
+    "x": 16.5,
+    "y": 7.75,
+    "z": 10.5
+  },
+  "686fa562807d71204d30f824": {
+    "position": {
+      "type": "Position",
+      "x": 16.0,
+      "y": 7.75,
+      "z": 15.5,
+      "facing": "FrontLeft"
+    },
+    "username": "HaftSledding",
+    "last_update": "2025-07-10T12:05:02.804293",
+    "x": 16.0,
+    "y": 7.75,
+    "z": 15.5
+  },
+  "6815f5d21f94c6d5be0d050a": {
+    "position": {
+      "type": "Position",
+      "x": 14.0,
+      "y": 0.0,
+      "z": 19.0,
+      "facing": "FrontRight"
+    },
+    "username": "Seniin1",
+    "last_update": "2025-07-10T12:11:05.313889",
+    "x": 14.0,
+    "y": 0.0,
+    "z": 19.0
+  },
+  "686a383ec82aa7bbb87d8f26": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "409f54876d3f456bab29b2a6",
+      "anchor_ix": 1
+    },
+    "username": "salom_the_love",
+    "last_update": "2025-07-10T12:14:28.088733",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "66f66de4d6776238ad5d0081": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "PrincipalshipHalter",
+    "last_update": "2025-07-10T12:14:59.084695",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "66e8845bc4d258cedbf9f46f": {
+    "position": {
+      "type": "Position",
+      "x": 18.0,
+      "y": 0.019999999552965164,
+      "z": 19.0,
+      "facing": "BackRight"
+    },
+    "username": "lolyabdalla",
+    "last_update": "2025-07-10T12:25:30.472004",
+    "x": 18.0,
+    "y": 0.019999999552965164,
+    "z": 19.0
+  },
+  "686eba91744576082a33537c": {
+    "position": {
+      "type": "Position",
+      "x": 7.0,
+      "y": 0.0,
+      "z": 10.5,
+      "facing": "FrontRight"
+    },
+    "username": "JENAN54",
+    "last_update": "2025-07-10T12:25:07.220788",
+    "x": 7.0,
+    "y": 0.0,
+    "z": 10.5
+  },
+  "66edcd33aede7a1ffca6eba0": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "F.a.o",
+    "last_update": "2025-07-10T12:24:24.785724",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "680bbf55c4591a3ad0584505": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontLeft"
+    },
+    "username": "SONA_69",
+    "last_update": "2025-07-10T12:30:36.662430",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "684f63bb6c6db95a03b1f13a": {
+    "position": {
+      "type": "Position",
+      "x": 18.5,
+      "y": 0.0,
+      "z": 7.0,
+      "facing": "FrontRight"
+    },
+    "username": "k_k23",
+    "last_update": "2025-07-19T18:34:49.391058",
+    "x": 18.5,
+    "y": 0.0,
+    "z": 7.0
+  },
+  "67f6660d11f816080fbf89ac": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "4267347d5dc0f918609fb212",
+      "anchor_ix": 0
+    },
+    "username": "Bibouuuu_",
+    "last_update": "2025-07-10T13:01:34.234052",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "67e469b58bae2ec9c14255e1": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "Layan_kk1",
+    "last_update": "2025-07-10T19:07:31.827733",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "67d57ac3f1818856a11ed339": {
+    "position": {
+      "type": "Position",
+      "x": 17.5,
+      "y": 0.019999999552965164,
+      "z": 19.5,
+      "facing": "BackRight"
+    },
+    "username": "kok1114",
+    "last_update": "2025-07-18T16:57:29.246279",
+    "x": 17.5,
+    "y": 0.019999999552965164,
+    "z": 19.5
+  },
+  "685a9d7d438a74c68790e854": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Q_a32",
+    "last_update": "2025-07-11T13:50:42.815219",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6815d6ff1f94c6d5be0ceaa9": {
+    "position": {
+      "type": "Position",
+      "x": 9.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "RoRi_6",
+    "last_update": "2025-07-11T13:51:25.115936",
+    "x": 9.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "683f72411e89d23e17367511": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Nayle_n",
+    "last_update": "2025-07-12T16:38:39.264956",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "684ec00e861296283874bcec": {
+    "position": {
+      "type": "Position",
+      "x": 13.5,
+      "y": 0.0,
+      "z": 12.5,
+      "facing": "FrontRight"
+    },
+    "username": "leona_122",
+    "last_update": "2025-07-11T14:31:38.517825",
+    "x": 13.5,
+    "y": 0.0,
+    "z": 12.5
+  },
+  "686050684db7d9d47e3d7398": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "PITCHO5",
+    "last_update": "2025-07-11T14:51:24.717562",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "68585fd10e20fad1c2dd6ace": {
+    "position": {
+      "type": "Position",
+      "x": 1.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "Jordan_13235",
+    "last_update": "2025-07-11T14:57:11.924920",
+    "x": 1.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "67926c4848e53955e7f4c4e6": {
+    "position": {
+      "type": "Position",
+      "x": 7.0,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontLeft"
+    },
+    "username": "Nail.X",
+    "last_update": "2025-07-11T15:05:50.905297",
+    "x": 7.0,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "68712253846229b69f7663fc": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "byb_4",
+    "last_update": "2025-07-11T14:54:43.336782",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "68706e641fc20481dec1f5bb": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "asraa51",
+    "last_update": "2025-07-11T14:58:44.974186",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "685d3fc4e27740fdd2701354": {
+    "position": {
+      "type": "Position",
+      "x": 8.0,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontRight"
+    },
+    "username": "yess_in1",
+    "last_update": "2025-07-11T15:01:03.146444",
+    "x": 8.0,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "63ba670cb9a9c4e7e091e25e": {
+    "position": {
+      "type": "Position",
+      "x": 6.0,
+      "y": 0.0,
+      "z": 10.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Al_577",
+    "last_update": "2025-07-11T15:05:43.301973",
+    "x": 6.0,
+    "y": 0.0,
+    "z": 10.5
+  },
+  "60b76f712d6383d1c5707346": {
+    "position": {
+      "type": "Position",
+      "x": 13.5,
+      "y": 0.0,
+      "z": 14.0,
+      "facing": "FrontRight"
+    },
+    "username": "xl_",
+    "last_update": "2025-07-11T15:05:37.398917",
+    "x": 13.5,
+    "y": 0.0,
+    "z": 14.0
+  },
+  "67dd6abe43bd6e46f25b6cde": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Moha912",
+    "last_update": "2025-07-11T15:05:39.792353",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "66d6161e142021b43f8a89a5": {
+    "position": {
+      "type": "Position",
+      "x": 11.0,
+      "y": 0.0,
+      "z": 14.0,
+      "facing": "FrontRight"
+    },
+    "username": "GTX3",
+    "last_update": "2025-07-11T15:13:13.009361",
+    "x": 11.0,
+    "y": 0.0,
+    "z": 14.0
+  },
+  "686fa47cdaabe7be60f98401": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "A1.1_",
+    "last_update": "2025-07-11T15:16:23.642993",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "686c2f8dbf82fbaf2b54e55e": {
+    "position": {
+      "type": "Position",
+      "x": 12.0,
+      "y": 0.0,
+      "z": 15.0,
+      "facing": "FrontRight"
+    },
+    "username": "CaberCataloger",
+    "last_update": "2025-07-11T16:01:20.036022",
+    "x": 12.0,
+    "y": 0.0,
+    "z": 15.0
+  },
+  "684f4169a445f0aff64604ae": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "80e3a507c32798afc298932e",
+      "anchor_ix": 1
+    },
+    "username": "StrengthenerSqueal",
+    "last_update": "2025-07-11T15:43:46.122335",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "684d3658402f403aac530cc0": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "O_m_a2",
+    "last_update": "2025-07-11T16:09:04.475285",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "686c1b1c8c3bcd6ed376e70e": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "MARIM213",
+    "last_update": "2025-07-11T17:15:01.521696",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "62e24dca9db369277e920fbc": {
+    "position": {
+      "type": "Position",
+      "x": 7.0,
+      "y": 0.0,
+      "z": 10.0,
+      "facing": "FrontRight"
+    },
+    "username": "rororot",
+    "last_update": "2025-07-11T15:25:57.127375",
+    "x": 7.0,
+    "y": 0.0,
+    "z": 10.0
+  },
+  "684f3cf41644780132bb983f": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "talaa35",
+    "last_update": "2025-07-11T16:01:36.934312",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "686fdd2ce3b265c89d2dd0d7": {
+    "position": {
+      "type": "Position",
+      "x": 4.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "kristel_20101",
+    "last_update": "2025-07-11T15:37:02.924464",
+    "x": 4.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "66ba64ba566582c689b3cf4e": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "BackLeft"
+    },
+    "username": "SALTAN_CR7",
+    "last_update": "2025-07-18T15:07:06.971865",
+    "x": 0.5,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "657f13db46bd16a715349346": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "_menheraa",
+    "last_update": "2025-07-11T15:46:18.277806",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6803c85bdb93b9cd3959e561": {
+    "position": {
+      "type": "Position",
+      "x": 14.5,
+      "y": 0.0,
+      "z": 10.5,
+      "facing": "FrontLeft"
+    },
+    "username": "malako0mmm_",
+    "last_update": "2025-07-11T15:51:18.614323",
+    "x": 14.5,
+    "y": 0.0,
+    "z": 10.5
+  },
+  "686971bcb3b86ee65be905e1": {
+    "position": {
+      "type": "Position",
+      "x": 15.5,
+      "y": 0.0,
+      "z": 7.0,
+      "facing": "FrontRight"
+    },
+    "username": "A__F17_b",
+    "last_update": "2025-07-11T15:53:28.827982",
+    "x": 15.5,
+    "y": 0.0,
+    "z": 7.0
+  },
+  "675a170dd2e7be7fa78c3d0c": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "l7rf",
+    "last_update": "2025-07-11T15:56:43.153709",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "649cb5dc9896f008743ecd9e": {
+    "position": {
+      "type": "Position",
+      "x": 16.0,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontRight"
+    },
+    "username": "S______d",
+    "last_update": "2025-07-11T15:58:17.876748",
+    "x": 16.0,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "66ba4397e15543699b060607": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 7.75,
+      "z": 4.5,
+      "facing": "FrontRight"
+    },
+    "username": "1xxone",
+    "last_update": "2025-07-20T11:20:41.913599",
+    "x": 0.5,
+    "y": 7.75,
+    "z": 4.5
+  },
+  "656391a4902a90881d992b64": {
+    "position": {
+      "type": "Position",
+      "x": 4.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "Moha._.soltan",
+    "last_update": "2025-07-11T16:46:10.819416",
+    "x": 4.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "64ecf7c159d5e7fc0251722d": {
+    "position": {
+      "type": "Position",
+      "x": 18.5,
+      "y": 0.019999999552965164,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "youssef100000000",
+    "last_update": "2025-07-11T16:20:54.090959",
+    "x": 18.5,
+    "y": 0.019999999552965164,
+    "z": 19.5
+  },
+  "6841711e66b189288d47c65d": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "malak979",
+    "last_update": "2025-07-11T16:13:53.114578",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "66d10519122bdd78d0c742d2": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "CallmeOdowgwu",
+    "last_update": "2025-07-11T16:17:47.566503",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "64a670c578628c1159f82c82": {
+    "position": {
+      "type": "Position",
+      "x": 15.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "Dlele_12",
+    "last_update": "2025-07-12T14:58:17.788891",
+    "x": 15.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "66ea72572e37ee74aa6fe719": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Raqoush_",
+    "last_update": "2025-07-11T16:32:16.277789",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "67570e88e31c6c56dadc816b": {
+    "position": {
+      "type": "Position",
+      "x": 3.0,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "L_a_n_a__11",
+    "last_update": "2025-07-11T16:40:47.493605",
+    "x": 3.0,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "66c464a346907cea91c2a351": {
+    "position": {
+      "type": "Position",
+      "x": 15.5,
+      "y": 16.5,
+      "z": 4.0,
+      "facing": "FrontRight"
+    },
+    "username": "Be.9",
+    "last_update": "2025-07-11T17:15:07.315866",
+    "x": 15.5,
+    "y": 16.5,
+    "z": 4.0
+  },
+  "61c2492e9df36c67a1ab5458": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "0H_H0",
+    "last_update": "2026-06-29T19:29:00.072504",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6550d2ba63ee916fad13255c": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontRight"
+    },
+    "username": "LITLLE_ANGEL",
+    "last_update": "2025-07-11T17:15:11.886503",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "6434733e38b4229b51604a23": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Prince205",
+    "last_update": "2025-07-12T14:01:14.579179",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "67df6dc9753cab425f0ee9f4": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "2316a79d999db9f841a58039",
+      "anchor_ix": 0
+    },
+    "username": "mour3",
+    "last_update": "2025-07-12T14:38:22.847229",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "67d6ee5fc7d247076f76a37f": {
+    "position": {
+      "type": "Position",
+      "x": 4.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "Emoo60",
+    "last_update": "2025-07-12T14:53:08.471157",
+    "x": 4.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "682b9131fe7209185329bb63": {
+    "position": {
+      "type": "Position",
+      "x": 11.5,
+      "y": 0.0,
+      "z": 10.0,
+      "facing": "FrontLeft"
+    },
+    "username": "alwerfly",
+    "last_update": "2025-07-18T07:36:25.867307",
+    "x": 11.5,
+    "y": 0.0,
+    "z": 10.0
+  },
+  "67a5fc039275eb2991f54888": {
+    "position": {
+      "type": "Position",
+      "x": 15.5,
+      "y": 7.75,
+      "z": 15.5,
+      "facing": "FrontLeft"
+    },
+    "username": "s____h125",
+    "last_update": "2025-07-12T14:53:01.837932",
+    "x": 15.5,
+    "y": 7.75,
+    "z": 15.5
+  },
+  "682dc0145526e047d6d7cc60": {
+    "position": {
+      "type": "Position",
+      "x": 14.0,
+      "y": 0.0,
+      "z": 11.0,
+      "facing": "FrontLeft"
+    },
+    "username": "F_3vo",
+    "last_update": "2025-07-12T14:49:45.417637",
+    "x": 14.0,
+    "y": 0.0,
+    "z": 11.0
+  },
+  "67cb129875f48d73ee9194ff": {
+    "position": {
+      "type": "Position",
+      "x": 4.0,
+      "y": 0.0,
+      "z": 14.5,
+      "facing": "FrontLeft"
+    },
+    "username": "mohebahmed",
+    "last_update": "2025-07-12T14:52:20.848531",
+    "x": 4.0,
+    "y": 0.0,
+    "z": 14.5
+  },
+  "686695eba242fa6c83acf6c5": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 14.0,
+      "facing": "BackLeft"
+    },
+    "username": "sama_lamar",
+    "last_update": "2025-07-12T14:54:06.672820",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 14.0
+  },
+  "682a2436f81627337ad4bdc2": {
+    "position": {
+      "type": "Position",
+      "x": 16.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "Top_O",
+    "last_update": "2025-07-12T14:59:19.315001",
+    "x": 16.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "63942dc69ef30d1d40d1d081": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "armybts_14",
+    "last_update": "2025-07-12T15:00:10.696827",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6848aa3b5674a1af9451077d": {
+    "position": {
+      "type": "Position",
+      "x": 12.5,
+      "y": 0.0,
+      "z": 14.5,
+      "facing": "FrontRight"
+    },
+    "username": "Y_.X",
+    "last_update": "2025-07-19T18:06:05.650110",
+    "x": 12.5,
+    "y": 0.0,
+    "z": 14.5
+  },
+  "687792d7ed1a1c4dab08528f": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "16ada06232ac2b1cd61caa77",
+      "anchor_ix": 0
+    },
+    "username": "MYASEN",
+    "last_update": "2025-07-18T12:34:22.557765",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "67d97d133b31629b681a5599": {
+    "position": {
+      "type": "Position",
+      "x": 11.5,
+      "y": 0.0,
+      "z": 11.5,
+      "facing": "BackRight"
+    },
+    "username": "omar_017",
+    "last_update": "2025-07-18T14:16:40.545013",
+    "x": 11.5,
+    "y": 0.0,
+    "z": 11.5
+  },
+  "681e1659916b42856c0544f5": {
+    "position": {
+      "type": "Position",
+      "x": 15.0,
+      "y": 16.5,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "AirfieldElongated",
+    "last_update": "2025-07-18T12:35:25.384843",
+    "x": 15.0,
+    "y": 16.5,
+    "z": 19.5
+  },
+  "6857de34e3923bbbd5d0704c": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.0,
+      "facing": "FrontRight"
+    },
+    "username": "soso1402",
+    "last_update": "2025-07-18T12:42:24.043507",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.0
+  },
+  "686ceb97f16b988d2bbe8fc3": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "2d1757490711e0c5902b9dda",
+      "anchor_ix": 0
+    },
+    "username": "R.A74",
+    "last_update": "2025-07-18T12:34:45.818749",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "67cc0d3cfcad34f1f6194b93": {
+    "position": {
+      "type": "Position",
+      "x": 13.0,
+      "y": 0.0,
+      "z": 9.0,
+      "facing": "FrontRight"
+    },
+    "username": "wsams00",
+    "last_update": "2025-07-20T11:34:33.815877",
+    "x": 13.0,
+    "y": 0.0,
+    "z": 9.0
+  },
+  "6877af674050d530ffc368b0": {
+    "position": {
+      "type": "Position",
+      "x": 9.0,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontRight"
+    },
+    "username": "Reraj_123456",
+    "last_update": "2025-07-18T12:35:09.801935",
+    "x": 9.0,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "64f4b2703fecb5d6b1b3dc93": {
+    "position": {
+      "type": "Position",
+      "x": 3.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontLeft"
+    },
+    "username": "KimRoRo_2",
+    "last_update": "2025-07-18T17:00:07.369474",
+    "x": 3.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "6878dd856d48041b15ca8907": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "2d1757490711e0c5902b9dda",
+      "anchor_ix": 1
+    },
+    "username": "M_H38",
+    "last_update": "2025-07-18T12:35:26.779573",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "63072a00dbba3a1140b566b5": {
+    "position": {
+      "type": "Position",
+      "x": 11.5,
+      "y": 0.0,
+      "z": 11.5,
+      "facing": "FrontLeft"
+    },
+    "username": "__larra__",
+    "last_update": "2025-07-18T13:17:20.734211",
+    "x": 11.5,
+    "y": 0.0,
+    "z": 11.5
+  },
+  "687a161bfc577e3091b9db8f": {
+    "position": {
+      "type": "Position",
+      "x": 11.5,
+      "y": 0.0,
+      "z": 10.0,
+      "facing": "FrontRight"
+    },
+    "username": "sak_rz",
+    "last_update": "2025-07-18T14:37:47.285290",
+    "x": 11.5,
+    "y": 0.0,
+    "z": 10.0
+  },
+  "667478ce670b208e95f2ce38": {
+    "position": {
+      "type": "Position",
+      "x": 11.0,
+      "y": 0.0,
+      "z": 11.5,
+      "facing": "FrontRight"
+    },
+    "username": "R0_.r",
+    "last_update": "2025-07-18T14:13:18.778837",
+    "x": 11.0,
+    "y": 0.0,
+    "z": 11.5
+  },
+  "687761d6047cdeb1c1ff20b9": {
+    "position": {
+      "type": "Position",
+      "x": 15.5,
+      "y": 7.75,
+      "z": 16.0,
+      "facing": "FrontRight"
+    },
+    "username": "Y_.x_Bot",
+    "last_update": "2025-07-18T14:27:31.722640",
+    "x": 15.5,
+    "y": 7.75,
+    "z": 16.0
+  },
+  "622cb4bb1106d0bd8e226045": {
+    "position": {
+      "type": "Position",
+      "x": 12.5,
+      "y": 7.75,
+      "z": 0.5,
+      "facing": "BackLeft"
+    },
+    "username": "doha51",
+    "last_update": "2025-07-18T13:27:26.971696",
+    "x": 12.5,
+    "y": 7.75,
+    "z": 0.5
+  },
+  "687711166d48041b15c5f2bb": {
+    "position": {
+      "type": "Position",
+      "x": 6.5,
+      "y": 0.0,
+      "z": 19.0,
+      "facing": "FrontRight"
+    },
+    "username": "F_._VIP",
+    "last_update": "2025-07-18T14:15:07.567266",
+    "x": 6.5,
+    "y": 0.0,
+    "z": 19.0
+  },
+  "6878213c4f146a391f842f37": {
+    "position": {
+      "type": "Position",
+      "x": 8.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "Mariam2511",
+    "last_update": "2025-07-18T14:21:23.280976",
+    "x": 8.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "68727d758ac3cd6cabab53e8": {
+    "position": {
+      "type": "Position",
+      "x": 17.0,
+      "y": 0.0,
+      "z": 10.5,
+      "facing": "FrontRight"
+    },
+    "username": "swer8",
+    "last_update": "2025-07-18T14:19:08.851755",
+    "x": 17.0,
+    "y": 0.0,
+    "z": 10.5
+  },
+  "687940be474dbc34fecf6ca1": {
+    "position": {
+      "type": "Position",
+      "x": 18.5,
+      "y": 0.019999999552965164,
+      "z": 18.0,
+      "facing": "FrontRight"
+    },
+    "username": "Bn_Omda",
+    "last_update": "2025-07-18T14:25:20.515362",
+    "x": 18.5,
+    "y": 0.019999999552965164,
+    "z": 18.0
+  },
+  "687a41e1e8d0917b699eafc2": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontRight"
+    },
+    "username": "rarad2011",
+    "last_update": "2025-07-18T14:35:00.964710",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "685de6c2ee03c781f7c16991": {
+    "position": {
+      "type": "Position",
+      "x": 3.0,
+      "y": 0.0,
+      "z": 18.5,
+      "facing": "FrontRight"
+    },
+    "username": "I_am_addicted",
+    "last_update": "2025-07-19T18:44:08.813907",
+    "x": 3.0,
+    "y": 0.0,
+    "z": 18.5
+  },
+  "6819d2d50d1c693e22e411af": {
+    "position": {
+      "type": "Position",
+      "x": 16.0,
+      "y": 0.0,
+      "z": 10.5,
+      "facing": "BackRight"
+    },
+    "username": "jojo4517",
+    "last_update": "2025-07-18T15:10:34.010383",
+    "x": 16.0,
+    "y": 0.0,
+    "z": 10.5
+  },
+  "6878f91b4050d530ffc7f45c": {
+    "position": {
+      "type": "Position",
+      "x": 15.5,
+      "y": 0.0,
+      "z": 15.0,
+      "facing": "BackLeft"
+    },
+    "username": "violett_66",
+    "last_update": "2025-07-18T14:52:44.515199",
+    "x": 15.5,
+    "y": 0.0,
+    "z": 15.0
+  },
+  "687a5ca399824305dacf0fc2": {
+    "position": {
+      "type": "Position",
+      "x": 15.5,
+      "y": 16.5,
+      "z": 6.5,
+      "facing": "FrontRight"
+    },
+    "username": "bila57",
+    "last_update": "2025-07-18T15:10:16.910278",
+    "x": 15.5,
+    "y": 16.5,
+    "z": 6.5
+  },
+  "629d46f0b14fddc2547e43ea": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "myQueen123",
+    "last_update": "2025-07-18T15:02:40.774237",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "67dea10e10eb2a1fb81437fa": {
+    "position": {
+      "type": "Position",
+      "x": 6.5,
+      "y": 16.5,
+      "z": 5.5,
+      "facing": "FrontRight"
+    },
+    "username": "GeopoliticalMongrel",
+    "last_update": "2025-07-18T15:07:35.233388",
+    "x": 6.5,
+    "y": 16.5,
+    "z": 5.5
+  },
+  "686cf68a3bf7a205a418df90": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Loaiali.1",
+    "last_update": "2025-07-18T15:05:45.358110",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "64fb89456dea5a6a364a94e2": {
+    "position": {
+      "type": "Position",
+      "x": 13.5,
+      "y": 0.0,
+      "z": 19.0,
+      "facing": "FrontLeft"
+    },
+    "username": "_HASAEN_13x",
+    "last_update": "2025-07-18T15:09:27.610212",
+    "x": 13.5,
+    "y": 0.0,
+    "z": 19.0
+  },
+  "685b93ee924da78b5f2734fe": {
+    "position": {
+      "type": "Position",
+      "x": 3.0,
+      "y": 0.0,
+      "z": 17.5,
+      "facing": "FrontRight"
+    },
+    "username": "LunchboxHoroscope",
+    "last_update": "2025-07-18T17:01:26.768173",
+    "x": 3.0,
+    "y": 0.0,
+    "z": 17.5
+  },
+  "68226d4588d438ac77794254": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "nihal95",
+    "last_update": "2025-07-18T15:21:48.352740",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "6878d45e047cdeb1c101c884": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "2316a79d999db9f841a58039",
+      "anchor_ix": 0
+    },
+    "username": "RashSadden",
+    "last_update": "2025-07-20T11:21:48.678408",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "685484fa38f2a9161598fffb": {
+    "position": {
+      "type": "Position",
+      "x": 7.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "SociobiologyDriller",
+    "last_update": "2025-07-20T11:34:17.982396",
+    "x": 7.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "673cf171f14f0d426d2da349": {
+    "position": {
+      "type": "Position",
+      "x": 13.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "C_20",
+    "last_update": "2025-07-20T11:34:53.317247",
+    "x": 13.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "6875788eed1a1c4dabff3989": {
+    "position": {
+      "type": "Position",
+      "x": 16.5,
+      "y": 0.0,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "Come_on5",
+    "last_update": "2025-07-20T11:27:09.503090",
+    "x": 16.5,
+    "y": 0.0,
+    "z": 19.5
+  },
+  "687c0be66d77a7bddf56a929": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "a5a77249e1a62eadbe1594d0",
+      "anchor_ix": 1
+    },
+    "username": "MothPorthole",
+    "last_update": "2025-07-20T11:12:27.599848",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "685e5ab61f184cbabf3723bd": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "caa1a7e3eefc2929697ab57f",
+      "anchor_ix": 0
+    },
+    "username": "noor__ii",
+    "last_update": "2025-07-20T11:16:49.767031",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "68627a48d2f5ec2f4e147c10": {
+    "position": {
+      "type": "Position",
+      "x": 16.5,
+      "y": 7.75,
+      "z": 19.5,
+      "facing": "FrontRight"
+    },
+    "username": "StreuselEmbellishment",
+    "last_update": "2025-07-20T11:22:02.536759",
+    "x": 16.5,
+    "y": 7.75,
+    "z": 19.5
+  },
+  "6841fbe66a9e8c72ba9e266d": {
+    "position": {
+      "type": "Position",
+      "x": 18.5,
+      "y": 0.019999999552965164,
+      "z": 18.5,
+      "facing": "FrontRight"
+    },
+    "username": "Asom_2",
+    "last_update": "2025-07-20T11:23:03.370750",
+    "x": 18.5,
+    "y": 0.019999999552965164,
+    "z": 18.5
+  },
+  "687cd0ec99824305dad5d9ec": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Reactan1",
+    "last_update": "2025-07-20T11:24:39.079463",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "68492c671403e02c905fc2bd": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "username": "KeyboardistScoring",
+    "last_update": "2025-07-20T11:33:25.195707",
+    "x": 19.5,
+    "y": 0.0,
+    "z": 9.5
+  },
+  "65a093ba8b86d5ac39cfdbed": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.18656539916992188,
+      "z": 20.258682250976562,
+      "facing": "FrontRight"
+    },
+    "username": "lopns_",
+    "last_update": "2026-06-29T20:27:20.403310",
+    "x": 0.0,
+    "y": 0.18656539916992188,
+    "z": 20.258682250976562
+  },
+  "65402b9fffc87c0146e3dcb3": {
+    "position": {
+      "type": "Position",
+      "x": 0.50999999046326,
+      "y": 0.5,
+      "z": 21.5,
+      "facing": "FrontRight"
+    },
+    "username": "HR_LY",
+    "last_update": "2026-06-29T19:49:39.498413",
+    "x": 0.50999999046326,
+    "y": 0.5,
+    "z": 21.5
+  },
+  "666a2de829685ce6aeb6773d": {
+    "position": {
+      "type": "Position",
+      "x": 5.4957981109619,
+      "y": 1.0,
+      "z": 28.29291343689,
+      "facing": "FrontRight"
+    },
+    "username": "hr_ly3_bot",
+    "last_update": "2026-06-29T20:27:18.007602",
+    "x": 5.4957981109619,
+    "y": 1.0,
+    "z": 28.29291343689
+  },
+  "655516c33fd6b143a624da30": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.21393585205078125,
+      "z": 22.241653442382812,
+      "facing": "FrontLeft"
+    },
+    "username": "fdjcis",
+    "last_update": "2026-06-26T15:15:02.449601",
+    "x": 0.0,
+    "y": 0.21393585205078125,
+    "z": 22.241653442382812
+  },
+  "69f4ae18a760550b0e6d2b24": {
+    "position": {
+      "type": "Position",
+      "x": 0.5607948303222656,
+      "y": 0.5,
+      "z": 19.524845123291016,
+      "facing": "BackRight"
+    },
+    "username": "seraphgirl",
+    "last_update": "2026-06-26T22:07:07.304330",
+    "x": 0.5607948303222656,
+    "y": 0.5,
+    "z": 19.524845123291016
+  },
+  "570cc9c4a8974242bb7603f9": {
+    "position": {
+      "type": "Position",
+      "x": 3.71954345703125,
+      "y": 1.1920928955078125e-07,
+      "z": 20.3775634765625,
+      "facing": "FrontRight"
+    },
+    "username": "K6i",
+    "last_update": "2026-06-26T14:23:24.196037",
+    "x": 3.71954345703125,
+    "y": 1.1920928955078125e-07,
+    "z": 20.3775634765625
+  },
+  "69a1a96fcb25e180f171c991": {
+    "position": {
+      "type": "Position",
+      "x": 0.3519172668457031,
+      "y": 0.25,
+      "z": 14.742984771728516,
+      "facing": "FrontRight"
+    },
+    "username": "alireza_ar",
+    "last_update": "2026-06-26T14:24:24.455810",
+    "x": 0.3519172668457031,
+    "y": 0.25,
+    "z": 14.742984771728516
+  },
+  "6795f4d05fa6223f65ee4c36": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.498199462890625,
+      "z": 27.09649658203125,
+      "facing": "BackLeft"
+    },
+    "username": "B___o___s___s___y",
+    "last_update": "2026-06-29T20:26:46.423277",
+    "x": 0.0,
+    "y": 0.498199462890625,
+    "z": 27.09649658203125
+  },
+  "69ee11017e2dbaadb133d1fb": {
+    "position": {
+      "type": "Position",
+      "x": 1.9913520812988281,
+      "y": 1.1920928955078125e-07,
+      "z": 16.820209503173828,
+      "facing": "FrontRight"
+    },
+    "username": "Qamar_07",
+    "last_update": "2026-06-28T20:53:37.719897",
+    "x": 1.9913520812988281,
+    "y": 1.1920928955078125e-07,
+    "z": 16.820209503173828
+  },
+  "69fcae5ef44817f5e13c618d": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Hm_d1",
+    "last_update": "2026-06-26T14:38:06.798984",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6981977fc6df6064c6e1e1f3": {
+    "position": {
+      "type": "Position",
+      "x": 0.4907569885253906,
+      "y": 0.5,
+      "z": 19.76950454711914,
+      "facing": "FrontRight"
+    },
+    "username": "33.261",
+    "last_update": "2026-06-26T14:42:28.949873",
+    "x": 0.4907569885253906,
+    "y": 0.5,
+    "z": 19.76950454711914
+  },
+  "63e5402ab9b998cae82b27d3": {
+    "position": {
+      "type": "Position",
+      "x": 0.4418792724609375,
+      "y": 0.3798332214355469,
+      "z": 25.0,
+      "facing": "FrontRight"
+    },
+    "username": "Moonhoneys",
+    "last_update": "2026-06-28T20:38:22.218529",
+    "x": 0.4418792724609375,
+    "y": 0.3798332214355469,
+    "z": 25.0
+  },
+  "697ce54b98c6c6020f549135": {
+    "position": {
+      "type": "Position",
+      "x": 10.5,
+      "y": 0.25,
+      "z": 29.5,
+      "facing": "BackRight"
+    },
+    "username": "SneakyMalarial",
+    "last_update": "2026-06-26T14:43:49.446439",
+    "x": 10.5,
+    "y": 0.25,
+    "z": 29.5
+  },
+  "6a3e8224a3c9f8dae9b70b7e": {
+    "position": {
+      "type": "Position",
+      "x": 10.659873962402344,
+      "y": 1.1920928955078125e-07,
+      "z": 28.544944763183594,
+      "facing": "BackRight"
+    },
+    "username": "InputGlorify",
+    "last_update": "2026-06-26T14:43:55.948056",
+    "x": 10.659873962402344,
+    "y": 1.1920928955078125e-07,
+    "z": 28.544944763183594
+  },
+  "69564acd89d8a004336ae807": {
+    "position": {
+      "type": "Position",
+      "x": 3.704010009765625,
+      "y": 1.1920928955078125e-07,
+      "z": 17.219512939453125,
+      "facing": "FrontRight"
+    },
+    "username": "IndecipherableConfound",
+    "last_update": "2026-06-26T14:44:38.444864",
+    "x": 3.704010009765625,
+    "y": 1.1920928955078125e-07,
+    "z": 17.219512939453125
+  },
+  "675a0b3aa7cfd9b6fe48d7a7": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Diamond__3",
+    "last_update": "2026-06-26T14:44:07.761790",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a3e8339f966e77206c018cd": {
+    "position": {
+      "type": "Position",
+      "x": 8.045707702636719,
+      "y": 1.1920928955078125e-07,
+      "z": 26.799354553222656,
+      "facing": "BackLeft"
+    },
+    "username": "isa_castro",
+    "last_update": "2026-06-26T14:48:50.446699",
+    "x": 8.045707702636719,
+    "y": 1.1920928955078125e-07,
+    "z": 26.799354553222656
+  },
+  "6a3e8d17a66952a11bc81124": {
+    "position": {
+      "type": "Position",
+      "x": 11.032485961914062,
+      "y": 1.1920928955078125e-07,
+      "z": 16.958877563476562,
+      "facing": "FrontRight"
+    },
+    "username": "Amir____48",
+    "last_update": "2026-06-26T14:48:47.446651",
+    "x": 11.032485961914062,
+    "y": 1.1920928955078125e-07,
+    "z": 16.958877563476562
+  },
+  "6a327f39efddd507369d8c43": {
+    "position": {
+      "type": "Position",
+      "x": 0.26488494873046875,
+      "y": 0.5,
+      "z": 15.147636413574219,
+      "facing": "FrontLeft"
+    },
+    "username": "kkskdkddjnddudjjjeue",
+    "last_update": "2026-06-26T15:10:46.956386",
+    "x": 0.26488494873046875,
+    "y": 0.5,
+    "z": 15.147636413574219
+  },
+  "67c329ab00606adbe9c1b5bc": {
+    "position": {
+      "type": "Position",
+      "x": 3.235797882080078,
+      "y": 1.1920928955078125e-07,
+      "z": 19.973468780517578,
+      "facing": "FrontRight"
+    },
+    "username": "q__171",
+    "last_update": "2026-06-26T14:50:26.481254",
+    "x": 3.235797882080078,
+    "y": 1.1920928955078125e-07,
+    "z": 19.973468780517578
+  },
+  "6994c6d133401e4bf8eaa604": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "ConfidentialCinematic",
+    "last_update": "2026-06-26T14:50:43.813383",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "68f274b52950bfbfefcce6c2": {
+    "position": {
+      "type": "Position",
+      "x": 3.1903762817382812,
+      "y": 1.1920928955078125e-07,
+      "z": 22.092124938964844,
+      "facing": "FrontRight"
+    },
+    "username": "Astropime",
+    "last_update": "2026-06-26T14:51:52.948507",
+    "x": 3.1903762817382812,
+    "y": 1.1920928955078125e-07,
+    "z": 22.092124938964844
+  },
+  "6a3e3516eb7f4b2ccb2140a1": {
+    "position": {
+      "type": "Position",
+      "x": 11.49496078491211,
+      "y": 1.1920928955078125e-07,
+      "z": 21.693950653076172,
+      "facing": "BackRight"
+    },
+    "username": "Filza_baddie",
+    "last_update": "2026-06-26T15:08:18.539711",
+    "x": 11.49496078491211,
+    "y": 1.1920928955078125e-07,
+    "z": 21.693950653076172
+  },
+  "6a3d508aa7345a1f114fccc2": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "te.p8_",
+    "last_update": "2026-06-26T14:55:24.046631",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a1892704e349f6ef68b6bdd": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "akram714",
+    "last_update": "2026-06-26T14:57:08.343033",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "68a0fc38490090a6dc246e1b": {
+    "position": {
+      "type": "Position",
+      "x": 0.391754150390625,
+      "y": 0.5,
+      "z": 21.437835693359375,
+      "facing": "FrontRight"
+    },
+    "username": "A.Z.8",
+    "last_update": "2026-06-26T15:10:34.947383",
+    "x": 0.391754150390625,
+    "y": 0.5,
+    "z": 21.437835693359375
+  },
+  "6a3c0a465d15dfbb817c4516": {
+    "position": {
+      "type": "Position",
+      "x": 0.99603271484375,
+      "y": 0.3748970031738281,
+      "z": 23.0,
+      "facing": "FrontRight"
+    },
+    "username": "Bilsah_",
+    "last_update": "2026-06-26T15:17:12.947214",
+    "x": 0.99603271484375,
+    "y": 0.3748970031738281,
+    "z": 23.0
+  },
+  "6a35cbe895b8152d533b5398": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "xjme",
+    "last_update": "2026-06-26T15:16:39.679989",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a3e846cda2613c82a4a4f72": {
+    "position": {
+      "type": "Position",
+      "x": 0.5956153869628906,
+      "y": 0.5,
+      "z": 11.81027603149414,
+      "facing": "FrontLeft"
+    },
+    "username": "Joumana101",
+    "last_update": "2026-06-26T15:20:43.449012",
+    "x": 0.5956153869628906,
+    "y": 0.5,
+    "z": 11.81027603149414
+  },
+  "64fd97eacddecc564f5abbb1": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "amir_821",
+    "last_update": "2026-06-26T15:18:45.749361",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "69fec56be558f63b582b0514": {
+    "position": {
+      "type": "Position",
+      "x": 14.920700073242188,
+      "y": 8.25,
+      "z": 21.5872802734375,
+      "facing": "BackRight"
+    },
+    "username": "T__ym",
+    "last_update": "2026-06-29T10:25:18.477455",
+    "x": 14.920700073242188,
+    "y": 8.25,
+    "z": 21.5872802734375
+  },
+  "6a0d78270e6285a2aea7c996": {
+    "position": {
+      "type": "Position",
+      "x": 0.030178070068359375,
+      "y": 0.25,
+      "z": 22.44771957397461,
+      "facing": "FrontLeft"
+    },
+    "username": "lo__lo9",
+    "last_update": "2026-06-26T23:17:15.883527",
+    "x": 0.030178070068359375,
+    "y": 0.25,
+    "z": 22.44771957397461
+  },
+  "69a76782138a32e114932901": {
+    "position": {
+      "type": "Position",
+      "x": 0.9813423156738281,
+      "y": 0.5,
+      "z": 17.225116729736328,
+      "facing": "FrontRight"
+    },
+    "username": "leyla10012",
+    "last_update": "2026-06-29T14:07:19.358390",
+    "x": 0.9813423156738281,
+    "y": 0.5,
+    "z": 17.225116729736328
+  },
+  "6a25882d2ac3258430698e4c": {
+    "position": {
+      "type": "Position",
+      "x": 0.14061355590820312,
+      "y": 0.5,
+      "z": 23.880268096923828,
+      "facing": "BackLeft"
+    },
+    "username": "aya_1226",
+    "last_update": "2026-06-26T23:16:23.356434",
+    "x": 0.14061355590820312,
+    "y": 0.5,
+    "z": 23.880268096923828
+  },
+  "6a220da2c28a6fefc7e1fd4e": {
+    "position": {
+      "type": "Position",
+      "x": 5.528724670410156,
+      "y": 1.1920928955078125e-07,
+      "z": 25.122642517089844,
+      "facing": "BackLeft"
+    },
+    "username": "marya421",
+    "last_update": "2026-06-26T22:00:02.527770",
+    "x": 5.528724670410156,
+    "y": 1.1920928955078125e-07,
+    "z": 25.122642517089844
+  },
+  "6a3e6b037af4eb2ec8345ff8": {
+    "position": {
+      "type": "Position",
+      "x": 0.017894744873046875,
+      "y": -0.05100000277161598,
+      "z": 22.039073944091797,
+      "facing": "BackRight"
+    },
+    "username": "Mi_mi_7",
+    "last_update": "2026-06-27T21:01:18.572948",
+    "x": 0.017894744873046875,
+    "y": -0.05100000277161598,
+    "z": 22.039073944091797
+  },
+  "63d55317baa492e13926d94e": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Mapachecam",
+    "last_update": "2026-06-26T22:02:10.005643",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a3afd63988308c459ff4151": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.460479736328125,
+      "z": 19.021163940429688,
+      "facing": "FrontRight"
+    },
+    "username": "Amir_TM6",
+    "last_update": "2026-06-26T22:03:39.806736",
+    "x": 0.0,
+    "y": 0.460479736328125,
+    "z": 19.021163940429688
+  },
+  "6a172f86e5137cd25f3d925b": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "1987V",
+    "last_update": "2026-06-29T10:23:48.784693",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "65dd25e48893febc6425609d": {
+    "position": {
+      "type": "Position",
+      "x": 0.19597625732421875,
+      "y": 0.5,
+      "z": 17.263465881347656,
+      "facing": "BackRight"
+    },
+    "username": "alikhanturk_1384",
+    "last_update": "2026-06-26T22:06:28.811356",
+    "x": 0.19597625732421875,
+    "y": 0.5,
+    "z": 17.263465881347656
+  },
+  "6a3ef4afbeb5c8afc90ca18b": {
+    "position": {
+      "type": "Position",
+      "x": 2.9397659301757812,
+      "y": 1.1920928955078125e-07,
+      "z": 24.88597869873047,
+      "facing": "FrontRight"
+    },
+    "username": "DRACULA_GSTS",
+    "last_update": "2026-06-26T22:19:21.804058",
+    "x": 2.9397659301757812,
+    "y": 1.1920928955078125e-07,
+    "z": 24.88597869873047
+  },
+  "6a32c79184d90f971200874d": {
+    "position": {
+      "type": "Position",
+      "x": 3.4078369140625,
+      "y": 1.1920928955078125e-07,
+      "z": 22.379638671875,
+      "facing": "FrontRight"
+    },
+    "username": "A_m._i",
+    "last_update": "2026-06-29T14:59:03.491618",
+    "x": 3.4078369140625,
+    "y": 1.1920928955078125e-07,
+    "z": 22.379638671875
+  },
+  "697aa6225aa78b2269e08f01": {
+    "position": {
+      "type": "Position",
+      "x": 0.18327713012695312,
+      "y": 0.25,
+      "z": 18.521732330322266,
+      "facing": "FrontLeft"
+    },
+    "username": "t.bag235",
+    "last_update": "2026-06-26T22:15:52.303772",
+    "x": 0.18327713012695312,
+    "y": 0.25,
+    "z": 18.521732330322266
+  },
+  "6a2177ecf42afed848f161fb": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Sea_girl6",
+    "last_update": "2026-06-26T22:07:43.591484",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "63504dc6fef0bde192f6a132": {
+    "position": {
+      "type": "Position",
+      "x": 8.194847106933594,
+      "y": 1.1920928955078125e-07,
+      "z": 26.856285095214844,
+      "facing": "BackLeft"
+    },
+    "username": "T2C",
+    "last_update": "2026-06-26T22:09:31.336920",
+    "x": 8.194847106933594,
+    "y": 1.1920928955078125e-07,
+    "z": 26.856285095214844
+  },
+  "69a5cd53efeba2e9438c501f": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "T_T61",
+    "last_update": "2026-06-26T22:09:19.787134",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "66eb325779526d943676070e": {
+    "position": {
+      "type": "Position",
+      "x": 0.3548851013183594,
+      "y": 0.5,
+      "z": 25.50655746459961,
+      "facing": "BackRight"
+    },
+    "username": "RE_59",
+    "last_update": "2026-06-26T22:12:54.306979",
+    "x": 0.3548851013183594,
+    "y": 0.5,
+    "z": 25.50655746459961
+  },
+  "69b8ec82a6e35a422449d909": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "L._ok",
+    "last_update": "2026-06-26T22:12:19.369139",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a0bb0c6a0ded2d19f581cfb": {
+    "position": {
+      "type": "Position",
+      "x": 0.055339813232421875,
+      "y": 0.25,
+      "z": 26.37313461303711,
+      "facing": "FrontLeft"
+    },
+    "username": "Maram______16",
+    "last_update": "2026-06-26T22:25:51.907918",
+    "x": 0.055339813232421875,
+    "y": 0.25,
+    "z": 26.37313461303711
+  },
+  "6248f4219937925ac060781a": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "f.iyia",
+    "last_update": "2026-06-26T22:12:30.093590",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "656cbae1e33b5e718242d1b2": {
+    "position": {
+      "type": "Position",
+      "x": 0.005184173583984375,
+      "y": 0.5,
+      "z": 21.634639739990234,
+      "facing": "BackLeft"
+    },
+    "username": "f.c7",
+    "last_update": "2026-06-29T09:50:25.647984",
+    "x": 0.005184173583984375,
+    "y": 0.5,
+    "z": 21.634639739990234
+  },
+  "6a2711c0d712ce349bce8abc": {
+    "position": {
+      "type": "Position",
+      "x": 4.570339202880859,
+      "y": 0.25,
+      "z": 28.67147445678711,
+      "facing": "FrontRight"
+    },
+    "username": "Sondos_43",
+    "last_update": "2026-06-29T14:00:17.361353",
+    "x": 4.570339202880859,
+    "y": 0.25,
+    "z": 28.67147445678711
+  },
+  "62ee60c38b71d02b6660a30e": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Ma7muD77",
+    "last_update": "2026-06-26T22:15:24.197513",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "613130d27d372ebfdbc5c30a": {
+    "position": {
+      "type": "Position",
+      "x": 3.1644325256347656,
+      "y": 1.1920928955078125e-07,
+      "z": 24.17422866821289,
+      "facing": "FrontRight"
+    },
+    "username": "2m__",
+    "last_update": "2026-06-26T22:18:09.316131",
+    "x": 3.1644325256347656,
+    "y": 1.1920928955078125e-07,
+    "z": 24.17422866821289
+  },
+  "6a2702d93ff14ea33039af7b": {
+    "position": {
+      "type": "Position",
+      "x": 6.175537109375,
+      "y": 1.1920928955078125e-07,
+      "z": 17.24114990234375,
+      "facing": "BackLeft"
+    },
+    "username": "girl__32",
+    "last_update": "2026-06-26T22:30:42.322310",
+    "x": 6.175537109375,
+    "y": 1.1920928955078125e-07,
+    "z": 17.24114990234375
+  },
+  "64d4b28b89c32ca9a06d40fc": {
+    "position": {
+      "type": "Position",
+      "x": 0.50999999046326,
+      "y": 0.25,
+      "z": 18.5,
+      "facing": "FrontLeft"
+    },
+    "username": "Jenny___4",
+    "last_update": "2026-06-29T20:27:19.907569",
+    "x": 0.50999999046326,
+    "y": 0.25,
+    "z": 18.5
+  },
+  "6a1384cace4e9212f1c1685b": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Hussin_CE",
+    "last_update": "2026-06-26T22:20:20.329938",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a3ef4919591f84a30a7679c": {
+    "position": {
+      "type": "Position",
+      "x": 0.18444061279296875,
+      "y": 0.5,
+      "z": 21.336647033691406,
+      "facing": "FrontRight"
+    },
+    "username": "ahmadl2",
+    "last_update": "2026-06-26T22:24:15.306467",
+    "x": 0.18444061279296875,
+    "y": 0.5,
+    "z": 21.336647033691406
+  },
+  "6062676531fe109865296dc0": {
+    "position": {
+      "type": "Position",
+      "x": 0.45935821533203125,
+      "y": 0.25,
+      "z": 26.99738311767578,
+      "facing": "BackLeft"
+    },
+    "username": "l.have.no.name",
+    "last_update": "2026-06-28T21:49:17.713476",
+    "x": 0.45935821533203125,
+    "y": 0.25,
+    "z": 26.99738311767578
+  },
+  "677bbfb079b2b8d352370445": {
+    "position": {
+      "type": "Position",
+      "x": 2.1528167724609375,
+      "y": 1.1920928955078125e-07,
+      "z": 13.408737182617188,
+      "facing": "FrontLeft"
+    },
+    "username": "Ayajdbbxhxjjzz",
+    "last_update": "2026-06-26T22:21:01.890940",
+    "x": 2.1528167724609375,
+    "y": 1.1920928955078125e-07,
+    "z": 13.408737182617188
+  },
+  "67dc42099bda2cb48bcf274a": {
+    "position": {
+      "type": "Position",
+      "x": 7.179534912109375,
+      "y": 1.1920928955078125e-07,
+      "z": 25.353378295898438,
+      "facing": "BackRight"
+    },
+    "username": "TARIK_BOY",
+    "last_update": "2026-06-26T22:22:01.315708",
+    "x": 7.179534912109375,
+    "y": 1.1920928955078125e-07,
+    "z": 25.353378295898438
+  },
+  "6763bd106352e52399b2a180": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "No_ura6",
+    "last_update": "2026-06-26T22:22:24.204057",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a26ec06e1e1a2bf75800f8e": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "AsL_1718",
+    "last_update": "2026-06-26T22:22:40.596740",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6936e79751884eef25aa6a8d": {
+    "position": {
+      "type": "Position",
+      "x": 16.118026733398438,
+      "y": 0.25,
+      "z": 10.141952514648438,
+      "facing": "FrontRight"
+    },
+    "username": "23.3310",
+    "last_update": "2026-06-26T22:25:42.306920",
+    "x": 16.118026733398438,
+    "y": 0.25,
+    "z": 10.141952514648438
+  },
+  "67f04c91205972992b88bf5d": {
+    "position": {
+      "type": "Position",
+      "x": 6.797279357910156,
+      "y": 1.1920928955078125e-07,
+      "z": 14.644508361816406,
+      "facing": "FrontRight"
+    },
+    "username": "PublicExtradition",
+    "last_update": "2026-06-26T22:42:54.309045",
+    "x": 6.797279357910156,
+    "y": 1.1920928955078125e-07,
+    "z": 14.644508361816406
+  },
+  "64bb01ac160115afd3293980": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Lolo243515",
+    "last_update": "2026-06-26T22:26:42.626700",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "657de5f10ac07c75f5c126c6": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "qrr.c",
+    "last_update": "2026-06-26T22:26:47.127438",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "69f918e40ff25b5976a4e022": {
+    "position": {
+      "type": "Position",
+      "x": 15.08559799194336,
+      "y": 8.25,
+      "z": 8.657344818115234,
+      "facing": "BackRight"
+    },
+    "username": "ayad25",
+    "last_update": "2026-06-29T19:49:41.436650",
+    "x": 15.08559799194336,
+    "y": 8.25,
+    "z": 8.657344818115234
+  },
+  "643aa5c88ebd10eddc76f756": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "54q",
+    "last_update": "2026-06-29T13:34:07.454831",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "69e2785567e2c2d496600380": {
+    "position": {
+      "type": "Position",
+      "x": 5.0,
+      "y": 0.9354591369628906,
+      "z": 27.499267578125,
+      "facing": "BackLeft"
+    },
+    "username": "R___ad20",
+    "last_update": "2026-06-29T17:37:10.938218",
+    "x": 5.0,
+    "y": 0.9354591369628906,
+    "z": 27.499267578125
+  },
+  "647cd0518ebaa8a67d6be6ee": {
+    "position": {
+      "type": "Position",
+      "x": 0.50999999046326,
+      "y": 0.5,
+      "z": 21.5,
+      "facing": "FrontLeft"
+    },
+    "username": "emoji_dinaa",
+    "last_update": "2026-06-29T19:49:39.413306",
+    "x": 0.50999999046326,
+    "y": 0.5,
+    "z": 21.5
+  },
+  "694c621e980bcd6975464b92": {
+    "position": {
+      "type": "Position",
+      "x": 0.29813385009765625,
+      "y": 1.1920928955078125e-07,
+      "z": 23.700599670410156,
+      "facing": "FrontLeft"
+    },
+    "username": "V.U.8",
+    "last_update": "2026-06-29T17:20:18.901405",
+    "x": 0.29813385009765625,
+    "y": 1.1920928955078125e-07,
+    "z": 23.700599670410156
+  },
+  "69a9f708f73eea5070f7a671": {
+    "position": {
+      "type": "Position",
+      "x": 0.6722030639648438,
+      "y": 0.5,
+      "z": 27.62297821044922,
+      "facing": "FrontRight"
+    },
+    "username": "4.SO",
+    "last_update": "2026-06-29T19:33:46.403596",
+    "x": 0.6722030639648438,
+    "y": 0.5,
+    "z": 27.62297821044922
+  },
+  "69f24c7aa8e1c4ad1bded64e": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.42887115478515625,
+      "z": 19.136138916015625,
+      "facing": "FrontRight"
+    },
+    "username": "mero200514",
+    "last_update": "2026-06-29T19:23:10.399389",
+    "x": 0.0,
+    "y": 0.42887115478515625,
+    "z": 19.136138916015625
+  },
+  "64a0a2fc8e78845524a39549": {
+    "position": {
+      "type": "Position",
+      "x": 7.138515472412109,
+      "y": 1.1920928955078125e-07,
+      "z": 10.108715057373047,
+      "facing": "FrontRight"
+    },
+    "username": "_M_LT",
+    "last_update": "2026-06-29T17:25:07.608879",
+    "x": 7.138515472412109,
+    "y": 1.1920928955078125e-07,
+    "z": 10.108715057373047
+  },
+  "69ba0523e0316e839a101bdf": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "q.l6",
+    "last_update": "2026-06-29T17:24:24.913649",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6405eefe307fdede73a7a326": {
+    "position": {
+      "type": "Position",
+      "x": 0.3786506652832031,
+      "y": 0.5,
+      "z": 27.065021514892578,
+      "facing": "FrontLeft"
+    },
+    "username": "N1.3",
+    "last_update": "2026-06-27T17:39:07.820915",
+    "x": 0.3786506652832031,
+    "y": 0.5,
+    "z": 27.065021514892578
+  },
+  "6a2d492bc2b5a15c446e9200": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3c04213fd512274125573a",
+      "anchor_ix": 0
+    },
+    "username": "kaorukoo",
+    "last_update": "2026-06-29T19:26:10.916703",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "6490db2705cb274a9e939dee": {
+    "position": {
+      "type": "Position",
+      "x": 3.812885284423828,
+      "y": 1.1920928955078125e-07,
+      "z": 23.596195220947266,
+      "facing": "FrontRight"
+    },
+    "username": "K.1.S",
+    "last_update": "2026-06-27T17:44:21.820995",
+    "x": 3.812885284423828,
+    "y": 1.1920928955078125e-07,
+    "z": 23.596195220947266
+  },
+  "60a59982cacd118c1e6a217a": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.5,
+      "z": 1.5099999904633,
+      "facing": "FrontRight"
+    },
+    "username": "2PAC00",
+    "last_update": "2026-06-29T19:44:20.508548",
+    "x": 0.5,
+    "y": 0.5,
+    "z": 1.5099999904633
+  },
+  "68af2c6229774dc9b1e0cfef": {
+    "position": {
+      "type": "Position",
+      "x": 4.4518280029296875,
+      "y": 1.1920928955078125e-07,
+      "z": 25.797836303710938,
+      "facing": "BackRight"
+    },
+    "username": "1Zynx",
+    "last_update": "2026-06-28T00:12:38.139099",
+    "x": 4.4518280029296875,
+    "y": 1.1920928955078125e-07,
+    "z": 25.797836303710938
+  },
+  "69ea8424a704eb5c5d0c49e8": {
+    "position": {
+      "type": "Position",
+      "x": 4.357212066650391,
+      "y": 1.1920928955078125e-07,
+      "z": 27.598377227783203,
+      "facing": "FrontRight"
+    },
+    "username": "Noor2222222222228",
+    "last_update": "2026-06-28T00:15:03.905186",
+    "x": 4.357212066650391,
+    "y": 1.1920928955078125e-07,
+    "z": 27.598377227783203
+  },
+  "6848cf0a6ac9217f8f03fb64": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "_FK98",
+    "last_update": "2026-06-28T00:15:12.537316",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6522db921dc732dfcc92b68e": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "J___13x",
+    "last_update": "2026-06-28T00:24:35.551289",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6978f5c1854bcae62ec3aa83": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "M___M238",
+    "last_update": "2026-06-29T19:28:27.570000",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "689a4706c8c43922537554e3": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "yona09_10",
+    "last_update": "2026-06-28T00:28:04.564172",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "62e9415403b52d5d438dfa00": {
+    "position": {
+      "type": "Position",
+      "x": 16.918460845947266,
+      "y": 0.25,
+      "z": 0.5979194641113281,
+      "facing": "BackRight"
+    },
+    "username": "AYOUBALI",
+    "last_update": "2026-06-28T00:33:39.413041",
+    "x": 16.918460845947266,
+    "y": 0.25,
+    "z": 0.5979194641113281
+  },
+  "617c0bfe664af2c3564d4c3e": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "E_s69",
+    "last_update": "2026-06-29T17:19:31.038109",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "698ebcecdcc5e07bec6c8adf": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "R_1292",
+    "last_update": "2026-06-28T00:41:24.095055",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6893e0f5e4e622aac7ca0f48": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "m__a__r__o__16",
+    "last_update": "2026-06-28T01:16:42.803356",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "694e7152019925abd670c791": {
+    "position": {
+      "type": "Position",
+      "x": 5.812896728515625,
+      "y": 1.1920928955078125e-07,
+      "z": 25.385452270507812,
+      "facing": "BackRight"
+    },
+    "username": "CrawlCalcification",
+    "last_update": "2026-06-28T20:29:48.219670",
+    "x": 5.812896728515625,
+    "y": 1.1920928955078125e-07,
+    "z": 25.385452270507812
+  },
+  "6a1de56bddc4db56d7e17c76": {
+    "position": {
+      "type": "Position",
+      "x": 0.06189727783203125,
+      "y": 0.25,
+      "z": 22.98706817626953,
+      "facing": "FrontLeft"
+    },
+    "username": "Batgirl____",
+    "last_update": "2026-06-29T19:35:38.404017",
+    "x": 0.06189727783203125,
+    "y": 0.25,
+    "z": 22.98706817626953
+  },
+  "6818d21a3c273c6d377410d5": {
+    "position": {
+      "type": "Position",
+      "x": 0.5596466064453125,
+      "y": 0.4772377014160156,
+      "z": 27.0,
+      "facing": "FrontLeft"
+    },
+    "username": "ab_ch",
+    "last_update": "2026-06-28T20:46:06.747034",
+    "x": 0.5596466064453125,
+    "y": 0.4772377014160156,
+    "z": 27.0
+  },
+  "6a27e6e6d68d7cc0f7612762": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3c04213fd512274125573a",
+      "anchor_ix": 0
+    },
+    "username": "ukuk2",
+    "last_update": "2026-06-28T20:37:42.216793",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "64f1be7c406f1e2b47447c57": {
+    "position": {
+      "type": "Position",
+      "x": 2.870891571044922,
+      "y": 1.1920928955078125e-07,
+      "z": 16.23879623413086,
+      "facing": "FrontLeft"
+    },
+    "username": "Ola__lol__2000",
+    "last_update": "2026-06-28T21:05:14.871244",
+    "x": 2.870891571044922,
+    "y": 1.1920928955078125e-07,
+    "z": 16.23879623413086
+  },
+  "67c70f2430ceaa438bbec732": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3c04213fd512274125573d",
+      "anchor_ix": 0
+    },
+    "username": "mayor_.7",
+    "last_update": "2026-06-28T20:42:32.223285",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "6670b69ab1848e1675bf3832": {
+    "position": {
+      "type": "Position",
+      "x": 6.173187255859375,
+      "y": 1.1920928955078125e-07,
+      "z": 25.842987060546875,
+      "facing": "BackLeft"
+    },
+    "username": "N.awa.b.1",
+    "last_update": "2026-06-28T20:55:03.375124",
+    "x": 6.173187255859375,
+    "y": 1.1920928955078125e-07,
+    "z": 25.842987060546875
+  },
+  "69fcea92393a14f8910699fa": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "its_ninoo",
+    "last_update": "2026-06-29T16:05:59.070825",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "686ad7f49d4c3a65a262bf03": {
+    "position": {
+      "type": "Position",
+      "x": 0.7976112365722656,
+      "y": 0.5,
+      "z": 25.256595611572266,
+      "facing": "FrontLeft"
+    },
+    "username": "Asil_222",
+    "last_update": "2026-06-28T21:12:20.719635",
+    "x": 0.7976112365722656,
+    "y": 0.5,
+    "z": 25.256595611572266
+  },
+  "66c4fb9769b40148524054f7": {
+    "position": {
+      "type": "Position",
+      "x": 8.744754791259766,
+      "y": 1.1920928955078125e-07,
+      "z": 27.37070083618164,
+      "facing": "BackRight"
+    },
+    "username": "JDT_",
+    "last_update": "2026-06-28T21:31:04.291611",
+    "x": 8.744754791259766,
+    "y": 1.1920928955078125e-07,
+    "z": 27.37070083618164
+  },
+  "610220ca79b76337194affac": {
+    "position": {
+      "type": "Position",
+      "x": 3.264781951904297,
+      "y": 1.1920928955078125e-07,
+      "z": 24.221660614013672,
+      "facing": "FrontRight"
+    },
+    "username": "Gosmein",
+    "last_update": "2026-06-28T21:37:02.719917",
+    "x": 3.264781951904297,
+    "y": 1.1920928955078125e-07,
+    "z": 24.221660614013672
+  },
+  "68a5ed487d99420b4e287d1a": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "nawaf04",
+    "last_update": "2026-06-29T16:12:40.468554",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "68a9b507f7b1a168612820fd": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "_NANOT7K_",
+    "last_update": "2026-06-29T19:32:56.070030",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "694405f77039baa9bdaa357a": {
+    "position": {
+      "type": "Position",
+      "x": 0.4753265380859375,
+      "y": 0.25,
+      "z": 26.702316284179688,
+      "facing": "BackLeft"
+    },
+    "username": "M.A13A",
+    "last_update": "2026-06-29T20:27:13.174859",
+    "x": 0.4753265380859375,
+    "y": 0.25,
+    "z": 26.702316284179688
+  },
+  "6971015b489b7d0d09072346": {
+    "position": {
+      "type": "Position",
+      "x": 0.2696571350097656,
+      "y": 0.5,
+      "z": 25.463809967041016,
+      "facing": "BackLeft"
+    },
+    "username": "Rov_an",
+    "last_update": "2026-06-28T22:43:29.839198",
+    "x": 0.2696571350097656,
+    "y": 0.5,
+    "z": 25.463809967041016
+  },
+  "69b4608ea03e2a993384cf8f": {
+    "position": {
+      "type": "Position",
+      "x": 3.992023468017578,
+      "y": 1.1920928955078125e-07,
+      "z": 25.121707916259766,
+      "facing": "FrontRight"
+    },
+    "username": "a._1._n",
+    "last_update": "2026-06-28T23:05:42.714794",
+    "x": 3.992023468017578,
+    "y": 1.1920928955078125e-07,
+    "z": 25.121707916259766
+  },
+  "699b878d46950863342f98a1": {
+    "position": {
+      "type": "Position",
+      "x": 0.8856239318847656,
+      "y": 0.5,
+      "z": 25.206623077392578,
+      "facing": "BackRight"
+    },
+    "username": "r_._._h",
+    "last_update": "2026-06-28T22:54:35.711199",
+    "x": 0.8856239318847656,
+    "y": 0.5,
+    "z": 25.206623077392578
+  },
+  "6a419ec20f7ed4bdee03a644": {
+    "position": {
+      "type": "Position",
+      "x": 12.5,
+      "y": 0.25,
+      "z": 29.5,
+      "facing": "BackLeft"
+    },
+    "username": "zoza223",
+    "last_update": "2026-06-28T22:54:32.210870",
+    "x": 12.5,
+    "y": 0.25,
+    "z": 29.5
+  },
+  "6a053341c808ff5c930138d4": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Indira55",
+    "last_update": "2026-06-28T22:54:22.831759",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6964f27a5c4f2f6a3f332a90": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "BalancingTactile2",
+    "last_update": "2026-06-28T23:05:00.800490",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a3a648c500fdb001224b97a": {
+    "position": {
+      "type": "Position",
+      "x": 5.105125427246094,
+      "y": 1.0,
+      "z": 27.47167205810547,
+      "facing": "BackLeft"
+    },
+    "username": "ba._.47",
+    "last_update": "2026-06-29T20:27:17.929906",
+    "x": 5.105125427246094,
+    "y": 1.0,
+    "z": 27.47167205810547
+  },
+  "685ab9705b96951f9f78c24f": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "X.xt",
+    "last_update": "2026-06-29T14:50:38.564376",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a19de7192160eb344522926": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Darren_dido",
+    "last_update": "2026-06-29T09:42:24.766341",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "685d90a775bb5bec07f63962": {
+    "position": {
+      "type": "Position",
+      "x": 4.254344940185547,
+      "y": 1.1920928955078125e-07,
+      "z": 25.093929290771484,
+      "facing": "FrontRight"
+    },
+    "username": "SIlllIIII",
+    "last_update": "2026-06-29T19:28:51.469006",
+    "x": 4.254344940185547,
+    "y": 1.1920928955078125e-07,
+    "z": 25.093929290771484
+  },
+  "6a41c004070e1717d79c95f6": {
+    "position": {
+      "type": "Position",
+      "x": 17.363666534423828,
+      "y": 4.0,
+      "z": 22.092945098876953,
+      "facing": "BackLeft"
+    },
+    "username": "maya_mya3",
+    "last_update": "2026-06-29T10:04:01.422336",
+    "x": 17.363666534423828,
+    "y": 4.0,
+    "z": 22.092945098876953
+  },
+  "6a393249543b8012dfebda4a": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3c04213fd5122741255740",
+      "anchor_ix": 0
+    },
+    "username": "0097af",
+    "last_update": "2026-06-29T09:51:12.143833",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "63cebebadaa4e4946049efdd": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3c04213fd512274125573d",
+      "anchor_ix": 0
+    },
+    "username": "Shadow_cid",
+    "last_update": "2026-06-29T09:51:42.649436",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "5f64955b5e1be991991c62c4": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "luqagain",
+    "last_update": "2026-06-29T09:56:22.271728",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a40d280342b37969cf9fbbf": {
+    "position": {
+      "type": "Position",
+      "x": 11.963249206542969,
+      "y": 1.1920928955078125e-07,
+      "z": 24.312583923339844,
+      "facing": "FrontRight"
+    },
+    "username": "masa_emoe_star_",
+    "last_update": "2026-06-29T10:15:53.139091",
+    "x": 11.963249206542969,
+    "y": 1.1920928955078125e-07,
+    "z": 24.312583923339844
+  },
+  "5ebbdb342d74bb8981122366": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "H.Lazy",
+    "last_update": "2026-06-29T10:03:01.653627",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "676fd09949cf1aca78063d77": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "lil_L1",
+    "last_update": "2026-06-29T10:03:46.334083",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a3a7c3c3ab7c51d46e3909f": {
+    "position": {
+      "type": "Position",
+      "x": 12.439208984375,
+      "y": 1.1920928955078125e-07,
+      "z": 4.7157135009765625,
+      "facing": "BackRight"
+    },
+    "username": "Rahaf_A5",
+    "last_update": "2026-06-29T10:31:46.148122",
+    "x": 12.439208984375,
+    "y": 1.1920928955078125e-07,
+    "z": 4.7157135009765625
+  },
+  "68ab1166e11abd731f9d97e2": {
+    "position": {
+      "type": "Position",
+      "x": 0.17566299438476562,
+      "y": 0.25,
+      "z": 24.453678131103516,
+      "facing": "BackRight"
+    },
+    "username": "ba___0",
+    "last_update": "2026-06-29T19:08:13.968031",
+    "x": 0.17566299438476562,
+    "y": 0.25,
+    "z": 24.453678131103516
+  },
+  "6a4234a54fc3f9eaa4b7d36e": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Noah_vic",
+    "last_update": "2026-06-29T11:41:35.291503",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a34d11214fbdc7cc3c7bfd5": {
+    "position": {
+      "type": "Position",
+      "x": 0.9300270080566406,
+      "y": 0.5,
+      "z": 23.13479995727539,
+      "facing": "FrontLeft"
+    },
+    "username": "Ayoosh_weyo",
+    "last_update": "2026-06-29T10:13:32.640158",
+    "x": 0.9300270080566406,
+    "y": 0.5,
+    "z": 23.13479995727539
+  },
+  "6a4225449f2da6350e3e811e": {
+    "position": {
+      "type": "Position",
+      "x": 14.667522430419922,
+      "y": 8.25,
+      "z": 20.372509002685547,
+      "facing": "BackLeft"
+    },
+    "username": "SalveUndereducated",
+    "last_update": "2026-06-29T10:13:42.156980",
+    "x": 14.667522430419922,
+    "y": 8.25,
+    "z": 20.372509002685547
+  },
+  "6a4242abfd4498486bc62916": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3d931bbc71c7a987755429",
+      "anchor_ix": 0
+    },
+    "username": "PagePleasant",
+    "last_update": "2026-06-29T10:07:57.170224",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "68d81e7a6661a410d958e8ca": {
+    "position": {
+      "type": "Position",
+      "x": 5.375450134277344,
+      "y": 1.1920928955078125e-07,
+      "z": 16.415504455566406,
+      "facing": "FrontRight"
+    },
+    "username": "__Q81",
+    "last_update": "2026-06-29T10:08:20.193136",
+    "x": 5.375450134277344,
+    "y": 1.1920928955078125e-07,
+    "z": 16.415504455566406
+  },
+  "644c004f500d8c6623cc5375": {
+    "position": {
+      "type": "Position",
+      "x": 1.8883934020996094,
+      "y": 1.1920928955078125e-07,
+      "z": 22.943782806396484,
+      "facing": "FrontLeft"
+    },
+    "username": "toxic_boy6",
+    "last_update": "2026-06-29T10:08:16.638795",
+    "x": 1.8883934020996094,
+    "y": 1.1920928955078125e-07,
+    "z": 22.943782806396484
+  },
+  "61ba84248e9d9d9e315bc599": {
+    "position": {
+      "type": "Position",
+      "x": 13.997589111328125,
+      "y": 1.1920928955078125e-07,
+      "z": 27.179336547851562,
+      "facing": "BackRight"
+    },
+    "username": "__habibi__",
+    "last_update": "2026-06-29T10:08:30.139981",
+    "x": 13.997589111328125,
+    "y": 1.1920928955078125e-07,
+    "z": 27.179336547851562
+  },
+  "6a1adaf29744393bb514f730": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "DIMIR7",
+    "last_update": "2026-06-29T11:11:26.443651",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a411bc25eaeabbf653e6e98": {
+    "position": {
+      "type": "Position",
+      "x": 12.5,
+      "y": 0.25,
+      "z": 29.5,
+      "facing": "BackLeft"
+    },
+    "username": "dolly.b",
+    "last_update": "2026-06-29T10:09:12.657266",
+    "x": 12.5,
+    "y": 0.25,
+    "z": 29.5
+  },
+  "67f1b03d17f2598ae3c46f43": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "samedi_2",
+    "last_update": "2026-06-29T10:09:07.992767",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a4142fd1221fe9966ae9635": {
+    "position": {
+      "type": "Position",
+      "x": 3.464771270751953,
+      "y": 0.5,
+      "z": 0.3107185363769531,
+      "facing": "FrontRight"
+    },
+    "username": "ninininni_iiiiii",
+    "last_update": "2026-06-29T10:11:51.141178",
+    "x": 3.464771270751953,
+    "y": 0.5,
+    "z": 0.3107185363769531
+  },
+  "6518303a7b37c4af30b9740b": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "ynitaz070",
+    "last_update": "2026-06-29T10:09:29.617477",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "685d263aa32de403656dac41": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Catherine_992",
+    "last_update": "2026-06-29T10:10:03.258393",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a42190f411cead4a4dd6416": {
+    "position": {
+      "type": "Position",
+      "x": 15.884658813476562,
+      "y": 1.1920928955078125e-07,
+      "z": 20.788986206054688,
+      "facing": "FrontRight"
+    },
+    "username": "Study_Unknown606",
+    "last_update": "2026-06-29T10:11:28.734015",
+    "x": 15.884658813476562,
+    "y": 1.1920928955078125e-07,
+    "z": 20.788986206054688
+  },
+  "6a42422a3c4591c7aae4106a": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3c41e9691fcad64a56f968",
+      "anchor_ix": 0
+    },
+    "username": "Emine.polat",
+    "last_update": "2026-06-29T10:20:51.143441",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "6a423fd63e4f0c2eb5160032": {
+    "position": {
+      "type": "Position",
+      "x": 2.491055727005,
+      "y": 0.2544721364975,
+      "z": 0.5,
+      "facing": "FrontRight"
+    },
+    "username": "ClimberVerbalize",
+    "last_update": "2026-06-29T10:56:26.826645",
+    "x": 2.491055727005,
+    "y": 0.2544721364975,
+    "z": 0.5
+  },
+  "677c0a081c15336a79301a79": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "liol.o",
+    "last_update": "2026-06-29T14:36:12.961125",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "68715a2cd4104a1c2d64c520": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Abol_138",
+    "last_update": "2026-06-29T10:11:47.816576",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "63649231e9baa45ce0fd930d": {
+    "position": {
+      "type": "Position",
+      "x": 0.16020965576171875,
+      "y": 0.5,
+      "z": 19.611839294433594,
+      "facing": "BackLeft"
+    },
+    "username": "Lucerys09",
+    "last_update": "2026-06-29T10:14:59.777193",
+    "x": 0.16020965576171875,
+    "y": 0.5,
+    "z": 19.611839294433594
+  },
+  "69c8cca2eab35f4006819677": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "AntarcticPreferment",
+    "last_update": "2026-06-29T10:14:13.789922",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "69f3b91cea436bab32ac04e2": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3c04213fd5122741255740",
+      "anchor_ix": 0
+    },
+    "username": "BasketballBobcat",
+    "last_update": "2026-06-29T10:34:42.142250",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "6a1efc40f1ab0f76de0bf856": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3c2acc446b0b5ebf4cb77a",
+      "anchor_ix": 0
+    },
+    "username": "GLORIA._33",
+    "last_update": "2026-06-29T10:27:20.189636",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "685bf6345fd934de3782f0f9": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Ssssss.i",
+    "last_update": "2026-06-29T10:18:46.859732",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a41d13d6b952267a4d18d6e": {
+    "position": {
+      "type": "Position",
+      "x": 15.090129852294922,
+      "y": 1.1920928955078125e-07,
+      "z": 24.204265594482422,
+      "facing": "BackLeft"
+    },
+    "username": "MONAJK13",
+    "last_update": "2026-06-29T10:32:14.644167",
+    "x": 15.090129852294922,
+    "y": 1.1920928955078125e-07,
+    "z": 24.204265594482422
+  },
+  "6a4224c92e5bf1c99116e4a5": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3c04213fd512274125573d",
+      "anchor_ix": 0
+    },
+    "username": "t_mara5",
+    "last_update": "2026-06-29T10:22:43.645604",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "69b25d6c5766922344d46c0e": {
+    "position": {
+      "type": "Position",
+      "x": 0.07622146606445312,
+      "y": 0.25,
+      "z": 18.508716583251953,
+      "facing": "FrontRight"
+    },
+    "username": "QB.80",
+    "last_update": "2026-06-29T13:38:52.954424",
+    "x": 0.07622146606445312,
+    "y": 0.25,
+    "z": 18.508716583251953
+  },
+  "6a42471f6ff22002484a6c73": {
+    "position": {
+      "type": "Position",
+      "x": 7.667728424072266,
+      "y": 8.25,
+      "z": 26.39865493774414,
+      "facing": "BackRight"
+    },
+    "username": "AEAE20",
+    "last_update": "2026-06-29T10:24:16.644071",
+    "x": 7.667728424072266,
+    "y": 8.25,
+    "z": 26.39865493774414
+  },
+  "6a4243cc40d65798ac0d1297": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "EukaryoteToner",
+    "last_update": "2026-06-29T11:14:14.017983",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "69c9aa5f0802b9a9642ce69c": {
+    "position": {
+      "type": "Position",
+      "x": 8.727802276611328,
+      "y": 1.1920928955078125e-07,
+      "z": 10.688282012939453,
+      "facing": "BackRight"
+    },
+    "username": "_SUSHI_2",
+    "last_update": "2026-06-29T15:02:35.356152",
+    "x": 8.727802276611328,
+    "y": 1.1920928955078125e-07,
+    "z": 10.688282012939453
+  },
+  "6a0d916077e61300da527a56": {
+    "position": {
+      "type": "Position",
+      "x": 0.4301300048828125,
+      "y": 0.4675140380859375,
+      "z": 25.0,
+      "facing": "FrontRight"
+    },
+    "username": "Reemase_133",
+    "last_update": "2026-06-29T10:31:29.644021",
+    "x": 0.4301300048828125,
+    "y": 0.4675140380859375,
+    "z": 25.0
+  },
+  "69ef2fbb5e43f09bacd75e49": {
+    "position": {
+      "type": "Position",
+      "x": 8.842395782470703,
+      "y": 0.25,
+      "z": 0.6928443908691406,
+      "facing": "BackLeft"
+    },
+    "username": "_.M.W0OX._",
+    "last_update": "2026-06-29T10:47:43.199748",
+    "x": 8.842395782470703,
+    "y": 0.25,
+    "z": 0.6928443908691406
+  },
+  "60d2f6931b1b5931dbe39f3a": {
+    "position": {
+      "type": "Position",
+      "x": 12.795379638671875,
+      "y": 1.1920928955078125e-07,
+      "z": 25.5279541015625,
+      "facing": "BackLeft"
+    },
+    "username": "XxAJ_xX",
+    "last_update": "2026-06-29T10:37:04.153209",
+    "x": 12.795379638671875,
+    "y": 1.1920928955078125e-07,
+    "z": 25.5279541015625
+  },
+  "68f6131386320fc738464361": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Lo___li",
+    "last_update": "2026-06-29T10:33:14.925712",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6906abce5085e6b448eff377": {
+    "position": {
+      "type": "Position",
+      "x": 2.6151466369628906,
+      "y": 1.1920928955078125e-07,
+      "z": 23.952960968017578,
+      "facing": "FrontLeft"
+    },
+    "username": "ron_____25",
+    "last_update": "2026-06-29T10:38:07.145097",
+    "x": 2.6151466369628906,
+    "y": 1.1920928955078125e-07,
+    "z": 23.952960968017578
+  },
+  "6a4248e370a534fcf06dc464": {
+    "position": {
+      "type": "Position",
+      "x": 3.084064483642578,
+      "y": 1.1920928955078125e-07,
+      "z": 24.707141876220703,
+      "facing": "FrontRight"
+    },
+    "username": "CapybaraOnshore",
+    "last_update": "2026-06-29T10:40:09.646896",
+    "x": 3.084064483642578,
+    "y": 1.1920928955078125e-07,
+    "z": 24.707141876220703
+  },
+  "649c33ed3fafa92100a4a28d": {
+    "position": {
+      "type": "Position",
+      "x": 2.5425987243652344,
+      "y": 1.1920928955078125e-07,
+      "z": 27.586650848388672,
+      "facing": "FrontLeft"
+    },
+    "username": "_Rozica_",
+    "last_update": "2026-06-29T10:44:10.643507",
+    "x": 2.5425987243652344,
+    "y": 1.1920928955078125e-07,
+    "z": 27.586650848388672
+  },
+  "69ce7c5425e09b3043125eac": {
+    "position": {
+      "type": "Position",
+      "x": 14.948417663574219,
+      "y": 1.1920928955078125e-07,
+      "z": 2.7060165405273438,
+      "facing": "BackRight"
+    },
+    "username": "7.UD",
+    "last_update": "2026-06-29T20:27:03.423068",
+    "x": 14.948417663574219,
+    "y": 1.1920928955078125e-07,
+    "z": 2.7060165405273438
+  },
+  "63bec411e0f35ebd7ab79165": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "_M25_",
+    "last_update": "2026-06-29T10:42:46.257997",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6260a54654b25fe27e2135e7": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.09852981567382812,
+      "z": 24.685028076171875,
+      "facing": "FrontRight"
+    },
+    "username": "SAEED_99",
+    "last_update": "2026-06-29T19:06:03.024766",
+    "x": 0.0,
+    "y": 0.09852981567382812,
+    "z": 24.685028076171875
+  },
+  "68bc1cda472cdb5839cf49e8": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.03014373779296875,
+      "z": 16.538101196289062,
+      "facing": "FrontRight"
+    },
+    "username": "luux____rumaysa",
+    "last_update": "2026-06-29T10:46:11.644135",
+    "x": 0.0,
+    "y": 0.03014373779296875,
+    "z": 16.538101196289062
+  },
+  "6a424d5f4fc3f9eaa4b89d0e": {
+    "position": {
+      "type": "Position",
+      "x": 2.5944671630859375,
+      "y": 1.1920928955078125e-07,
+      "z": 16.69342041015625,
+      "facing": "BackRight"
+    },
+    "username": "jodddyy",
+    "last_update": "2026-06-29T10:50:13.185893",
+    "x": 2.5944671630859375,
+    "y": 1.1920928955078125e-07,
+    "z": 16.69342041015625
+  },
+  "6a01d0803983f2812620b9b0": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "o.a6",
+    "last_update": "2026-06-29T17:34:52.093734",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a3dff6d12d00717c5cb7eb9": {
+    "position": {
+      "type": "Position",
+      "x": 14.0,
+      "y": 0.2806053161621094,
+      "z": 13.53701400756836,
+      "facing": "FrontRight"
+    },
+    "username": "Olivia_4637",
+    "last_update": "2026-06-29T10:57:16.654124",
+    "x": 14.0,
+    "y": 0.2806053161621094,
+    "z": 13.53701400756836
+  },
+  "64ec73946edaf2fd87a5bab5": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "_________1__1__9__________",
+    "last_update": "2026-06-29T11:40:33.283544",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a23ba889a27160dcc6153c6": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "BeBaa87897789",
+    "last_update": "2026-06-29T10:57:23.875893",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "636e6edcd27a503e7d2471cd": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "JOKER_H_999",
+    "last_update": "2026-06-29T14:24:42.544016",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6701613b0a34233cee17aece": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "l_dodo_l",
+    "last_update": "2026-06-29T10:58:03.293942",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a1db673df146641407dfa09": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "n_78n",
+    "last_update": "2026-06-29T12:11:37.022185",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "663a7fd961e2444a177bc750": {
+    "position": {
+      "type": "Position",
+      "x": 4.285846710205078,
+      "y": 0.25,
+      "z": 29.15237808227539,
+      "facing": "FrontRight"
+    },
+    "username": "Catherine_97",
+    "last_update": "2026-06-29T11:04:40.662730",
+    "x": 4.285846710205078,
+    "y": 0.25,
+    "z": 29.15237808227539
+  },
+  "6a3b1f1f67100742fcd1d983": {
+    "position": {
+      "type": "Position",
+      "x": 2.2095603942871094,
+      "y": 1.1920928955078125e-07,
+      "z": 25.898738861083984,
+      "facing": "FrontRight"
+    },
+    "username": "_Noir_3_",
+    "last_update": "2026-06-29T11:05:51.478176",
+    "x": 2.2095603942871094,
+    "y": 1.1920928955078125e-07,
+    "z": 25.898738861083984
+  },
+  "6a2cf45d8e0f627ca7e8721f": {
+    "position": {
+      "type": "Position",
+      "x": 6.526252746582031,
+      "y": 0.25,
+      "z": 0.11685943603515625,
+      "facing": "FrontRight"
+    },
+    "username": "yassin_03h_",
+    "last_update": "2026-06-29T11:08:14.641175",
+    "x": 6.526252746582031,
+    "y": 0.25,
+    "z": 0.11685943603515625
+  },
+  "6a42518db26afc2cb54681cb": {
+    "position": {
+      "type": "Position",
+      "x": 9.76849365234375,
+      "y": 0.4832191467285156,
+      "z": 0.0,
+      "facing": "FrontRight"
+    },
+    "username": "t.i.lo",
+    "last_update": "2026-06-29T11:10:53.141479",
+    "x": 9.76849365234375,
+    "y": 0.4832191467285156,
+    "z": 0.0
+  },
+  "6a3aedd7be6369eee656bc0a": {
+    "position": {
+      "type": "Position",
+      "x": 0.6251182556152344,
+      "y": 0.25,
+      "z": 10.36208724975586,
+      "facing": "BackRight"
+    },
+    "username": "Abdo3454",
+    "last_update": "2026-06-29T11:11:26.652016",
+    "x": 0.6251182556152344,
+    "y": 0.25,
+    "z": 10.36208724975586
+  },
+  "69fccf68da397c4f58cfe558": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Asia_sos",
+    "last_update": "2026-06-29T11:16:17.365747",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "66db5e7c85dda08995807afc": {
+    "position": {
+      "type": "Position",
+      "x": 4.454536437988281,
+      "y": 1.0,
+      "z": 1.4239578247070312,
+      "facing": "BackLeft"
+    },
+    "username": "w_e_k_i__",
+    "last_update": "2026-06-29T11:25:02.671184",
+    "x": 4.454536437988281,
+    "y": 1.0,
+    "z": 1.4239578247070312
+  },
+  "6a3af12f9d4621a3a8ab054c": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3c2acc446b0b5ebf4cb77a",
+      "anchor_ix": 0
+    },
+    "username": "VibesCrumpet",
+    "last_update": "2026-06-29T11:19:06.143996",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "64de227d1b11644ddadc9038": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "3CD",
+    "last_update": "2026-06-29T11:21:12.757094",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6932e281352157bf314cc1c7": {
+    "position": {
+      "type": "Position",
+      "x": 1.4443244934082031,
+      "y": 0.5,
+      "z": 0.3712196350097656,
+      "facing": "FrontRight"
+    },
+    "username": "Mi__mi0",
+    "last_update": "2026-06-29T11:22:09.140573",
+    "x": 1.4443244934082031,
+    "y": 0.5,
+    "z": 0.3712196350097656
+  },
+  "6a2d3d107ab0e326040ee58f": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Soso._2008",
+    "last_update": "2026-06-29T11:22:21.929227",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "66c2a4052d63a040f54fc7b6": {
+    "position": {
+      "type": "Position",
+      "x": 6.714748382568359,
+      "y": 1.1920928955078125e-07,
+      "z": 8.678462982177734,
+      "facing": "FrontLeft"
+    },
+    "username": "Sb_3",
+    "last_update": "2026-06-29T11:27:15.640960",
+    "x": 6.714748382568359,
+    "y": 1.1920928955078125e-07,
+    "z": 8.678462982177734
+  },
+  "59f4f6ab3f8421644d6b8065": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "king_.p",
+    "last_update": "2026-06-29T11:27:38.480517",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a31569f058ed1e5b81ca361": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "MOSTAFA_2004",
+    "last_update": "2026-06-29T11:28:28.788280",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a37d6cb1f5fc386bcb5b92b": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "ZX.K",
+    "last_update": "2026-06-29T11:29:14.943759",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "657f5e8fa901e6c7133df963": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.5,
+      "z": 25.510000228882,
+      "facing": "FrontRight"
+    },
+    "username": "A.300",
+    "last_update": "2026-06-29T13:37:27.406919",
+    "x": 0.5,
+    "y": 0.5,
+    "z": 25.510000228882
+  },
+  "6a3c9b00c83dd49bf572dc77": {
+    "position": {
+      "type": "Position",
+      "x": 0.9133453369140625,
+      "y": 0.5,
+      "z": 3.588653564453125,
+      "facing": "FrontRight"
+    },
+    "username": "Activator4",
+    "last_update": "2026-06-29T11:34:04.654219",
+    "x": 0.9133453369140625,
+    "y": 0.5,
+    "z": 3.588653564453125
+  },
+  "6a273e9ff9e7bef17f87b8eb": {
+    "position": {
+      "type": "Position",
+      "x": 5.3732147216796875,
+      "y": 1.0,
+      "z": 1.5384521484375,
+      "facing": "FrontRight"
+    },
+    "username": "lTalial",
+    "last_update": "2026-06-29T11:37:50.205959",
+    "x": 5.3732147216796875,
+    "y": 1.0,
+    "z": 1.5384521484375
+  },
+  "6a3d6ef976d8b3cb73e2fa81": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3d931bbc71c7a987755428",
+      "anchor_ix": 0
+    },
+    "username": "adalina35",
+    "last_update": "2026-06-29T11:43:27.256922",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "68065845f5dff7dd58ac5690": {
+    "position": {
+      "type": "Position",
+      "x": 5.3365478515625,
+      "y": 0.5,
+      "z": 0.06243896484375,
+      "facing": "FrontRight"
+    },
+    "username": "HeadgearGauze",
+    "last_update": "2026-06-29T11:41:11.143469",
+    "x": 5.3365478515625,
+    "y": 0.5,
+    "z": 0.06243896484375
+  },
+  "69f8d3f93ec3585c780ae6de": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Aya_y5",
+    "last_update": "2026-06-29T11:54:12.207519",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a2537b97fc024991a614eea": {
+    "position": {
+      "type": "Position",
+      "x": 3.854015350341797,
+      "y": 1.1920928955078125e-07,
+      "z": 25.430248260498047,
+      "facing": "FrontRight"
+    },
+    "username": "xcreaa",
+    "last_update": "2026-06-29T12:08:41.140179",
+    "x": 3.854015350341797,
+    "y": 1.1920928955078125e-07,
+    "z": 25.430248260498047
+  },
+  "6317c67bf60183ff8da579ac": {
+    "position": {
+      "type": "Position",
+      "x": 0.5952491760253906,
+      "y": 0.5,
+      "z": 25.35068130493164,
+      "facing": "FrontRight"
+    },
+    "username": "Ayad2023",
+    "last_update": "2026-06-29T12:54:17.958638",
+    "x": 0.5952491760253906,
+    "y": 0.5,
+    "z": 25.35068130493164
+  },
+  "6a39b65e96548c40a05759d2": {
+    "position": {
+      "type": "Position",
+      "x": 3.8141136169433594,
+      "y": 1.1920928955078125e-07,
+      "z": 25.218852996826172,
+      "facing": "BackRight"
+    },
+    "username": "AL___13",
+    "last_update": "2026-06-29T19:51:38.654117",
+    "x": 3.8141136169433594,
+    "y": 1.1920928955078125e-07,
+    "z": 25.218852996826172
+  },
+  "685c50650149eb6d4da9ef02": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "LI._19",
+    "last_update": "2026-06-29T12:49:06.082675",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "69cbaaa89b25c3545928f0d5": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 9.00360107421875,
+      "z": 25.221633911132812,
+      "facing": "FrontLeft"
+    },
+    "username": "ABS211",
+    "last_update": "2026-06-29T12:53:36.902381",
+    "x": 0.0,
+    "y": 9.00360107421875,
+    "z": 25.221633911132812
+  },
+  "69ddc722ef08c703909b6c6c": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "TreasonChooser_n",
+    "last_update": "2026-06-29T12:51:00.195640",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "695a779058b331b88baa366e": {
+    "position": {
+      "type": "Position",
+      "x": 0.14308929443359375,
+      "y": 0.5,
+      "z": 15.683036804199219,
+      "facing": "BackRight"
+    },
+    "username": "L0ZA.__",
+    "last_update": "2026-06-29T14:51:25.877673",
+    "x": 0.14308929443359375,
+    "y": 0.5,
+    "z": 15.683036804199219
+  },
+  "652d4be9e5dd847ba8c3a825": {
+    "position": {
+      "type": "Position",
+      "x": 0.270751953125,
+      "y": 0.5,
+      "z": 21.58453369140625,
+      "facing": "FrontRight"
+    },
+    "username": "faluu",
+    "last_update": "2026-06-29T13:10:08.054734",
+    "x": 0.270751953125,
+    "y": 0.5,
+    "z": 21.58453369140625
+  },
+  "672a5bd48e1160a7f9cb44a9": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3c04213fd512274125573b",
+      "anchor_ix": 0
+    },
+    "username": "Tx.t5",
+    "last_update": "2026-06-29T13:07:33.900165",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "6a31327b1d67db29efba28fc": {
+    "position": {
+      "type": "Position",
+      "x": 2.820110321044922,
+      "y": 1.1920928955078125e-07,
+      "z": 24.549617767333984,
+      "facing": "FrontRight"
+    },
+    "username": "uul89",
+    "last_update": "2026-06-29T13:07:48.860207",
+    "x": 2.820110321044922,
+    "y": 1.1920928955078125e-07,
+    "z": 24.549617767333984
+  },
+  "623f4b84ceb1665d98ef89a9": {
+    "position": {
+      "type": "Position",
+      "x": 0.33115386962890625,
+      "y": 0.5,
+      "z": 7.551246643066406,
+      "facing": "FrontRight"
+    },
+    "username": "yara1111111",
+    "last_update": "2026-06-29T13:08:44.349918",
+    "x": 0.33115386962890625,
+    "y": 0.5,
+    "z": 7.551246643066406
+  },
+  "6a426c722043aed3fc14bec6": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "GasketSubsidization",
+    "last_update": "2026-06-29T13:10:17.273591",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a420ccdc9cb82e4605cf20a": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.2521476745605469,
+      "z": 23.5677490234375,
+      "facing": "FrontRight"
+    },
+    "username": "Crustal14",
+    "last_update": "2026-06-29T13:10:47.867143",
+    "x": 0.0,
+    "y": 0.2521476745605469,
+    "z": 23.5677490234375
+  },
+  "6a04b27bee93728f7b2a8304": {
+    "position": {
+      "type": "Position",
+      "x": 0.5526771545410156,
+      "y": 0.5,
+      "z": 25.433719635009766,
+      "facing": "FrontRight"
+    },
+    "username": "Mohammed_.0",
+    "last_update": "2026-06-29T14:58:48.371120",
+    "x": 0.5526771545410156,
+    "y": 0.5,
+    "z": 25.433719635009766
+  },
+  "6997db8972d65defffa7eaf0": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "tf2az",
+    "last_update": "2026-06-29T19:45:08.088164",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "623675b8a55c4a17f628d695": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "LiL_NeGRo",
+    "last_update": "2026-06-29T13:29:56.490040",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "69d148289622da0d9cdc5410": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "7anon_",
+    "last_update": "2026-06-29T13:33:04.982823",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "658f244511b48f7e991d5241": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "OMAR2866",
+    "last_update": "2026-06-29T13:39:16.483626",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "69eec11c0a3d785526dd4dbf": {
+    "position": {
+      "type": "Position",
+      "x": 3.737957000732422,
+      "y": 1.1920928955078125e-07,
+      "z": 13.009334564208984,
+      "facing": "FrontRight"
+    },
+    "username": "Awadallah100",
+    "last_update": "2026-06-29T13:42:29.848212",
+    "x": 3.737957000732422,
+    "y": 1.1920928955078125e-07,
+    "z": 13.009334564208984
+  },
+  "688f2d9fb7c6cc9e2b85405d": {
+    "position": {
+      "type": "Position",
+      "x": 8.5,
+      "y": 0.25,
+      "z": 29.5,
+      "facing": "BackLeft"
+    },
+    "username": "S_XD",
+    "last_update": "2026-06-29T13:55:22.390269",
+    "x": 8.5,
+    "y": 0.25,
+    "z": 29.5
+  },
+  "6a332007007ff70c2707cea9": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "too_10",
+    "last_update": "2026-06-29T14:26:38.356891",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6707bb6bdbe3c1df5ff92522": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.3899421691894531,
+      "z": 7.370235443115234,
+      "facing": "BackRight"
+    },
+    "username": "K_N_A_G",
+    "last_update": "2026-06-29T13:53:47.849515",
+    "x": 0.0,
+    "y": 0.3899421691894531,
+    "z": 7.370235443115234
+  },
+  "6a400e5edf285fea821206ba": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "cuteeeeeeeeeeeeeeeeeeeeeee_yyy",
+    "last_update": "2026-06-29T13:46:55.081991",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a20b4dfe2a290c8769bfa91": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.4343757629394531,
+      "z": 11.354232788085938,
+      "facing": "FrontRight"
+    },
+    "username": "soo__0",
+    "last_update": "2026-06-29T13:54:17.821000",
+    "x": 0.0,
+    "y": 0.4343757629394531,
+    "z": 11.354232788085938
+  },
+  "634be7db1a298c2b41b63f4b": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "_omran_",
+    "last_update": "2026-06-29T13:57:15.999530",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6997b09a5eee9e9a1fac2d13": {
+    "position": {
+      "type": "Position",
+      "x": 3.780078887939453,
+      "y": 1.1920928955078125e-07,
+      "z": 26.510913848876953,
+      "facing": "BackLeft"
+    },
+    "username": "N74_",
+    "last_update": "2026-06-29T14:04:01.435492",
+    "x": 3.780078887939453,
+    "y": 1.1920928955078125e-07,
+    "z": 26.510913848876953
+  },
+  "6a427ae1dc324d329c343286": {
+    "position": {
+      "type": "Position",
+      "x": 3.4032554626464844,
+      "y": 1.1920928955078125e-07,
+      "z": 20.300853729248047,
+      "facing": "FrontRight"
+    },
+    "username": "Alina66616",
+    "last_update": "2026-06-29T14:06:23.886994",
+    "x": 3.4032554626464844,
+    "y": 1.1920928955078125e-07,
+    "z": 20.300853729248047
+  },
+  "6a4008d5c41902cc1b11d715": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3c04213fd512274125573e",
+      "anchor_ix": 0
+    },
+    "username": "oryyya",
+    "last_update": "2026-06-29T14:08:15.860224",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "6a27460b1a79009384ec9968": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "dhfughkguhffuffuh",
+    "last_update": "2026-06-29T14:08:45.982906",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a1347c835ebce52d3dfa1dc": {
+    "position": {
+      "type": "Position",
+      "x": 3.8784866333007812,
+      "y": 1.1920928955078125e-07,
+      "z": 25.576576232910156,
+      "facing": "FrontLeft"
+    },
+    "username": "414_",
+    "last_update": "2026-06-29T14:10:11.350971",
+    "x": 3.8784866333007812,
+    "y": 1.1920928955078125e-07,
+    "z": 25.576576232910156
+  },
+  "5fc9152641b17eb5ef06f7af": {
+    "position": {
+      "type": "Position",
+      "x": 3.4074363708496094,
+      "y": 1.1920928955078125e-07,
+      "z": 25.95333480834961,
+      "facing": "FrontRight"
+    },
+    "username": "2v0",
+    "last_update": "2026-06-29T14:09:53.351831",
+    "x": 3.4074363708496094,
+    "y": 1.1920928955078125e-07,
+    "z": 25.95333480834961
+  },
+  "69a8382c5802d94d057fbe85": {
+    "position": {
+      "type": "Position",
+      "x": 0.14006805419921875,
+      "y": 0.25,
+      "z": 24.20366668701172,
+      "facing": "FrontRight"
+    },
+    "username": "f_vx_",
+    "last_update": "2026-06-29T16:03:34.851361",
+    "x": 0.14006805419921875,
+    "y": 0.25,
+    "z": 24.20366668701172
+  },
+  "6a3ee1b39591f84a30a75b9a": {
+    "position": {
+      "type": "Position",
+      "x": 0.7733230590820312,
+      "y": 0.5,
+      "z": 9.883171081542969,
+      "facing": "BackLeft"
+    },
+    "username": "ACEELL2",
+    "last_update": "2026-06-29T14:27:20.349242",
+    "x": 0.7733230590820312,
+    "y": 0.5,
+    "z": 9.883171081542969
+  },
+  "68a5d82c488dce352a94c0ba": {
+    "position": {
+      "type": "Position",
+      "x": 3.189605712890625,
+      "y": 1.1920928955078125e-07,
+      "z": 24.223663330078125,
+      "facing": "FrontRight"
+    },
+    "username": "CR.X",
+    "last_update": "2026-06-29T17:06:17.406545",
+    "x": 3.189605712890625,
+    "y": 1.1920928955078125e-07,
+    "z": 24.223663330078125
+  },
+  "68e460bab04bb193f503777d": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "lilyan___",
+    "last_update": "2026-06-29T14:35:43.758465",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "678853623b82bf6b992337c3": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "blendinn",
+    "last_update": "2026-06-29T14:36:02.527721",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "68fd5b61469e9c2af718a370": {
+    "position": {
+      "type": "Position",
+      "x": 0.666534423828125,
+      "y": 0.25,
+      "z": 14.52362060546875,
+      "facing": "BackRight"
+    },
+    "username": "r__v__",
+    "last_update": "2026-06-29T14:37:12.849527",
+    "x": 0.666534423828125,
+    "y": 0.25,
+    "z": 14.52362060546875
+  },
+  "65f645d8aa03102555fa1556": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "QR.S",
+    "last_update": "2026-06-29T14:38:58.757587",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "61b0a5897f428b41528c99ce": {
+    "position": {
+      "type": "Position",
+      "x": 2.660137176513672,
+      "y": 1.1920928955078125e-07,
+      "z": 22.935466766357422,
+      "facing": "FrontRight"
+    },
+    "username": "K12__",
+    "last_update": "2026-06-29T14:52:28.365230",
+    "x": 2.660137176513672,
+    "y": 1.1920928955078125e-07,
+    "z": 22.935466766357422
+  },
+  "656b31dfa9f6d82cefef04a4": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "ROSEE._.7",
+    "last_update": "2026-06-29T14:53:07.460804",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "69dabc26f54596b2a60fa059": {
+    "position": {
+      "type": "Position",
+      "x": 6.003696441650391,
+      "y": 0.029999997466802597,
+      "z": 19.43466567993164,
+      "facing": "FrontRight"
+    },
+    "username": "DTqp",
+    "last_update": "2026-06-29T15:01:41.365910",
+    "x": 6.003696441650391,
+    "y": 0.029999997466802597,
+    "z": 19.43466567993164
+  },
+  "6a3fd411df285fea82111461": {
+    "position": {
+      "type": "Position",
+      "x": 12.915168762207031,
+      "y": 1.1920928955078125e-07,
+      "z": 23.879051208496094,
+      "facing": "FrontRight"
+    },
+    "username": "nazli200",
+    "last_update": "2026-06-29T14:58:59.349122",
+    "x": 12.915168762207031,
+    "y": 1.1920928955078125e-07,
+    "z": 23.879051208496094
+  },
+  "6827242d15c52d8b19829e12": {
+    "position": {
+      "type": "Position",
+      "x": 2.5286521911621094,
+      "y": 1.1920928955078125e-07,
+      "z": 27.780498504638672,
+      "facing": "FrontLeft"
+    },
+    "username": "r3_e17",
+    "last_update": "2026-06-29T14:57:01.215799",
+    "x": 2.5286521911621094,
+    "y": 1.1920928955078125e-07,
+    "z": 27.780498504638672
+  },
+  "68dbdd8581279aaaf16aaf36": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "_loly_5",
+    "last_update": "2026-06-29T14:56:14.109472",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6826f74b6a60ce420980cd1d": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "9ra_",
+    "last_update": "2026-06-29T14:56:16.850234",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6920a2a841621825f29835af": {
+    "position": {
+      "type": "Position",
+      "x": 7.829608917236328,
+      "y": 1.1920928955078125e-07,
+      "z": 11.272953033447266,
+      "facing": "FrontRight"
+    },
+    "username": "lolyatsh_",
+    "last_update": "2026-06-29T14:58:57.854015",
+    "x": 7.829608917236328,
+    "y": 1.1920928955078125e-07,
+    "z": 11.272953033447266
+  },
+  "67c0f8d5234951f1ca561320": {
+    "position": {
+      "type": "Position",
+      "x": 0.9725303649902344,
+      "y": 0.25,
+      "z": 16.370906829833984,
+      "facing": "BackRight"
+    },
+    "username": "a_m_e_1_1",
+    "last_update": "2026-06-29T16:23:50.867782",
+    "x": 0.9725303649902344,
+    "y": 0.25,
+    "z": 16.370906829833984
+  },
+  "69500adcfe28c4826adff37b": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Yara_917",
+    "last_update": "2026-06-29T18:36:36.203451",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "69505f0661c5d867f830a5a7": {
+    "position": {
+      "type": "Position",
+      "x": 0.49175262451171875,
+      "y": 0.5,
+      "z": 21.52422332763672,
+      "facing": "BackRight"
+    },
+    "username": "J.1a",
+    "last_update": "2026-06-29T16:00:24.853089",
+    "x": 0.49175262451171875,
+    "y": 0.5,
+    "z": 21.52422332763672
+  },
+  "63bb6095e23c09fd206c3fd0": {
+    "position": {
+      "type": "Position",
+      "x": 0.0724639892578125,
+      "y": 0.5,
+      "z": 11.380508422851562,
+      "facing": "BackRight"
+    },
+    "username": "Ahmed____A2006",
+    "last_update": "2026-06-29T19:15:45.898179",
+    "x": 0.0724639892578125,
+    "y": 0.5,
+    "z": 11.380508422851562
+  },
+  "6a0d4d857f6f1d204180f199": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.28490447998046875,
+      "z": 11.685653686523438,
+      "facing": "FrontLeft"
+    },
+    "username": "hano203",
+    "last_update": "2026-06-29T17:29:21.399979",
+    "x": 0.0,
+    "y": 0.28490447998046875,
+    "z": 11.685653686523438
+  },
+  "6a232220efb717dc883697f9": {
+    "position": {
+      "type": "Position",
+      "x": 0.16517257690429688,
+      "y": 0.5,
+      "z": 11.369915008544922,
+      "facing": "FrontRight"
+    },
+    "username": "Najma405",
+    "last_update": "2026-06-29T16:30:50.904097",
+    "x": 0.16517257690429688,
+    "y": 0.5,
+    "z": 11.369915008544922
+  },
+  "69befe2f29869bbdda6d7227": {
+    "position": {
+      "type": "Position",
+      "x": 9.479095458984375,
+      "y": 1.25,
+      "z": 15.79705810546875,
+      "facing": "FrontLeft"
+    },
+    "username": "kpoe2",
+    "last_update": "2026-06-29T16:14:43.852958",
+    "x": 9.479095458984375,
+    "y": 1.25,
+    "z": 15.79705810546875
+  },
+  "6a07e886b35390db8503f387": {
+    "position": {
+      "type": "Position",
+      "x": 0.7270851135253906,
+      "y": 0.5,
+      "z": 11.313220977783203,
+      "facing": "BackRight"
+    },
+    "username": "Najma60",
+    "last_update": "2026-06-29T16:14:23.051904",
+    "x": 0.7270851135253906,
+    "y": 0.5,
+    "z": 11.313220977783203
+  },
+  "65f5f7ab8894628f98cb51ba": {
+    "position": {
+      "type": "Position",
+      "x": 0.1470489501953125,
+      "y": 0.25,
+      "z": 14.50347900390625,
+      "facing": "BackRight"
+    },
+    "username": "Mosquito5_",
+    "last_update": "2026-06-29T16:31:23.019980",
+    "x": 0.1470489501953125,
+    "y": 0.25,
+    "z": 14.50347900390625
+  },
+  "6a18ce85f063f2e6359ceaf1": {
+    "position": {
+      "type": "Position",
+      "x": 0.04261016845703125,
+      "y": 0.25,
+      "z": 8.338615417480469,
+      "facing": "FrontRight"
+    },
+    "username": "Tara_918",
+    "last_update": "2026-06-29T16:31:05.904045",
+    "x": 0.04261016845703125,
+    "y": 0.25,
+    "z": 8.338615417480469
+  },
+  "6a0480cf146279d90c686795": {
+    "position": {
+      "type": "Position",
+      "x": 3.42535400390625,
+      "y": 1.1920928955078125e-07,
+      "z": 26.227279663085938,
+      "facing": "FrontRight"
+    },
+    "username": "yw_8",
+    "last_update": "2026-06-29T16:25:02.873247",
+    "x": 3.42535400390625,
+    "y": 1.1920928955078125e-07,
+    "z": 26.227279663085938
+  },
+  "6a3e3b0beb7f4b2ccb233e27": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "j8_K",
+    "last_update": "2026-06-29T16:29:54.492285",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "67de4569651c3180dbe9ad9c": {
+    "position": {
+      "type": "Position",
+      "x": 2.2816810607910156,
+      "y": 1.1920928955078125e-07,
+      "z": 25.139514923095703,
+      "facing": "FrontRight"
+    },
+    "username": "s.46",
+    "last_update": "2026-06-29T17:01:34.901238",
+    "x": 2.2816810607910156,
+    "y": 1.1920928955078125e-07,
+    "z": 25.139514923095703
+  },
+  "67744d7b46400a2ec0017ef4": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.08269119262695312,
+      "z": 23.094985961914062,
+      "facing": "BackRight"
+    },
+    "username": "ZA15m",
+    "last_update": "2026-06-29T17:01:58.037510",
+    "x": 0.0,
+    "y": 0.08269119262695312,
+    "z": 23.094985961914062
+  },
+  "6a3800fa92cec26919601501": {
+    "position": {
+      "type": "Position",
+      "x": 0.3038177490234375,
+      "y": 0.5,
+      "z": 21.93218994140625,
+      "facing": "BackLeft"
+    },
+    "username": "DecidingDuty",
+    "last_update": "2026-06-29T17:02:30.504268",
+    "x": 0.3038177490234375,
+    "y": 0.5,
+    "z": 21.93218994140625
+  },
+  "6a2ca37469c64e0e23cb3519": {
+    "position": {
+      "type": "Position",
+      "x": 4.361461639404297,
+      "y": 1.1920928955078125e-07,
+      "z": 27.803462982177734,
+      "facing": "FrontRight"
+    },
+    "username": "_Jansta_",
+    "last_update": "2026-06-29T17:07:51.901304",
+    "x": 4.361461639404297,
+    "y": 1.1920928955078125e-07,
+    "z": 27.803462982177734
+  },
+  "69a6f0b9138a32e11490aab4": {
+    "position": {
+      "type": "Position",
+      "x": 3.1346702575683594,
+      "y": 1.1920928955078125e-07,
+      "z": 21.98873519897461,
+      "facing": "FrontRight"
+    },
+    "username": "nero_882",
+    "last_update": "2026-06-29T17:11:11.904801",
+    "x": 3.1346702575683594,
+    "y": 1.1920928955078125e-07,
+    "z": 21.98873519897461
+  },
+  "6820ba2488d438ac777468cd": {
+    "position": {
+      "type": "Position",
+      "x": 0.4684410095214844,
+      "y": 0.25,
+      "z": 22.66152572631836,
+      "facing": "FrontRight"
+    },
+    "username": "DisplaySoundtrack",
+    "last_update": "2026-06-29T17:11:54.904752",
+    "x": 0.4684410095214844,
+    "y": 0.25,
+    "z": 22.66152572631836
+  },
+  "68cbfe2b17ecdf8aa5f5e7c1": {
+    "position": {
+      "type": "Position",
+      "x": 0.5,
+      "y": 0.25447204709053,
+      "z": 26.491056442261,
+      "facing": "FrontRight"
+    },
+    "username": "just_loves",
+    "last_update": "2026-06-29T17:12:12.349544",
+    "x": 0.5,
+    "y": 0.25447204709053,
+    "z": 26.491056442261
+  },
+  "695994a1a8dfe122e07e6858": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "HOH_0",
+    "last_update": "2026-06-29T17:15:53.544036",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6978c22f1dd86d869cc00762": {
+    "position": {
+      "type": "Position",
+      "x": 1.0916061401367188,
+      "y": 0.5,
+      "z": 0.17147064208984375,
+      "facing": "BackRight"
+    },
+    "username": "nslop_",
+    "last_update": "2026-06-29T19:47:04.939534",
+    "x": 1.0916061401367188,
+    "y": 0.5,
+    "z": 0.17147064208984375
+  },
+  "69460ba6be3b549b4e20c2de": {
+    "position": {
+      "type": "Position",
+      "x": 0.5586509704589844,
+      "y": 0.5,
+      "z": 25.91573715209961,
+      "facing": "BackLeft"
+    },
+    "username": "Ropanzel900",
+    "last_update": "2026-06-29T17:21:18.404291",
+    "x": 0.5586509704589844,
+    "y": 0.5,
+    "z": 25.91573715209961
+  },
+  "6a427d6b8416150d83139d31": {
+    "position": {
+      "type": "Position",
+      "x": 9.38861083984375,
+      "y": 1.1920928955078125e-07,
+      "z": 27.8441162109375,
+      "facing": "FrontRight"
+    },
+    "username": "malak_____3",
+    "last_update": "2026-06-29T17:18:32.901561",
+    "x": 9.38861083984375,
+    "y": 1.1920928955078125e-07,
+    "z": 27.8441162109375
+  },
+  "6837a0b812d463afadedf642": {
+    "position": {
+      "type": "Position",
+      "x": 4.505687713623047,
+      "y": 1.1920928955078125e-07,
+      "z": 11.964046478271484,
+      "facing": "BackRight"
+    },
+    "username": "Ma_h_m_o_u_d_",
+    "last_update": "2026-06-29T17:53:04.399650",
+    "x": 4.505687713623047,
+    "y": 1.1920928955078125e-07,
+    "z": 11.964046478271484
+  },
+  "68c3d477a2a6ef1dafad6059": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Sarah8813",
+    "last_update": "2026-06-29T17:29:28.773228",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "64e388df44f98e467220513e": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.13369369506835938,
+      "z": 26.255340576171875,
+      "facing": "FrontRight"
+    },
+    "username": "Im_your_hell13",
+    "last_update": "2026-06-29T17:40:00.430440",
+    "x": 0.0,
+    "y": 0.13369369506835938,
+    "z": 26.255340576171875
+  },
+  "647dce8bf9d75ccd23e45dad": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "n20h_",
+    "last_update": "2026-06-29T17:43:56.535931",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "67395ff72ab5b7eb300a2572": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Q.lll",
+    "last_update": "2026-06-29T17:44:07.557466",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6668601482aa3fbfd7eaf52d": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Senz7",
+    "last_update": "2026-06-29T17:46:11.063944",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "64d555fd8e306b4eeedc847d": {
+    "position": {
+      "type": "Position",
+      "x": 3.035381317138672,
+      "y": 1.1920928955078125e-07,
+      "z": 22.084911346435547,
+      "facing": "BackRight"
+    },
+    "username": "m77adbx",
+    "last_update": "2026-06-29T18:07:34.945751",
+    "x": 3.035381317138672,
+    "y": 1.1920928955078125e-07,
+    "z": 22.084911346435547
+  },
+  "694010a6ef99f96e2104cdeb": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Q.6k",
+    "last_update": "2026-06-29T17:52:17.349547",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6859ba5718f7be3f9e1d4581": {
+    "position": {
+      "type": "Position",
+      "x": 3.0708656311035156,
+      "y": 1.1920928955078125e-07,
+      "z": 24.210208892822266,
+      "facing": "FrontRight"
+    },
+    "username": "zhor_",
+    "last_update": "2026-06-29T18:48:31.404451",
+    "x": 3.0708656311035156,
+    "y": 1.1920928955078125e-07,
+    "z": 24.210208892822266
+  },
+  "6990762bccaa40e3c16549a6": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "OA.T_",
+    "last_update": "2026-06-29T18:19:31.234660",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "67bb6072a4401dde22e200a1": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "mw.r",
+    "last_update": "2026-06-29T18:23:22.034913",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "67c8024d0c65449a89c14038": {
+    "position": {
+      "type": "Position",
+      "x": 0.3812751770019531,
+      "y": 0.25,
+      "z": 18.661258697509766,
+      "facing": "FrontRight"
+    },
+    "username": "m.MABILA",
+    "last_update": "2026-06-29T18:33:53.402161",
+    "x": 0.3812751770019531,
+    "y": 0.25,
+    "z": 18.661258697509766
+  },
+  "68c75ad813339e908291dd8a": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "S.H01",
+    "last_update": "2026-06-29T19:20:27.058701",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "69c84f528c35f3acdaa63b8f": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "iman_902",
+    "last_update": "2026-06-29T19:40:14.657066",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6429c19ce46b63d1a37d5e86": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Jo_J2",
+    "last_update": "2026-06-29T19:05:22.623284",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "69d92624868b6e3b50959608": {
+    "position": {
+      "type": "Position",
+      "x": 4.222362518310547,
+      "y": 1.1920928955078125e-07,
+      "z": 27.038463592529297,
+      "facing": "FrontRight"
+    },
+    "username": "lamosaaa_x",
+    "last_update": "2026-06-29T19:10:16.448931",
+    "x": 4.222362518310547,
+    "y": 1.1920928955078125e-07,
+    "z": 27.038463592529297
+  },
+  "69b9ad714d0dfd8449207ca3": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "M8A_",
+    "last_update": "2026-06-29T19:10:56.096065",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "69ddee6a98d8b25e655de2d7": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "pop_9_0",
+    "last_update": "2026-06-29T19:21:26.596844",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "62a308b2de3c1e3eca4b88fa": {
+    "position": {
+      "type": "Position",
+      "x": 12.533863067626953,
+      "y": 1.1920928955078125e-07,
+      "z": 14.124011993408203,
+      "facing": "FrontRight"
+    },
+    "username": "SA._.M0",
+    "last_update": "2026-06-29T19:24:21.408126",
+    "x": 12.533863067626953,
+    "y": 1.1920928955078125e-07,
+    "z": 14.124011993408203
+  },
+  "6a3c88b911609a466670e5aa": {
+    "position": {
+      "type": "Position",
+      "x": 2.2845306396484375,
+      "y": 1.6026992797851562,
+      "z": 2.0,
+      "facing": "FrontRight"
+    },
+    "username": "Roro5022",
+    "last_update": "2026-06-29T19:25:52.902091",
+    "x": 2.2845306396484375,
+    "y": 1.6026992797851562,
+    "z": 2.0
+  },
+  "6268809cdd6f046ef570b239": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "Tagwa.kh",
+    "last_update": "2026-06-29T19:26:46.639580",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "6a31b40f3632bc8e04b41b20": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "X_r0",
+    "last_update": "2026-06-29T19:28:14.453906",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  },
+  "64415b81680f60959299dba7": {
+    "position": {
+      "type": "Position",
+      "x": 0.13943862915039062,
+      "y": 0.5,
+      "z": 17.571430206298828,
+      "facing": "FrontRight"
+    },
+    "username": "__.sandra.__",
+    "last_update": "2026-06-29T20:27:13.907880",
+    "x": 0.13943862915039062,
+    "y": 0.5,
+    "z": 17.571430206298828
+  },
+  "654e9f795bb21a7b3d911372": {
+    "position": {
+      "type": "Position",
+      "x": 0.3905906677246094,
+      "y": 0.25,
+      "z": 24.74459457397461,
+      "facing": "FrontRight"
+    },
+    "username": "wex.07",
+    "last_update": "2026-06-29T19:35:31.620776",
+    "x": 0.3905906677246094,
+    "y": 0.25,
+    "z": 24.74459457397461
+  },
+  "69d30815d9b9b450961b0b8e": {
+    "position": {
+      "type": "Position",
+      "x": 3.0133628845214844,
+      "y": 1.1920928955078125e-07,
+      "z": 21.588558197021484,
+      "facing": "FrontRight"
+    },
+    "username": "Husn_s",
+    "last_update": "2026-06-29T19:41:16.437785",
+    "x": 3.0133628845214844,
+    "y": 1.1920928955078125e-07,
+    "z": 21.588558197021484
+  },
+  "6a3ea2d48d37aff74a3baf5c": {
+    "position": {
+      "type": "Position",
+      "x": 3.2069740295410156,
+      "y": 1.1920928955078125e-07,
+      "z": 21.17679214477539,
+      "facing": "FrontRight"
+    },
+    "username": "marwa1218",
+    "last_update": "2026-06-29T19:43:36.410762",
+    "x": 3.2069740295410156,
+    "y": 1.1920928955078125e-07,
+    "z": 21.17679214477539
+  },
+  "6a305fa9ef4fcfb03cd0be94": {
+    "position": {
+      "type": "AnchorPosition",
+      "entity_id": "6a3c04213fd512274125573a",
+      "anchor_ix": 0
+    },
+    "username": "c_ali",
+    "last_update": "2026-06-29T19:48:10.536265",
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "62828d3ccc653cf9a7baea4f": {
+    "position": {
+      "type": "Position",
+      "x": 4.384971618652344,
+      "y": 0.25,
+      "z": 28.28913116455078,
+      "facing": "FrontRight"
+    },
+    "username": "Afren3x",
+    "last_update": "2026-06-29T19:48:54.911543",
+    "x": 4.384971618652344,
+    "y": 0.25,
+    "z": 28.28913116455078
+  },
+  "67aa6a8a27c6f862a9c325f4": {
+    "position": {
+      "type": "Position",
+      "x": 4.25,
+      "y": 0.25,
+      "z": 29.25,
+      "facing": "FrontRight"
+    },
+    "username": "_0vs",
+    "last_update": "2026-06-29T19:49:11.902174",
+    "x": 4.25,
+    "y": 0.25,
+    "z": 29.25
+  }
+}

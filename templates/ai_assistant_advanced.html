@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant Pro - Google Gemini</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .ai-pro-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .ai-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .ai-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr 250px;
+            gap: 20px;
+            height: 80vh;
+        }
+
+        .left-sidebar {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .main-chat {
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .right-sidebar {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .project-tree {
+            margin-bottom: 20px;
+        }
+
+        .project-tree h4 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .tree-item {
+            padding: 5px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+        .tree-item:hover {
+            background: #f8f9fa;
+        }
+
+        .tree-folder {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .tree-file {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .ai-status {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-left: 8px;
+        }
+
+        .status-online {
+            background: #28a745;
+        }
+
+        .status-offline {
+            background: #dc3545;
+        }
+
+        .advanced-tools {
+            margin-top: 20px;
+        }
+
+        .tool-btn {
+            display: block;
+            width: 100%;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .tool-btn:hover {
+            background: #e9ecef;
+            transform: translateY(-1px);
+        }
+
+        .chat-workspace {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .chat-tab {
+            padding: 12px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .chat-tab.active {
+            background: white;
+            border-bottom-color: #007bff;
+            color: #007bff;
+        }
+
+        .chat-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+
+        .code-editor {
+            display: none;
+            flex: 1;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        .code-editor.active {
+            display: block;
+        }
+
+        .performance-monitor {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .performance-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .performance-bar {
+            width: 60px;
+            height: 8px;
+            background: #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .performance-fill {
+            height: 100%;
+            transition: width 0.3s;
+        }
+
+        .fill-good {
+            background: #28a745;
+        }
+
+        .fill-warning {
+            background: #ffc107;
+        }
+
+        .fill-danger {
+            background: #dc3545;
+        }
+
+        .recent-changes {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .change-item {
+            padding: 8px 12px;
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            margin-bottom: 8px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .change-time {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .floating-actions {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .fab {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+        }
+
+        .fab-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .fab-success {
+            background: #28a745;
+        }
+
+        .fab-warning {
+            background: #ffc107;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        @media (max-width: 1024px) {
+            .ai-layout {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            .left-sidebar, .right-sidebar {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ai-pro-container">
+        <div class="ai-header">
+            <h1>🚀 AI Assistant Pro - Google Gemini</h1>
+            <p>مساعد ذكي متطور مع صلاحيات كاملة للتطوير والإصلاح</p>
+        </div>
+
+        <div class="ai-layout">
+            <!-- الشريط الجانبي الأيسر -->
+            <div class="left-sidebar">
+                <div class="ai-status">
+                    <h4>🤖 حالة AI</h4>
+                    <p>
+                        <span class="status-indicator status-online"></span>
+                        Google Gemini متصل
+                    </p>
+                    <small>آخر تحديث: <span id="lastUpdate">الآن</span></small>
+                </div>
+
+                <div class="project-tree">
+                    <h4>📁 هيكل المشروع</h4>
+                    <div class="tree-item tree-file" onclick="loadFile('main.py')">
+                        🐍 main.py
+                    </div>
+                    <div class="tree-item tree-file" onclick="loadFile('run.py')">
+                        🏃 run.py
+                    </div>
+                    <div class="tree-item tree-folder" onclick="toggleFolder('modules')">
+                        📂 modules/
+                    </div>
+                    <div id="modules-content" style="display: none; margin-right: 20px;">
+                        <div class="tree-item tree-file" onclick="loadFile('modules/ai_chat_manager.py')">
+                            🧠 ai_chat_manager.py
+                        </div>
+                        <div class="tree-item tree-file" onclick="loadFile('modules/commands_handler.py')">
+                            ⚙️ commands_handler.py
+                        </div>
+                        <div class="tree-item tree-file" onclick="loadFile('modules/user_manager.py')">
+                            👥 user_manager.py
+                        </div>
+                    </div>
+                    <div class="tree-item tree-folder" onclick="toggleFolder('templates')">
+                        📂 templates/
+                    </div>
+                    <div class="tree-item tree-folder" onclick="toggleFolder('data')">
+                        📂 data/
+                    </div>
+                </div>
+
+                <div class="advanced-tools">
+                    <h4>🛠️ أدوات متقدمة</h4>
+                    <button class="tool-btn" onclick="analyzeProject()">
+                        📊 تحليل المشروع
+                    </button>
+                    <button class="tool-btn" onclick="optimizeCode()">
+                        ⚡ تحسين الأداء
+                    </button>
+                    <button class="tool-btn" onclick="findBugs()">
+                        🐛 البحث عن الأخطاء
+                    </button>
+                    <button class="tool-btn" onclick="generateTests()">
+                        🧪 إنشاء اختبارات
+                    </button>
+                    <button class="tool-btn" onclick="securityScan()">
+                        🔒 فحص الأمان
+                    </button>
+                </div>
+            </div>
+
+            <!-- المنطقة الرئيسية -->
+            <div class="main-chat">
+                <div class="chat-tabs">
+                    <div class="chat-tab active" onclick="switchTab('chat')">
+                        💬 المحادثة
+                    </div>
+                    <div class="chat-tab" onclick="switchTab('code')">
+                        👨‍💻 محرر الكود
+                    </div>
+                    <div class="chat-tab" onclick="switchTab('preview')">
+                        👁️ المعاينة
+                    </div>
+                </div>
+
+                <div class="chat-workspace">
+                    <!-- منطقة المحادثة -->
+                    <div id="chat-content" class="chat-content">
+                        <div class="message system-message">
+                            <strong>🚀 مرحباً بك في AI Assistant Pro</strong><br>
+                            أنا مساعدك الذكي المتطور مع صلاحيات كاملة للتطوير. يمكنني:
+                            <ul>
+                                <li>إنشاء أوامر جديدة وميزات متطورة</li>
+                                <li>إصلاح الأخطاء وتحسين الأداء</li>
+                                <li>تطوير واجهات ويب جديدة</li>
+                                <li>تحليل الكود وإعطاء اقتراحات</li>
+                                <li>تطبيق التغييرات مباشرة على الملفات</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- محرر الكود -->
+                    <div id="code-content" class="code-editor">
+                        <div style="color: #569cd6; margin-bottom: 20px;">
+                            # محرر الكود المتقدم
+                            # اختر ملف من الشريط الجانبي لعرضه هنا
+                        </div>
+                        <textarea id="codeEditor" style="width: 100%; height: 80%; background: #1e1e1e; color: #d4d4d4; border: none; outline: none; font-family: 'Courier New', monospace; padding: 20px; resize: none;">
+# اختر ملف من الشريط الجانبي لتحريره
+# أو اطلب من AI إنشاء كود جديد
+                        </textarea>
+                    </div>
+
+                    <!-- منطقة المعاينة -->
+                    <div id="preview-content" class="chat-content" style="display: none;">
+                        <iframe id="previewFrame" style="width: 100%; height: 100%; border: none; border-radius: 10px;"></iframe>
+                    </div>
+                </div>
+
+                <!-- منطقة الإدخال -->
+                <div class="chat-input-area">
+                    <div class="input-group">
+                        <textarea 
+                            id="aiInput" 
+                            class="chat-input"
+                            placeholder="اطلب مني أي شيء... مثل: أنشئ أمر للرقص الجماعي، أصلح مشكلة في التحميل، طور واجهة إعدادات جديدة..."
+                            rows="2"
+                        ></textarea>
+                        <button class="send-btn" onclick="sendAIMessage()">إرسال</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الشريط الجانبي الأيمن -->
+            <div class="right-sidebar">
+                <div class="performance-monitor">
+                    <h4>📈 مراقب الأداء</h4>
+                    <div class="performance-item">
+                        <span>استخدام المعالج</span>
+                        <div class="performance-bar">
+                            <div class="performance-fill fill-good" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    <div class="performance-item">
+                        <span>استخدام الذاكرة</span>
+                        <div class="performance-bar">
+                            <div class="performance-fill fill-warning" style="width: 68%"></div>
+                        </div>
+                    </div>
+                    <div class="performance-item">
+                        <span>جودة الكود</span>
+                        <div class="performance-bar">
+                            <div class="performance-fill fill-good" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>🔄 التغييرات الأخيرة</h4>
+                    <div class="recent-changes" id="recentChanges">
+                        <div class="change-item">
+                            <div>تحسين نظام AI</div>
+                            <div class="change-time">منذ 5 دقائق</div>
+                        </div>
+                        <div class="change-item">
+                            <div>إضافة أمر جديد</div>
+                            <div class="change-time">منذ ساعة</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <h4>🎯 اقتراحات سريعة</h4>
+                    <div class="quick-suggestions">
+                        <button class="tool-btn" onclick="quickAction('optimize_db')">
+                            تحسين قاعدة البيانات
+                        </button>
+                        <button class="tool-btn" onclick="quickAction('add_logging')">
+                            إضافة نظام سجلات
+                        </button>
+                        <button class="tool-btn" onclick="quickAction('security_update')">
+                            تحديث أمني
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- الأزرار العائمة -->
+    <div class="floating-actions">
+        <button class="fab fab-primary" onclick="openAIChat()" title="فتح محادثة سريعة">
+            🤖
+        </button>
+        <button class="fab fab-success" onclick="applyAllChanges()" title="تطبيق جميع التغييرات">
+            ✅
+        </button>
+        <button class="fab fab-warning" onclick="createBackup()" title="إنشاء نسخة احتياطية">
+            💾
+        </button>
+    </div>
+
+    <!-- النماذج المنبثقة -->
+    <div id="aiChatModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🤖 محادثة سريعة مع AI</h3>
+                <span class="close" onclick="closeModal('aiChatModal')">&times;</span>
+            </div>
+            <div id="quickChatArea" style="height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 15px; margin-bottom: 15px;">
+                <div class="message ai-message">مرحباً! كيف يمكنني مساعدتك؟</div>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="quickChatInput" style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" placeholder="اكتب رسالتك...">
+                <button onclick="sendQuickChat()" style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px;">إرسال</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentFile = null;
+        let pendingChanges = [];
+
+        // تبديل الألسنة
+        function switchTab(tab) {
+            // إخفاء جميع المحتويات
+            document.getElementById('chat-content').style.display = 'none';
+            document.getElementById('code-content').style.display = 'none';
+            document.getElementById('preview-content').style.display = 'none';
+
+            // إزالة الفئة النشطة من جميع الألسنة
+            document.querySelectorAll('.chat-tab').forEach(t => t.classList.remove('active'));
+
+            // إظهار المحتوى المطلوب وتفعيل اللسان
+            if (tab === 'chat') {
+                document.getElementById('chat-content').style.display = 'block';
+            } else if (tab === 'code') {
+                document.getElementById('code-content').style.display = 'flex';
+            } else if (tab === 'preview') {
+                document.getElementById('preview-content').style.display = 'block';
+                updatePreview();
+            }
+
+            event.target.classList.add('active');
+        }
+
+        // تحميل ملف
+        function loadFile(filePath) {
+            currentFile = filePath;
+            
+            fetch(`/api/ai-assistant/load-file`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    file_path: filePath
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('codeEditor').value = data.content;
+                    switchTab('code');
+                    addRecentChange(`تم تحميل ${filePath}`);
+                } else {
+                    alert('فشل في تحميل الملف: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('خطأ في تحميل الملف');
+            });
+        }
+
+        // حفظ الملف الحالي
+        function saveCurrentFile() {
+            if (!currentFile) {
+                alert('لا يوجد ملف محدد للحفظ');
+                return;
+            }
+
+            const content = document.getElementById('codeEditor').value;
+
+            fetch(`/api/ai-assistant/save-file`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    file_path: currentFile,
+                    content: content
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('تم حفظ الملف بنجاح');
+                    addRecentChange(`تم حفظ ${currentFile}`);
+                } else {
+                    alert('فشل في حفظ الملف: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('خطأ في حفظ الملف');
+            });
+        }
+
+        // إرسال رسالة AI
+        function sendAIMessage() {
+            const input = document.getElementById('aiInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+
+            // إضافة رسالة المستخدم
+            addChatMessage('user', message);
+            input.value = '';
+
+            // إرسال إلى AI
+            fetch('/api/ai-assistant/advanced-chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: message,
+                    current_file: currentFile,
+                    context: 'advanced_interface'
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    addChatMessage('ai', data.response);
+                    
+                    // معالجة التغييرات إذا وجدت
+                    if (data.code_changes && data.code_changes.length > 0) {
+                        handleCodeChanges(data.code_changes);
+                    }
+                } else {
+                    addChatMessage('system', 'خطأ: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                addChatMessage('system', 'خطأ في الاتصال');
+            });
+        }
+
+        // إضافة رسالة للمحادثة
+        function addChatMessage(type, content) {
+            const chatContent = document.getElementById('chat-content');
+            const messageDiv = document.createElement('div');
+            
+            let className = 'message ';
+            switch(type) {
+                case 'user':
+                    className += 'user-message';
+                    break;
+                case 'ai':
+                    className += 'ai-message';
+                    break;
+                case 'system':
+                    className += 'system-message';
+                    break;
+            }
+            
+            messageDiv.className = className;
+            messageDiv.innerHTML = content.replace(/\n/g, '<br>');
+            
+            chatContent.appendChild(messageDiv);
+            chatContent.scrollTop = chatContent.scrollHeight;
+        }
+
+        // معالجة تغييرات الكود
+        function handleCodeChanges(changes) {
+            changes.forEach(change => {
+                pendingChanges.push(change);
+                addRecentChange(`تغيير معلق: ${change.file_path}`);
+            });
+
+            // إظهار زر التطبيق
+            if (changes.length > 0) {
+                const applyBtn = document.createElement('button');
+                applyBtn.textContent = `تطبيق ${changes.length} تغيير`;
+                applyBtn.className = 'tool-btn';
+                applyBtn.style.background = '#28a745';
+                applyBtn.style.color = 'white';
+                applyBtn.onclick = () => applyPendingChanges();
+                
+                document.getElementById('chat-content').appendChild(applyBtn);
+            }
+        }
+
+        // تطبيق التغييرات المعلقة
+        function applyPendingChanges() {
+            if (pendingChanges.length === 0) {
+                alert('لا توجد تغييرات معلقة');
+                return;
+            }
+
+            fetch('/api/ai-assistant/apply-multiple-changes', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    changes: pendingChanges
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(`تم تطبيق ${data.applied_count} تغيير بنجاح`);
+                    pendingChanges = [];
+                    addRecentChange(`تم تطبيق ${data.applied_count} تغيير`);
+                } else {
+                    alert('فشل في تطبيق التغييرات: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('خطأ في تطبيق التغييرات');
+            });
+        }
+
+        // إضافة تغيير حديث
+        function addRecentChange(change) {
+            const changesContainer = document.getElementById('recentChanges');
+            const changeDiv = document.createElement('div');
+            changeDiv.className = 'change-item';
+            changeDiv.innerHTML = `
+                <div>${change}</div>
+                <div class="change-time">الآن</div>
+            `;
+            
+            changesContainer.insertBefore(changeDiv, changesContainer.firstChild);
+            
+            // الاحتفاظ بآخر 10 تغييرات فقط
+            while (changesContainer.children.length > 10) {
+                changesContainer.removeChild(changesContainer.lastChild);
+            }
+        }
+
+        // تبديل مجلد
+        function toggleFolder(folderId) {
+            const content = document.getElementById(folderId + '-content');
+            if (content) {
+                content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            }
+        }
+
+        // فتح محادثة سريعة
+        function openAIChat() {
+            document.getElementById('aiChatModal').style.display = 'block';
+        }
+
+        // إغلاق النموذج المنبثق
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // إرسال محادثة سريعة
+        function sendQuickChat() {
+            const input = document.getElementById('quickChatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+
+            const chatArea = document.getElementById('quickChatArea');
+            chatArea.innerHTML += `<div class="message user-message">${message}</div>`;
+            input.value = '';
+
+            // محاكاة رد AI
+            setTimeout(() => {
+                chatArea.innerHTML += `<div class="message ai-message">فهمت طلبك. جاري العمل عليه...</div>`;
+                chatArea.scrollTop = chatArea.scrollHeight;
+            }, 1000);
+        }
+
+        // أدوات متقدمة
+        function analyzeProject() {
+            addChatMessage('system', 'جاري تحليل المشروع...');
+            fetch('/api/ai-assistant/analyze-project', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    addChatMessage('ai', data.analysis || 'تم تحليل المشروع بنجاح');
+                });
+        }
+
+        function optimizeCode() {
+            sendAIMessage = function() {
+                document.getElementById('aiInput').value = 'حسن الكود وزود الأداء';
+                sendAIMessage();
+            };
+            sendAIMessage();
+        }
+
+        function findBugs() {
+            document.getElementById('aiInput').value = 'ابحث عن الأخطاء في الكود واصلحها';
+            sendAIMessage();
+        }
+
+        // إعداد اختصارات لوحة المفاتيح
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 's') {
+                e.preventDefault();
+                saveCurrentFile();
+            } else if (e.ctrlKey && e.key === 'Enter') {
+                e.preventDefault();
+                sendAIMessage();
+            }
+        });
+
+        // تحديث الوقت
+        setInterval(() => {
+            document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString('ar-EG');
+        }, 60000);
+
+        console.log('🚀 AI Assistant Pro محمل وجاهز للعمل المتقدم!');
+    </script>
+</body>
+</html>

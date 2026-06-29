@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدير الملابس - بوت Highrise EDX</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .outfit-category {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 20px;
+            border-radius: 0;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            border-color: transparent;
+            box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+        }
+
+        .accordion-body {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+        }
+
+        .outfit-item {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 12px;
+            margin: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            min-width: 200px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .outfit-item:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .outfit-item.selected {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            border-color: #28a745;
+            transform: scale(1.05);
+        }
+
+        .new-item {
+            position: relative;
+        }
+
+        .new-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border-radius: 10px;
+            padding: 2px 6px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .transform-btn {
+            background: linear-gradient(45deg, #ffd700, #ffb347);
+            border: none;
+            color: white;
+            border-radius: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .transform-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.6);
+            color: white;
+        }
+
+        .current-outfit {
+            background: linear-gradient(45deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .clear-all-btn {
+            background: linear-gradient(45deg, #dc3545, #c82333);
+            border: none;
+            color: white;
+            border-radius: 15px;
+            padding: 10px 20px;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+
+        .clear-all-btn:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .selected-outfit-display {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .category-counter {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 5px 10px;
+            margin-left: 10px;
+            font-size: 12px;
+        }
+
+        .btn-info {
+            background: linear-gradient(45deg, #17a2b8, #138496);
+            border: none;
+            color: white;
+            border-radius: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(23, 162, 184, 0.4);
+        }
+
+        .btn-info:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(23, 162, 184, 0.6);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
+        <div class="container">
+            <a class="navbar-brand text-white" href="/">
+                <i class="fas fa-robot"></i> بوت Highrise EDX
+            </a>
+            <div class="text-white">
+                <a href="/" class="btn btn-outline-light btn-sm me-2">
+                    <i class="fas fa-home"></i> الرئيسية
+                </a>
+                <a href="/outfit-creator" class="btn btn-outline-light btn-sm me-2">
+                    <i class="fas fa-magic"></i> صانع الملابس
+                </a>
+                <i class="fas fa-tshirt"></i> مدير الملابس
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="text-center text-white mb-4">
+            👗 مدير الملابس للبوت
+            <br><small class="text-light">اختر الملابس وقم بالتحويل</small>
+        </h1>
+
+        <!-- الزي الحالي -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="current-outfit">
+                    <h5 class="text-center mb-3">
+                        <i class="fas fa-user-tie text-primary"></i> الزي الحالي للبوت
+                    </h5>
+                    <div id="currentOutfitDisplay" class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">جاري التحميل...</span>
+                        </div>
+                        <p class="mt-2 text-muted">جاري تحميل الزي الحالي...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الملابس المختارة -->
+        <div class="selected-outfit-display">
+            <h5 class="text-center text-white mb-3">
+                <i class="fas fa-check-circle text-success"></i> الملابس المختارة
+            </h5>
+            <div class="alert alert-info text-center mb-3">
+                <small>
+                    <i class="fas fa-info-circle"></i> 
+                    يمكنك اختيار عدة إكسسوارات من نفس النوع - انقر مرة أخرى لإلغاء الاختيار
+                </small>
+            </div>
+            <div id="selectedOutfit" class="row">
+                <div class="col-12 text-center">
+                    <i class="fas fa-hand-pointer text-white-50" style="font-size: 48px;"></i>
+                    <p class="text-white-50 mt-2">اختر الملابس من التصنيفات أدناه</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- تصنيفات الملابس بنظام Accordion -->
+        <div class="accordion" id="outfitAccordion">
+
+            <!-- الجسم -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bodyCategory" aria-expanded="false">
+                        <i class="fas fa-user me-2"></i> الجسم 
+                        <span class="category-counter">1 قطعة</span>
+                    </button>
+                </h2>
+                <div id="bodyCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item" data-category="body" data-item="body-flesh">
+                            <span>جسم عادي</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الشعر الأمامي -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hairFrontCategory" aria-expanded="false">
+                        <i class="fas fa-cut me-2"></i> الشعر الأمامي 
+                        <span class="category-counter">33 قطعة</span>
+                    </button>
+                </h2>
+                <div id="hairFrontCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <!-- الشعر الأمامي الجديد -->
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew33">
+                            <span>أفرو قصير جداً</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew32">
+                            <span>ضفائر مربعة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew31">
+                            <span>ضفائر طويلة مقصوصة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew30">
+                            <span>ضفائر مقصوصة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew29">
+                            <span>أفرو جانبي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew27">
+                            <span>أفرو طويل مقصوص</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew26">
+                            <span>أفرو قصير مقصوص</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew25">
+                            <span>كيرلي مقصوص</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew24">
+                            <span>تجعيدات ضيقة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew23">
+                            <span>تجعيدات فضفاضة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew22">
+                            <span>تجعيدات أشعث</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew21">
+                            <span>تجعيدات قصيرة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew20">
+                            <span>قصة متوسطة متموجة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew19">
+                            <span>قصة قصيرة متموجة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew18">
+                            <span>متموج مقصوص</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew17">
+                            <span>متموج جانبي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew16">
+                            <span>جانبي أشعث</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew15">
+                            <span>أمواج للخلف مسرحة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew14">
+                            <span>أمواج للخلف منفوخة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew13">
+                            <span>مستقيم قصير</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew12">
+                            <span>مستقيم جانبي مسرح</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew11">
+                            <span>مستقيم مسرح للخلف</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew10">
+                            <span>قصة عسكرية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew09">
+                            <span>قصة عسكرية أشعث</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew08">
+                            <span>صقر مزيف</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew07">
+                            <span>مستقيم أشعث</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew06">
+                            <span>مستقيم جانبي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew05">
+                            <span>مسرح للخلف مقصوص</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew04">
+                            <span>مرفوع للأعلى</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew03">
+                            <span>جانبي مقصوص</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew02">
+                            <span>جانبي كلاسيكي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_front" data-item="hair_front-n_malenew01">
+                            <span>قصة الطاقم</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الشعر الخلفي -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hairBackCategory" aria-expanded="false">
+                        <i class="fas fa-cut me-2"></i> الشعر الخلفي 
+                        <span class="category-counter">35 قطعة</span>
+                    </button>
+                </h2>
+                <div id="hairBackCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <!-- الشعر الخلفي الجديد -->
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew33">
+                            <span>أفرو قصير جداً</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew32">
+                            <span>ضفائر مربعة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew31">
+                            <span>ضفائر طويلة مقصوصة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew30">
+                            <span>ضفائر مقصوصة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew29">
+                            <span>أفرو جانبي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew27">
+                            <span>أفرو طويل مقصوص</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew26">
+                            <span>أفرو قصير مقصوص</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew25">
+                            <span>كيرلي مقصوص</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew24">
+                            <span>تجعيدات ضيقة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew23">
+                            <span>تجعيدات فضفاضة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew22">
+                            <span>تجعيدات أشعث</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew21">
+                            <span>تجعيدات قصيرة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew20">
+                            <span>قصة متوسطة متموجة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew19">
+                            <span>قصة قصيرة متموجة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew18">
+                            <span>متموج مقصوص</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew17">
+                            <span>متموج جانبي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew16">
+                            <span>جانبي أشعث</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew15">
+                            <span>أمواج للخلف مسرحة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew14">
+                            <span>أمواج للخلف منفوخة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew13">
+                            <span>مستقيم قصير</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew12">
+                            <span>مستقيم جانبي مسرح</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew11">
+                            <span>مستقيم مسرح للخلف</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew10">
+                            <span>قصة عسكرية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew09">
+                            <span>قصة عسكرية أشعث</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew08">
+                            <span>صقر مزيف</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew07">
+                            <span>مستقيم أشعث</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew06">
+                            <span>مستقيم جانبي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew05">
+                            <span>مسرح للخلف مقصوص</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew04">
+                            <span>مرفوع للأعلى</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew03">
+                            <span>جانبي مقصوص</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew02">
+                            <span>جانبي كلاسيكي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hair_back" data-item="hair_back-n_malenew01">
+                            <span>قصة الطاقم</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item" data-category="hair_back" data-item="hair_back-n_bunspace">
+                            <span>كعكة شعر</span>
+                        </div>
+                        <div class="outfit-item" data-category="hair_back" data-item="hair_back-n_farmrewards19shaggycow">
+                            <span>شعر البقرة الأشعث</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- العيون -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eyeCategory" aria-expanded="false">
+                        <i class="fas fa-eye me-2"></i> العيون 
+                        <span class="category-counter">50+ قطعة</span>
+                    </button>
+                </h2>
+                <div id="eyeCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <!-- العيون الجديدة المضافة -->
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018zanyeyes">
+                            <span>عيون مجنونة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018woaheyes">
+                            <span>عيون مذهولة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018wingedliner">
+                            <span>آيلاينر بأجنحة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018teardrop">
+                            <span>عيون دمعة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018starryeye">
+                            <span>عيون نجمية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018squintynude">
+                            <span>عيون ضيقة طبيعية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018snakeeyes">
+                            <span>عيون الثعبان</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018smokeyeye2">
+                            <span>ظلال داكنة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018slantednude">
+                            <span>عيون مائلة طبيعية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018redeyes">
+                            <span>عيون حمراء</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018pinkshadow2">
+                            <span>ظلال وردية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018nudesquare">
+                            <span>عيون مربعة طبيعية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018nudediamond">
+                            <span>عيون ماسية طبيعية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malesquareupturned                            <span>عيون مربعة مرفوعة (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malesquaresquint">
+                            <span>عيون مربعة ضيقة (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malesquaresleepy">
+                            <span>عيون مربعة نعسانة (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malesquaredroopy">
+                            <span>عيون مربعة متدلية (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malesquare">
+                            <span>عيون مربعة (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018maleroundupturned">
+                            <span>عيون دائرية مرفوعة (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018maleroundsquint">
+                            <span>عيون دائرية ضيقة (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018maleroundsleepy">
+                            <span>عيون دائرية نعسانة (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malerounddroopy">
+                            <span>عيون دائرية متدلية (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018maleround">
+                            <span>عيون دائرية (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malediamondupturned">
+                            <span>عيون ماسية مرفوعة (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malediamondsquint">
+                            <span>عيون ماسية ضيقة (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malediamondsleepy">
+                            <span>عيون ماسية نعسانة (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malediamonddroopy">
+                            <span>عيون ماسية متدلية (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malediamond">
+                            <span>عيون ماسية (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malealmondupturned">
+                            <span>عيون لوزية مرفوعة (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malealmondsquint">
+                            <span>عيون لوزية ضيقة (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018malealmond">
+                            <span>عيون لوزية (ذكورية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <!-- العيون الأنثوية -->
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femalesquareupturned">
+                            <span>عيون مربعة مرفوعة (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femalesquaresquint">
+                            <span>عيون مربعة ضيقة (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femalesquaresleepy">
+                            <span>عيون مربعة نعسانة (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femalesquaredroopy">
+                            <span>عيون مربعة متدلية (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femalesquare">
+                            <span>عيون مربعة (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femaleroundupturned">
+                            <span>عيون دائرية مرفوعة (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femaleroundsleepy">
+                            <span>عيون دائرية نعسانة (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femalerounddroopy">
+                            <span>عيون دائرية متدلية (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femaleround">
+                            <span>عيون دائرية (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femalediamondupturned">
+                            <span>عيون ماسية مرفوعة (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femalediamondsquint">
+                            <span>عيون ماسية ضيقة (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femalediamondsleepy">
+                            <span>عيون ماسية نعسانة (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femalediamond">
+                            <span>عيون ماسية (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018femalealmond">
+                            <span>عيون لوزية (أنثوية)</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <!-- عيون أخرى -->
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018liftedeyes">
+                            <span>عيون مرفوعة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018holloweyes">
+                            <span>عيون فارغة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018heavymascera">
+                            <span>ماسكارا ثقيلة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018guyliner">
+                            <span>آيلاينر رجالي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018goldshadow2">
+                            <span>ظلال ذهبية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018falselashes">
+                            <span>رموش صناعية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018downturnedoval">
+                            <span>عيون بيضاوية متدلية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018doublewing">
+                            <span>آيلاينر بجناح مزدوج</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018dolleyes">
+                            <span>عيون دمية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018doeeyes">
+                            <span>عيون غزال</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018definedlashes">
+                            <span>رموش محددة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018crescent">
+                            <span>عيون هلالية ضيقة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018butterflyeyes">
+                            <span>عيون فراشة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018blockeyes">
+                            <span>عيون مكعبة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018animeeyes">
+                            <span>عيون أنمي أساسية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="eye" data-item="eye-n_basic2018angryeyes">
+                            <span>عيون غاضبة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <!-- العيون القديمة -->
+                        <div class="outfit-item" data-category="eye" data-item="eyes-n_virgo2019virgoamythesteyes">
+                            <span>عيون برج العذراء الجمشتية</span>
+                        </div>
+                        <div class="outfit-item" data-category="eye" data-item="eye-n_costumepartyllludcgrabone2024jbrionneeye">
+                            <span>عيون حفلة تنكرية 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الأنف -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#noseCategory" aria-expanded="false">
+                        <i class="fas fa-user-circle me-2"></i> الأنف 
+                        <span class="category-counter">1 قطعة</span>
+                    </button>
+                </h2>
+                <div id="noseCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item" data-category="nose" data-item="nose-n_01">
+                            <span>أنف عادي</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الحواجب -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eyebrowCategory" aria-expanded="false">
+                        <i class="fas fa-eye me-2"></i> الحواجب 
+                        <span class="category-counter">2 قطعة</span>
+                    </button>
+                </h2>
+                <div id="eyebrowCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item" data-category="eyebrow" data-item="eyebrow-n_26">
+                            <span>حواجب كلاسيكية</span>
+                        </div>
+                        <div class="outfit-item" data-category="eyebrow" data-item="eyebrow-n_basic2018newbrows09">
+                            <span>حواجب عصرية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الفم -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mouthCategory" aria-expanded="false">
+                        <i class="fas fa-lips me-2"></i> الفم 
+                        <span class="category-counter">4 قطع</span>
+                    </button>
+                </h2>
+                <div id="mouthCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item" data-category="mouth" data-item="mouth-basic2018thinround">
+                            <span>فم رفيع دائري</span>
+                        </div>
+                        <div class="outfit-item" data-category="mouth" data-item="mouth-basic2018downturnedthinround">
+                            <span>فم منحني</span>
+                        </div>
+                        <div class="outfit-item" data-category="mouth" data-item="mouth-basic2018lollipop">
+                            <span>فم بالمصاصة</span>
+                        </div>
+                        <div class="outfit-item new-item" data-category="mouth" data-item="mouth-n_aprilfoolsinvisible2020mouth">
+                            <span>فم خفي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- شعر الوجه -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faceHairCategory" aria-expanded="false">
+                        <i class="fas fa-user-alt me-2"></i> شعر الوجه 
+                        <span class="category-counter">1 قطعة</span>
+                    </button>
+                </h2>
+                <div id="faceHairCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item new-item" data-category="face_hair" data-item="face_hair-n_newbasicfacehairupper14">
+                            <span>شعر وجه أساسي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- النمش -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#freckleCategory" aria-expanded="false">
+                        <i class="fas fa-dot-circle me-2"></i> النمش 
+                        <span class="category-counter">1 قطعة</span>
+                    </button>
+                </h2>
+                <div id="freckleCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item" data-category="freckle" data-item="freckle-n_basic2018freckle22">
+                            <span>نمش طبيعي</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- القميص -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shirtCategory" aria-expanded="false">
+                        <i class="fas fa-tshirt me-2"></i> القمصان والتوبات 
+                        <span class="category-counter">30+ قطعة</span>
+                    </button>
+                </h2>
+                <div id="shirtCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_starteritems2019tankwhite">
+                            <span>تانك توب أبيض</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_starteritems2019tankblack">
+                            <span>تانك توب أسود</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_starteritems2019raglanwhite">
+                            <span>قميص راغلان أبيض</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_starteritems2019raglanblack">
+                            <span>قميص راغلان أسود</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_starteritems2019pulloverwhite">
+                            <span>بولوفر أبيض</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_starteritems2019pulloverblack">
+                            <span>بولوفر أسود</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_starteritems2019maletshirtwhite">
+                            <span>تيشيرت رجالي أبيض</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_starteritems2019maletshirtblack">
+                            <span>تيشيرت رجالي أسود</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_starteritems2019femtshirtwhite">
+                            <span>تيشيرت نسائي أبيض</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_starteritems2019femtshirtblack">
+                            <span>تيشيرت نسائي أسود</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room32019slouchyredtrackjacket">
+                            <span>جاكيت رياضي أحمر</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room32019malepuffyjacketgreen">
+                            <span>جاكيت منفوخ أخضر رجالي</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room32019longlineteesweatshirtgrey">
+                            <span>سويت شيرت رمادي طويل</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room32019jerseywhite">
+                            <span>جيرسي أبيض</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room32019hoodiered">
+                            <span>هودي أحمر</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_gamerskypass2022gghoodie">
+                            <span>هودي الجيمرز</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirts-n_wakeupudcskypass2023tvmlissatrapdumplingtop">
+                            <span>توب ترابدمبلنغ</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room32019femalepuffyjacketgreen">
+                            <span>جاكيت منفوخ أخضر نسائي</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room32019denimjackethoodie">
+                            <span>جاكيت جينز بهودي</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room32019croppedspaghettitankblack">
+                            <span>تانك توب أسود مقصوص</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room22109plaidjacket">
+                            <span>جاكيت مربعات</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room22019denimjacket">
+                            <span>جاكيت جينز</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room22019tuckedtstripes">
+                            <span>تيشيرت مخطط مدسوس</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room22019overalltop">
+                            <span>أوفرول علوي</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room22019denimdress">
+                            <span>فستان جينز</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room22019bratoppink">
+                            <span>برا توب وردي</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room12019sweaterwithbuttondowngrey">
+                            <span>سترة رمادية بأزرار</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room12019cropsweaterwhite">
+                            <span>سترة مقصوصة بيضاء</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room12019cropsweaterblack">
+                            <span>سترة مقصوصة سوداء</span>
+                        </div>
+                        <div class="outfit-item" data-category="shirt" data-item="shirt-n_room12019buttondownblack">
+                            <span>قميص بأزرار أسود</span>
+                        </div>
+                        <div class="outfit-item new-item" data-category="shirt" data-item="shirt-m_suit_black">
+                            <span>بدلة سوداء رجالية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="shirt" data-item="shirts-n_weddingbubblegrap2022whiteblazershirtopen">
+                            <span>بليزر زفاف أبيض مفتوح</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- البناطيل -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pantsCategory" aria-expanded="false">
+                        <i class="fas fa-user me-2"></i> البناطيل والشورتات 
+                        <span class="category-counter">25+ قطعة</span>
+                    </button>
+                </h2>
+                <div id="pantsCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item" data-category="pants" data-item="pants-n_room32019baggytrackpantsgreycamo">
+                            <span>بنطلون رياضي رمادي</span>
+                        </div>
+                        <div class="outfit-item" data-category="pants" data-item="pants-n_starteritems2019cuffedjeansblue">
+                            <span>جينز أزرق</span>
+                        </div>
+                        <div class="outfit-item" data-category="pants" data-item="pants-n_starteritems2019cuffedjeansblack">
+                            <span>جينز أسود</span>
+                        </div>
+                        <div class="outfit-item" data-category="pants" data-item="pants-n_room12019rippedpantsblack">
+                            <span>بنطلون ممزق أسود</span>
+                        </div>
+                        <div class="outfit-item" data-category="pants" data-item="pants-n_starteritems2019femjeans">
+                            <span>جينز نسائي</span>
+                        </div>
+                        <div class="outfit-item" data-category="pants" data-item="pants-n_wakeupudcskypass2023anthopophobiacozypjpants">
+                            <span>بنطلون مريح</span>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_weddingbubblegrap2022whiteslimpants">
+                            <span>بنطلون زفاف أبيض ضيق</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <!-- الشورتات الجديدة -->
+                        <div class="outfit-item new-item" data-category="pants" data-item="shorts-f_pantyhoseshortsnavy">
+                            <span>شورت أزرق بجوارب طويلة</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_starteritems2019mensshortswhite">
+                            <span>شورت أساسي أبيض</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_starteritems2019mensshortsblue">
+                            <span>شورت أساسي أزرق</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_starteritems2019mensshortsblack">
+                            <span>شورت أساسي أسود</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_starteritems2019cuffedshortswhite">
+                            <span>شورت مطوي أبيض</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_starteritems2019cuffedshortsblue">
+                            <span>شورت مطوي أزرق</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_starteritems2019cuffedshortsblack">
+                            <span>شورت مطوي أسود</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_starteritems2019cuffedjeanswhite">
+                            <span>جينز مطوي أبيض</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room32019rippedpantswhite">
+                            <span>جينز ممزق أبيض</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room32019rippedpantsblue">
+                            <span>جينز ممزق أزرق</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room32019longtrackshortscamo">
+                            <span>شورت رياضي مموه</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room32019longshortswithsocksgrey">
+                            <span>شورت طويل رمادي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room32019longshortswithsocksblack">
+                            <span>شورت طويل أسود</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room32019highwasittrackshortsblack">
+                            <span>شورت رياضي قصير أسود</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room32019baggytrackpantsred">
+                            <span>بنطلون رياضي فضفاض أحمر</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room22019undiespink">
+                            <span>سروال داخلي وردي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room22019undiesblack">
+                            <span>سروال داخلي أسود</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room22019techpantscamo">
+                            <span>بنطلون تقني مموه</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room22019shortcutoffsdenim">
+                            <span>جينز مقصوص قصير</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room22019longcutoffsdenim">
+                            <span>جينز مقصوص طويل</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room12019rippedpantsblue">
+                            <span>جينز ممزق أزرق</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room12019formalslackskhaki">
+                            <span>بنطلون رسمي كاكي</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room12019formalslacksblack">
+                            <span>بنطلون رسمي أسود</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_room12019blackacidwashjeans">
+                            <span>جينز أسود بالحمض</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="pants" data-item="pants-n_2016fallgreyacidwashjeans">
+                            <span>جينز رمادي بالحمض</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- التنانير -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#skirtCategory" aria-expanded="false">
+                        <i class="fas fa-female me-2"></i> التنانير 
+                        <span class="category-counter">9 قطع</span>
+                    </button>
+                </h2>
+                <div id="skirtCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item new-item" data-category="skirt" data-item="skirt-n_starteritems2018whiteskirt">
+                            <span>تنورة أساسية بيضاء</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="skirt" data-item="skirt-n_starteritems2018blueskirt">
+                            <span>تنورة أساسية زرقاء</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="skirt" data-item="skirt-n_starteritems2018blackskirt">
+                            <span>تنورة أساسية سوداء</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="skirt" data-item="skirt-n_room22019skirtwithsocksplaid">
+                            <span>تنورة مربعات بجوارب</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="skirt" data-item="skirt-n_room22019skirtwithsocksblack">
+                            <span>تنورة سوداء بجوارب</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="skirt" data-item="skirt-n_room12019pleatedskirtpink">
+                            <span>تنورة مطوية وردية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="skirt" data-item="skirt-n_room12019pleatedskirtgrey">
+                            <span>تنورة مطوية رمادية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="skirt" data-item="skirt-n_room12019pleatedskirtblack">
+                            <span>تنورة مطوية سوداء</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="skirt" data-item="skirt-f_gianttutu">
+                            <span>تنورة باليه</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الأحذية -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shoesCategory" aria-expanded="false">
+                        <i class="fas fa-shoe-prints me-2"></i> الأحذية والجوارب 
+                        <span class="category-counter">3 قطع</span>
+                    </button>
+                </h2>
+                <div id="shoesCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item" data-category="shoes" data-item="shoes-n_whitedans">
+                            <span>أحذية بيضاء</span>
+                        </div>
+                        <div class="outfit-item" data-category="shoes" data-item="shoes-n_room12019sneakersblack">
+                            <span>أحذية رياضية سوداء</span>
+                        </div>
+                        <div class="outfit-item" data-category="shoes" data-item="shoes-n_room22019tallsocks">
+                            <span>جوارب طويلة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- النظارات -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#glassesCategory" aria-expanded="false">
+                        <i class="fas fa-glasses me-2"></i> النظارات 
+                        <span class="category-counter">3 قطع</span>
+                    </button>
+                </h2>
+                <div id="glassesCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item" data-category="glasses" data-item="glasses-n_room12019circleframes">
+                            <span>نظارات دائرية</span>
+                        </div>
+                        <div class="outfit-item" data-category="glasses" data-item="glasses-n_10">
+                            <span>نظارات كلاسيكية</span>
+                        </div>
+                        <div class="outfit-item new-item" data-category="glasses" data-item="glasses-n_registrationavatars2023billieglasses">
+                            <span>نظارات بيلي 2023</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- القبعات -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hatCategory" aria-expanded="false">
+                        <i class="fas fa-hat-cowboy me-2"></i> القبعات والإكسسوارات 
+                        <span class="category-counter">8 قطع</span>
+                    </button>
+                </h2>
+                <div id="hatCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item" data-category="hat" data-item="hat-n_room22019beanieblack">
+                            <span>قبعة صوفية سوداء</span>
+                        </div>
+                        <div class="outfit-item" data-category="hat" data-item="hat-basic2019baseballcapblack">
+                            <span>كاب أسود</span>
+                        </div>
+                        <div class="outfit-item" data-category="hat" data-item="hat-n_froglifeskypass2023froggyyonhead">
+                            <span>قبعة ضفدع</span>
+                        </div>
+                        <div class="outfit-item" data-category="hat" data-item="hat-n_giftyyourself2023colorchangingbox">
+                            <span>صندوق متغير الألوان</span>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hat" data-item="hat-n_eidshop2020whitekufi">
+                            <span>كوفية بيضاء للعيد</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hat" data-item="hat-n_casualteenskypass2021brownsunglasses">
+                            <span>نظارة شمسية بنية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hat" data-item="hat-n_subscribercontentrecolors2024catspikeearspinkver">
+                            <span>أذان قط وردية</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="hat" data-item="hat-n_emojisales2024devil">
+                            <span>قرون الشيطان</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الساعات -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#watchCategory" aria-expanded="false">
+                        <i class="fas fa-clock me-2"></i> الساعات 
+                        <span class="category-counter">1 قطعة</span>
+                    </button>
+                </h2>
+                <div id="watchCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item" data-category="watch" data-item="watch-n_room32019blackwatch">
+                            <span>ساعة سوداء</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الحقائب -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bagCategory" aria-expanded="false">
+                        <i class="fas fa-backpack me-2"></i> الحقائب 
+                        <span class="category-counter">3 قطع</span>
+                    </button>
+                </h2>
+                <div id="bagCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item" data-category="bag" data-item="bag-n_room12019backpack">
+                            <span>حقيبة ظهر</span>
+                        </div>
+                        <div class="outfit-item new-item" data-category="bag" data-item="bag-n_amethystdailyrewards2020amethystwings">
+                            <span>أجنحة الجمشت</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="bag" data-item="bag-n_ramadan19starandcrescent">
+                            <span>حقيبة رمضان نجمة وهلال</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الحقائب اليدوية -->
+            <div class="outfit-category">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#handbagCategory" aria-expanded="false">
+                        <i class="fas fa-handbag me-2"></i> الحقائب اليدوية 
+                        <span class="category-counter">2 قطعة</span>
+                    </button>
+                </h2>
+                <div id="handbagCategory" class="accordion-collapse collapse" data-bs-parent="#outfitAccordion">
+                    <div class="accordion-body">
+                        <div class="outfit-item new-item" data-category="handbag" data-item="handbag-n_sadspring2020roseofsadness">
+                            <span>وردة الحزن</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                        <div class="outfit-item new-item" data-category="handbag" data-item="handbag-n_dailyquest2025kireylovewatch">
+                            <span>ساعة الحب</span>
+                            <div class="new-badge">جديد</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- أزرار التحكم -->
+        <div class="text-center mb-5">
+            <button class="clear-all-btn" onclick="clearAllSelections()">
+                <i class="fas fa-trash"></i> مسح الكل
+            </button>
+            <button class="transform-btn" id="transformBtn" onclick="transformOutfit()">
+                <i class="fas fa-magic"></i> تحويل الزي
+            </button>
+            <button class="btn btn-info btn-lg mx-2" onclick="saveBotCurrentOutfit()">
+                <i class="fas fa-save"></i> حفظ الزي الحالي
+            </button>
+            <!-- زر حفظ الزي باسم -->
+            <button class="btn btn-success btn-lg mx-2" onclick="showSaveOutfitModal()">
+                <i class="fas fa-bookmark"></i> حفظ مع اسم
+            </button>
+
+            <!-- زر عرض الأزياء المحفوظة -->
+            <button class="btn btn-warning btn-lg mx-2" onclick="showSavedOutfitsModal()">
+                <i class="fas fa-list"></i> الأزياء المحفوظة
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast للإشعارات -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="outfitToast" class="toast" role="alert">
+            <div class="toast-header">
+                <i class="fas fa-robot me-2"></i>
+                <strong class="me-auto">بوت الملابس</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="outfitToastBody">
+                تم تحديث الزي بنجاح!
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة حفظ الزي -->
+    <div class="modal fade" id="saveOutfitModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+                <div class="modal-header">
+                    <h5 class="modal-title text-white">
+                        <i class="fas fa-bookmark"></i> حفظ الزي باسم
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="outfitNameInput" class="form-label text-white">اسم الزي:</label>
+                        <input type="text" class="form-control" id="outfitNameInput" placeholder="أدخل اسم الزي">
+                    </div>
+                    <div class="mb-3">
+                        <label for="outfitDescInput" class="form-label text-white">وصف الزي (اختياري):</label>
+                        <textarea class="form-control" id="outfitDescInput" rows="3" placeholder="أدخل وصفاً للزي"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i> إلغاء
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="saveOutfitWithName()">
+                        <i class="fas fa-save"></i> حفظ الزي
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة عرض الأزياء المحفوظة -->
+    <div class="modal fade" id="savedOutfitsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+                <div class="modal-header">
+                    <h5 class="modal-title text-white">
+                        <i class="fas fa-list"></i> الأزياء المحفوظة
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="savedOutfitsList">
+                        <!-- سيتم عرض الأزياء المحفوظة هنا -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i> إغلاق
+                    </button>
+                    <button type="button" class="btn btn-info" onclick="refreshSavedOutfits()">
+                        <i class="fas fa-sync"></i> تحديث القائمة
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- مكان لعرض الأزياء المحفوظة في الصفحة الرئيسية -->
+    <div class="container mt-4">
+        <div id="savedOutfitsDisplay">
+            <!-- سيتم عرض الأزياء المحفوظة هنا -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let selectedOutfit = {};
+
+        // تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCurrentOutfit();
+            updateSelectedOutfitDisplay();
+            loadSavedOutfits(); // تحميل الأزياء المحفوظة عند تحميل الصفحة
+        });
+
+        // اختيار قطعة ملابس
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.outfit-item')) {
+                const item = e.target.closest('.outfit-item');
+                const category = item.getAttribute('data-category');
+                const itemId = item.getAttribute('data-item');
+
+                // تحديد التصنيفات التي تدعم إكسسوارات متعددة
+                const multipleAccessoryCategories = ['hat', 'glasses', 'watch', 'bag', 'handbag', 'freckle'];
+
+                if (multipleAccessoryCategories.includes(category)) {
+                    // للإكسسوارات: السماح بإختيار متعدد
+                    if (item.classList.contains('selected')) {
+                        // إلغاء التحديد إذا كان مختاراً
+                        item.classList.remove('selected');
+
+                        // إزالة من القائمة المختارة
+                        if (selectedOutfit[category]) {
+                            if (Array.isArray(selectedOutfit[category])) {
+                                selectedOutfit[category] = selectedOutfit[category].filter(outfit => outfit.id !== itemId);
+                                if (selectedOutfit[category].length === 0) {
+                                    delete selectedOutfit[category];
+                                }
+                            } else {
+                                delete selectedOutfit[category];
+                            }
+                        }
+                    } else {
+                        // إضافة للإختيار
+                        item.classList.add('selected');
+
+                        const outfitData = {
+                            id: itemId,
+                            name: item.querySelector('span').textContent
+                        };
+
+                        if (!selectedOutfit[category]) {
+                            selectedOutfit[category] = [outfitData];
+                        } else if (Array.isArray(selectedOutfit[category])) {
+                            selectedOutfit[category].push(outfitData);
+                        } else {
+                            // تحويل إلى مصفوفة إذا كان عنصر واحد
+                            selectedOutfit[category] = [selectedOutfit[category], outfitData];
+                        }
+                    }
+                } else {
+                    // للملابس الأساسية: إختيار واحد فقط
+                    // إلغاء تحديد العناصر الأخرى في نفس التصنيف
+                    document.querySelectorAll(`[data-category="${category}"]`).forEach(el => {
+                        el.classList.remove('selected');
+                    });
+
+                    // تحديد العنصر الجديد
+                    item.classList.add('selected');
+                    selectedOutfit[category] = {
+                        id: itemId,
+                        name: item.querySelector('span').textContent
+                    };
+                }
+
+                updateSelectedOutfitDisplay();
+            }
+        });
+
+        // مسح جميع الاختيارات
+        function clearAllSelections() {
+            selectedOutfit = {};
+            document.querySelectorAll('.outfit-item').forEach(el => {
+                el.classList.remove('selected');
+            });
+            updateSelectedOutfitDisplay();
+            showOutfitToast('🗑️ تم مسح جميع الاختيارات', 'info');
+        }
+
+        // تحديث عرض الملابس المختارة
+        function updateSelectedOutfitDisplay() {
+            const container = document.getElementById('selectedOutfit');
+            let html = '';
+
+            const categories = {
+                'body': { name: 'الجسم', icon: 'fas fa-user' },
+                'hair_front': { name: 'الشعر الأمامي', icon: 'fas fa-cut' },
+                'hair_back': { name: 'الشعر الخلفي', icon: 'fas fa-cut' },
+                'face_hair': { name: 'شعر الوجه', icon: 'fas fa-user-alt' },
+                'eye': { name: 'العيون', icon: 'fas fa-eye' },
+                'nose': { name: 'الأنف', icon: 'fas fa-user-circle' },
+                'eyebrow': { name: 'الحواجب', icon: 'fas fa-eye' },
+                'mouth': { name: 'الفم', icon: 'fas fa-lips' },
+                'shirt': { name: 'القميص', icon: 'fas fa-tshirt' },
+                'pants': { name: 'البنطلون', icon: 'fas fa-user' },
+                'skirt': { name: 'التنورة', icon: 'fas fa-female' },
+                'shoes': { name: 'الأحذية', icon: 'fas fa-shoe-prints' },
+                'glasses': { name: 'النظارات', icon: 'fas fa-glasses' },
+                'hat': { name: 'القبعة', icon: 'fas fa-hat-cowboy' },
+                'watch': { name: 'الساعة', icon: 'fas fa-clock' },
+                'bag': { name: 'الحقيبة', icon: 'fas fa-backpack' },
+                'handbag': { name: 'الحقيبة اليدوية', icon: 'fas fa-handbag' },
+                'freckle': { name: 'النمش', icon: 'fas fa-dot-circle' },
+                'fullsuit': { name: 'البدلة الكاملة', icon: 'fas fa-user-tie' }
+            };
+
+            if (Object.keys(selectedOutfit).length === 0) {
+                html = `
+                    <div class="col-12 text-center">
+                        <i class="fas fa-hand-pointer text-white-50" style="font-size: 48px;"></i>
+                        <p class="text-white-50 mt-2">اختر الملابس من التصنيفات أعلاه</p>
+                    </div>
+                `;
+            } else {
+                Object.keys(selectedOutfit).forEach(category => {
+                    const items = selectedOutfit[category];
+                    const categoryInfo = categories[category];
+
+                    if (Array.isArray(items)) {
+                        // إكسسوارات متعددة
+                        html += `
+                            <div class="col-md-6 col-sm-12 mb-2">
+                                <div class="alert alert-info mb-2">
+                                    <i class="${categoryInfo.icon}"></i>
+                                    <strong>${categoryInfo.name} (${items.length}):</strong>
+                                    <button class="btn btn-sm btn-outline-danger float-end" onclick="removeOutfitCategory('${category}')">
+                                        <i class="fas fa-trash"></i> مسح الكل
+                                    </button>
+                                    <div class="mt-2">
+                        `;
+
+                        items.forEach((item, index) => {
+                            html += `
+                                <div class="d-flex justify-content-between align-items-center mt-1 p-1 bg-white rounded">
+                                    <span class="small">${item.name}</span>
+                                    <button class="btn btn-xs btn-outline-danger" onclick="removeSpecificOutfitItem('${category}', '${item.id}')">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            `;
+                        });
+
+                        html += `
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        // قطعة واحدة فقط
+                        html += `
+                            <div class="col-md-4 col-sm-6 mb-2">
+                                <div class="alert alert-success mb-2">
+                                    <i class="${categoryInfo.icon}"></i>
+                                    <strong>${categoryInfo.name}:</strong> ${items.name}
+                                    <button class="btn btn-sm btn-outline-danger float-end" onclick="removeOutfitCategory('${category}')">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+            }
+
+            container.innerHTML = html;
+        }
+
+        // إزالة تصنيف كامل من الملابس
+        function removeOutfitCategory(category) {
+            delete selectedOutfit[category];
+            document.querySelectorAll(`[data-category="${category}"]`).forEach(el => {
+                el.classList.remove('selected');
+            });
+            updateSelectedOutfitDisplay();
+        }
+
+        // إزالة قطعة محددة من الإكسسوارات المتعددة
+        function removeSpecificOutfitItem(category, itemId) {
+            if (selectedOutfit[category] && Array.isArray(selectedOutfit[category])) {
+                // إزالة من المصفوفة
+                selectedOutfit[category] = selectedOutfit[category].filter(item => item.id !== itemId);
+
+                // حذف التصنيف إذا لم تبقى قطع
+                if (selectedOutfit[category].length === 0) {
+                    delete selectedOutfit[category];
+                }
+
+                // إزالة التحديد من العنصر في الواجهة
+                document.querySelectorAll(`[data-category="${category}"][data-item="${itemId}"]`).forEach(el => {
+                    el.classList.remove('selected');
+                });
+
+                updateSelectedOutfitDisplay();
+            }
+        }
+
+        // تحويل الزي
+        async function transformOutfit() {
+            if (Object.keys(selectedOutfit).length === 0) {
+                showOutfitToast('❌ يرجى اختيار قطع الملابس أولاً', 'danger');
+                return;
+            }
+
+            const transformBtn = document.getElementById('transformBtn');
+            transformBtn.disabled = true;
+            transformBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحويل...';
+
+            try {
+                // تحويل الإكسسوارات المتعددة إلى تنسيق مفهوم للخادم
+                const processedOutfit = {};
+
+                Object.keys(selectedOutfit).forEach(category => {
+                    const items = selectedOutfit[category];
+                    if (Array.isArray(items)) {
+                        // للإكسسوارات المتعددة: إرسال جميع القطع
+                        items.forEach((item, index) => {
+                            const categoryKey = index === 0 ? category : `${category}_${index + 1}`;
+                            processedOutfit[categoryKey] = { id: item.id, name: item.name };
+                        });
+                    } else {
+                        // للقطع الفردية
+                        processedOutfit[category] = items;
+                    }
+                });
+
+                const response = await fetch('/api/change-outfit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ outfit: processedOutfit })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showOutfitToast('✅ تم إرسال أمر تغيير الزي للبوت!', 'success');
+                    console.log('Command sent:', data.command);
+                    setTimeout(() => {
+                        loadCurrentOutfit();
+                    }, 2000);
+                } else {
+                    showOutfitToast('❌ فشل في تغيير الزي: ' + (data.error || 'خطأ غير معروف'), 'danger');
+                }
+            } catch (error) {
+                console.error('خطأ في تغيير الزي:', error);
+                showOutfitToast('❌ خطأ في الاتصال بالخادم', 'danger');
+            } finally {
+                transformBtn.disabled = false;
+                transformBtn.innerHTML = '<i class="fas fa-magic"></i> تحويل الزي';
+            }
+        }
+
+        // تحميل الزي الحالي
+        async function loadCurrentOutfit() {
+            try {
+                const response = await fetch('/api/current-outfit');
+                const data = await response.json();
+
+                const container = document.getElementById('currentOutfitDisplay');
+                if (data.success) {
+                    let html = '<div class="row">';
+
+                    if (data.outfit && Object.keys(data.outfit).length > 0) {
+                        Object.keys(data.outfit).forEach(category => {
+                            const item = data.outfit[category];
+                            html += `
+                                <div class="col-md-4 col-sm-6 mb-2">
+                                    <div class="badge bg-primary p-2">
+                                        ${category}: ${item}
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        html += '<div class="col-12 text-center"><p class="text-muted">لا توجد معلومات عن الزي الحالي</p></div>';
+                    }
+
+                    html += '</div>';
+                    container.innerHTML = html;
+                } else {
+                    container.innerHTML = '<p class="text-danger text-center">خطأ في تحميل الزي الحالي</p>';
+                }
+            } catch (error) {
+                console.error('خطأ في تحميل الزي:', error);
+                document.getElementById('currentOutfitDisplay').innerHTML = '<p class="text-danger text-center">خطأ في تحميل الزي الحالي</p>';
+            }
+        }
+
+        // عرض إشعار
+        function showOutfitToast(message, type = 'success') {
+            const toast = document.getElementById('outfitToast');
+            const toastBody = document.getElementById('outfitToastBody');
+            const toastHeader = toast.querySelector('.toast-header');
+
+            toastBody.textContent = message;
+
+            if (type === 'danger') {
+                toastHeader.className = 'toast-header bg-danger text-white';
+            } else if (type === 'info') {
+                toastHeader.className = 'toast-header bg-info text-white';
+            } else {
+                toastHeader.className = 'toast-header bg-success text-white';
+            }
+
+            const bsToast = new bootstrap.Toast(toast);
+            bsToast.show();
+        }
+
+        // حفظ الزي الحالي للبوت
+        async function saveBotCurrentOutfit() {
+            try {
+                showOutfitToast('🔄 جاري حفظ الزي الحالي...', 'info');
+
+                const response = await fetch('/api/save-bot-current-outfit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showOutfitToast('✅ تم حفظ الزي الحالي بنجاح!', 'success');
+                } else {
+                    showOutfitToast('❌ فشل في حفظ الزي: ' + result.error, 'danger');
+                }
+            } catch (error) {
+                console.error('خطأ في حفظ الزي:', error);
+                document.getElementById('savedOutfitsDisplay').innerHTML = `
+                    <p class="text-danger">خطأ في تحميل الأزياء المحفوظة</p>
+                `;
+                showOutfitToast('❌ خطأ في الاتصال بالخادم', 'danger');
+            }
+        }
+
+        // عرض نافذة حفظ الزي
+        function showSaveOutfitModal() {
+            const modal = new bootstrap.Modal(document.getElementById('saveOutfitModal'));
+            modal.show();
+        }
+
+        // حفظ الزي مع اسم مخصص
+        async function saveOutfitWithName() {
+            const outfitName = document.getElementById('outfitNameInput').value.trim();
+            const outfitDesc = document.getElementById('outfitDescInput').value.trim();
+
+            if (!outfitName) {
+                showOutfitToast('❌ يرجى إدخال اسم للزي', 'danger');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/save-outfit-with-name', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        name: outfitName, 
+                        description: outfitDesc 
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showOutfitToast(`✅ ${data.message}`, 'success');
+
+                    // إغلاق النافذة وتنظيف الحقول
+                    bootstrap.Modal.getInstance(document.getElementById('saveOutfitModal')).hide();
+                    document.getElementById('outfitNameInput').value = '';
+                    document.getElementById('outfitDescInput').value = '';
+
+                    // تحديث قائمة الأزياء المحفوظة
+                    loadSavedOutfits();
+                } else {
+                    showOutfitToast(`❌ ${data.error}`, 'danger');
+                }
+            } catch (error) {
+                console.error('خطأ في حفظ الزي:', error);
+                showOutfitToast('❌ خطأ في الاتصال بالخادم', 'danger');
+            }
+        }
+
+        // عرض نافذة الأزياء المحفوظة
+        function showSavedOutfitsModal() {
+            const modal = new bootstrap.Modal(document.getElementById('savedOutfitsModal'));
+            modal.show();
+            loadSavedOutfitsInModal();
+        }
+
+        // تحميل الأزياء المحفوظة في النافذة
+        async function loadSavedOutfitsInModal() {
+            try {
+                const response = await fetch('/api/saved-outfits');
+                const data = await response.json();
+
+                const container = document.getElementById('savedOutfitsList');
+
+                if (data.success && data.outfits.length > 0) {
+                    let html = '';
+                    data.outfits.forEach(outfit => {
+                        const savedDate = new Date(outfit.saved_at).toLocaleDateString('ar-EG');
+                        const previewText = outfit.preview_items.slice(0, 3).join(', ') + 
+                                          (outfit.total_items > 3 ? ` و ${outfit.total_items - 3} آخرين` : '');
+
+                        html += `
+                            <div class="card mb-3" style="background: rgba(255,255,255,0.1);">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="flex-grow-1">
+                                            <h6 class="card-title text-white mb-1">
+                                                <i class="fas fa-bookmark text-warning"></i> ${outfit.name}
+                                            </h6>
+                                            ${outfit.description ? `<p class="card-text small text-light">${outfit.description}</p>` : ''}
+                                            <p class="card-text small text-white-50">
+                                                📅 ${savedDate} | 👔 ${outfit.total_items} قطعة
+                                            </p>
+                                            <p class="card-text small text-white-50" title="${outfit.preview_items.join(', ')}">
+                                                ${previewText}
+                                            </p>
+                                        </div>
+                                        <div class="btn-group-vertical">
+                                            <button class="btn btn-sm btn-success mb-1" onclick="applySavedOutfit('${outfit.id}', '${outfit.name}')">
+                                                <i class="fas fa-play"></i> تطبيق
+                                            </button>
+                                            <button class="btn btn-sm btn-danger" onclick="deleteSavedOutfit('${outfit.id}', '${outfit.name}')">
+                                                <i class="fas fa-trash"></i> حذف
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    container.innerHTML = html;
+                } else {
+                    container.innerHTML = `
+                        <div class="text-center">
+                            <i class="fas fa-bookmark text-white-50" style="font-size: 48px;"></i>
+                            <p class="text-white-50 mt-2">لا توجد أزياء محفوظة</p>
+                            <p class="text-white-50 small">استخدم زر "حفظ مع اسم" لحفظ الأزياء</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('خطأ في تحميل الأزياء المحفوظة:', error);
+                document.getElementById('savedOutfitsList').innerHTML = `
+                    <div class="alert alert-danger">
+                        خطأ في تحميل الأزياء المحفوظة
+                    </div>
+                `;
+            }
+        }
+
+        // تطبيق زي محفوظ
+        async function applySavedOutfit(outfitId, outfitName) {
+            try {
+                const response = await fetch('/api/apply-saved-outfit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ outfit_id: outfitId })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showOutfitToast(`✅ تم إرسال أمر تطبيق الزي "${outfitName}"`, 'success');
+
+                    // إغلاق النافذة
+                    bootstrap.Modal.getInstance(document.getElementById('savedOutfitsModal')).hide();
+
+                    // تحديث الزي الحالي بعد تأخير قصير
+                    setTimeout(() => {
+                        loadCurrentOutfit();
+                    }, 2000);
+                } else {
+                    showOutfitToast(`❌ ${data.error}`, 'danger');
+                }
+            } catch (error) {
+                console.error('خطأ في تطبيق الزي:', error);
+                showOutfitToast('❌ خطأ في الاتصال بالخادم', 'danger');
+            }
+        }
+
+        // حذف زي محفوظ
+        async function deleteSavedOutfit(outfitId, outfitName) {
+            if (!confirm(`هل أنت متأكد من حذف الزي "${outfitName}"؟`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/delete-saved-outfit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ outfit_id: outfitId })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showOutfitToast(`✅ ${data.message}`, 'success');
+
+                    // تحديث قائمة الأزياء
+                    loadSavedOutfitsInModal();
+                    loadSavedOutfits();
+                } else {
+                    showOutfitToast(`❌ ${data.error}`, 'danger');
+                }
+            } catch (error) {
+                console.error('خطأ في حذف الزي:', error);
+                showOutfitToast('❌ خطأ في الاتصال بالخادم', 'danger');
+            }
+        }
+
+        // تحديث الأزياء المحفوظة
+        function refreshSavedOutfits() {
+            loadSavedOutfitsInModal();
+            loadSavedOutfits();
+        }
+
+        // تحميل الأزياء المحفوظة في الصفحة الرئيسية
+        async function loadSavedOutfits() {
+            try {
+                const response = await fetch('/api/saved-outfits');
+                const data = await response.json();
+
+                const container = document.getElementById('savedOutfitsDisplay');
+
+                if (data.success && data.outfits.length > 0) {
+                    let html = `
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <h6 class="text-center text-white">
+                                    📚 لديك ${data.total_count} ${data.total_count === 1 ? 'زي محفوظ' : 'أزياء محفوظة'}
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                    `;
+
+                    // عرض أول 6 أزياء
+                    data.outfits.slice(0, 6).forEach(outfit => {
+                        const savedDate = new Date(outfit.saved_at).toLocaleDateString('ar-EG');
+                        html += `
+                            <div class="col-md-4 col-sm-6 mb-3">
+                                <div class="alert alert-info mb-0" style="cursor: pointer;" onclick="applySavedOutfit('${outfit.id}', '${outfit.name}')">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>${outfit.name}</strong><br>
+                                            <small>${outfit.total_items} قطعة | ${savedDate}</small>
+                                        </div>
+                                        <i class="fas fa-play text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    html += '</div>';
+
+                    if (data.total_count > 6) {
+                        html += `
+                            <div class="text-center mt-2">
+                                <button class="btn btn-outline-light btn-sm" onclick="showSavedOutfitsModal()">
+                                    عرض جميع الأزياء (${data.total_count})
+                                </button>
+                            </div>
+                        `;
+                    }
+
+                    container.innerHTML = html;
+                } else {
+                    container.innerHTML = `
+                        <div class="text-center">
+                            <i class="fas fa-bookmark text-white-50" style="font-size: 48px;"></i>
+                            <p class="text-white-50 mt-2">لا توجد أزياء محفوظة</p>
+                            <p class="text-white-50 small">استخدم زر "حفظ مع اسم" لحفظ أزيائك المفضلة</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('خطأ في تحميل الأزياء المحفوظة:', error);
+                document.getElementById('savedOutfitsDisplay').innerHTML = `
+                    <p class="text-danger">خطأ في تحميل الأزياء المحفوظة</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

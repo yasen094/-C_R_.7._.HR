@@ -1,0 +1,624 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💬 إدارة الردود التلقائية - بوت Highrise EDX</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
+    <div class="container-fluid py-4">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
+                <!-- Header -->
+                <div class="text-center mb-4">
+                    <h1 class="display-4 text-primary mb-3">
+                        <i class="fas fa-comments"></i> إدارة الردود التلقائية
+                    </h1>
+                    <p class="lead text-muted">تخصيص الردود الترحيبية والوداعية لكل نوع من المستخدمين</p>
+                </div>
+
+                <!-- إعدادات سريعة -->
+                <div class="card bg-secondary mb-4">
+                    <div class="card-header">
+                        <h5><i class="fas fa-cogs"></i> الإعدادات السريعة</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button id="toggleWelcome" class="btn btn-success btn-sm me-2">
+                                    <i class="fas fa-hand-wave"></i> تفعيل الترحيب
+                                </button>
+                                <button id="toggleFarewell" class="btn btn-success btn-sm">
+                                    <i class="fas fa-hand-wave"></i> تفعيل الوداع
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button id="reloadResponses" class="btn btn-info btn-sm">
+                                    <i class="fas fa-sync"></i> إعادة تحميل الردود
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- تبويبات الردود -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs justify-content-center" id="responsesTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="welcome-tab" data-bs-toggle="tab" data-bs-target="#welcome-content" type="button" role="tab">
+                                    <i class="fas fa-hand-wave"></i> رسائل الترحيب
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="farewell-tab" data-bs-toggle="tab" data-bs-target="#farewell-content" type="button" role="tab">
+                                    <i class="fas fa-door-open"></i> رسائل الوداع
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- محتوى التبويبات -->
+                <div class="tab-content" id="responsesTabContent">
+                    <!-- تبويب رسائل الترحيب -->
+                    <div class="tab-pane fade show active" id="welcome-content" role="tabpanel">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card bg-secondary">
+                                    <div class="card-header">
+                                        <h5><i class="fas fa-hand-wave"></i> رسائل الترحيب حسب نوع المستخدم</h5>
+                                    </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <!-- مطور البوت -->
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card bg-dark">
+                                            <div class="card-header bg-warning text-dark">
+                                                <h6><i class="fas fa-crown"></i> مطور البوت</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="botDeveloperResponses" class="responses-list"></div>
+                                                <div class="mt-2">
+                                                    <input type="text" id="newBotDeveloperResponse" class="form-control form-control-sm mb-2" placeholder="رسالة جديدة للمطور...">
+                                                    <button onclick="addResponse('bot_developer')" class="btn btn-warning btn-sm">
+                                                        <i class="fas fa-plus"></i> إضافة رد
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- المشرفين -->
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card bg-dark">
+                                            <div class="card-header bg-danger">
+                                                <h6><i class="fas fa-shield-alt"></i> المشرفين</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="moderatorResponses" class="responses-list"></div>
+                                                <div class="mt-2">
+                                                    <input type="text" id="newModeratorResponse" class="form-control form-control-sm mb-2" placeholder="رسالة جديدة...">
+                                                    <button onclick="addResponse('moderator')" class="btn btn-danger btn-sm">
+                                                        <i class="fas fa-plus"></i> إضافة
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- VIP -->
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card bg-dark">
+                                            <div class="card-header bg-info">
+                                                <h6><i class="fas fa-gem"></i> الأعضاء المميزين</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="vipUserResponses" class="responses-list"></div>
+                                                <div class="mt-2">
+                                                    <input type="text" id="newVipUserResponse" class="form-control form-control-sm mb-2" placeholder="رسالة جديدة للـ VIP...">
+                                                    <button onclick="addResponse('vip_user')" class="btn btn-info btn-sm">
+                                                        <i class="fas fa-plus"></i> إضافة رد
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- المستخدمين العاديين -->
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card bg-dark">
+                                            <div class="card-header bg-success">
+                                                <h6><i class="fas fa-user"></i> المستخدمين العاديين</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="userResponses" class="responses-list"></div>
+                                                <div class="mt-2">
+                                                    <input type="text" id="newUserResponse" class="form-control form-control-sm mb-2" placeholder="رسالة جديدة...">
+                                                    <button onclick="addResponse('user')" class="btn btn-success btn-sm">
+                                                        <i class="fas fa-plus"></i> إضافة
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- تبويب رسائل الوداع -->
+            <div class="tab-pane fade" id="farewell-content" role="tabpanel">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card bg-secondary">
+                            <div class="card-header">
+                                <h5><i class="fas fa-door-open"></i> رسائل الوداع حسب نوع المستخدم</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <!-- مطور البوت - وداع -->
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card bg-dark">
+                                            <div class="card-header bg-warning text-dark">
+                                                <h6><i class="fas fa-crown"></i> مطور البوت - وداع</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="farewellBotDeveloperResponses" class="responses-list"></div>
+                                                <div class="mt-2">
+                                                    <input type="text" id="newFarewellBotDeveloperResponse" class="form-control form-control-sm mb-2" placeholder="رسالة وداع جديدة للمطور...">
+                                                    <button onclick="addFarewellResponse('bot_developer')" class="btn btn-warning btn-sm">
+                                                        <i class="fas fa-plus"></i> إضافة رد وداع
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- المشرفين - وداع -->
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card bg-dark">
+                                            <div class="card-header bg-danger">
+                                                <h6><i class="fas fa-shield-alt"></i> المشرفين - وداع</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="farewellModeratorResponses" class="responses-list"></div>
+                                                <div class="mt-2">
+                                                    <input type="text" id="newFarewellModeratorResponse" class="form-control form-control-sm mb-2" placeholder="رسالة وداع جديدة...">
+                                                    <button onclick="addFarewellResponse('moderator')" class="btn btn-danger btn-sm">
+                                                        <i class="fas fa-plus"></i> إضافة وداع
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ملاك الغرفة - وداع -->
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card bg-dark">
+                                            <div class="card-header bg-primary">
+                                                <h6><i class="fas fa-crown"></i> ملاك الغرفة - وداع</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="farewellRoomOwnerResponses" class="responses-list"></div>
+                                                <div class="mt-2">
+                                                    <input type="text" id="newFarewellRoomOwnerResponse" class="form-control form-control-sm mb-2" placeholder="رسالة وداع لمالك الغرفة...">
+                                                    <button onclick="addFarewellResponse('room_owner')" class="btn btn-primary btn-sm">
+                                                        <i class="fas fa-plus"></i> إضافة وداع
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ملك الغرفة - وداع -->
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card bg-dark">
+                                            <div class="card-header bg-gold text-dark" style="background-color: #FFD700;">
+                                                <h6><i class="fas fa-chess-king"></i> ملك الغرفة - وداع</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="farewellRoomKingResponses" class="responses-list"></div>
+                                                <div class="mt-2">
+                                                    <input type="text" id="newFarewellRoomKingResponse" class="form-control form-control-sm mb-2" placeholder="رسالة وداع للملك...">
+                                                    <button onclick="addFarewellResponse('room_king')" class="btn btn-sm" style="background-color: #FFD700; color: black;">
+                                                        <i class="fas fa-plus"></i> إضافة وداع
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ملكة الغرفة - وداع -->
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card bg-dark">
+                                            <div class="card-header text-white" style="background-color: #FF69B4;">
+                                                <h6><i class="fas fa-chess-queen"></i> ملكة الغرفة - وداع</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="farewellRoomQueenResponses" class="responses-list"></div>
+                                                <div class="mt-2">
+                                                    <input type="text" id="newFarewellRoomQueenResponse" class="form-control form-control-sm mb-2" placeholder="رسالة وداع للملكة...">
+                                                    <button onclick="addFarewellResponse('room_queen')" class="btn btn-sm" style="background-color: #FF69B4; color: white;">
+                                                        <i class="fas fa-plus"></i> إضافة وداع
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- المستخدمين العاديين - وداع -->
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card bg-dark">
+                                            <div class="card-header bg-success">
+                                                <h6><i class="fas fa-user"></i> المستخدمين العاديين - وداع</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="farewellUserResponses" class="responses-list"></div>
+                                                <div class="mt-2">
+                                                    <input type="text" id="newFarewellUserResponse" class="form-control form-control-sm mb-2" placeholder="رسالة وداع جديدة...">
+                                                    <button onclick="addFarewellResponse('user')" class="btn btn-success btn-sm">
+                                                        <i class="fas fa-plus"></i> إضافة وداع
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- زر العودة -->
+                <div class="text-center mt-4">
+                    <a href="/" class="btn btn-outline-light">
+                        <i class="fas fa-arrow-right"></i> العودة للوحة التحكم
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast للإشعارات -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="responseToast" class="toast" role="alert">
+            <div class="toast-header">
+                <strong class="me-auto">إشعار</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="toastMessage"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentResponses = {};
+
+        // تحميل الردود عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            loadResponses();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            document.getElementById('toggleWelcome').addEventListener('click', toggleWelcome);
+            document.getElementById('toggleFarewell').addEventListener('click', toggleFarewell);
+            document.getElementById('reloadResponses').addEventListener('click', loadResponses);
+        }
+
+        async function loadResponses() {
+            try {
+                const response = await fetch('/api/responses/get');
+                const data = await response.json();
+                currentResponses = data;
+                updateUI();
+                showToast('تم تحميل الردود بنجاح', 'success');
+            } catch (error) {
+                showToast('خطأ في تحميل الردود', 'error');
+            }
+        }
+
+        function updateUI() {
+            // تحديث حالة الأزرار
+            const welcomeBtn = document.getElementById('toggleWelcome');
+            const farewellBtn = document.getElementById('toggleFarewell');
+            
+            if (currentResponses.settings?.welcome_enabled) {
+                welcomeBtn.className = 'btn btn-success btn-sm me-2';
+                welcomeBtn.innerHTML = '<i class="fas fa-hand-wave"></i> تفعيل الترحيب';
+            } else {
+                welcomeBtn.className = 'btn btn-outline-success btn-sm me-2';
+                welcomeBtn.innerHTML = '<i class="fas fa-hand-wave"></i> إيقاف الترحيب';
+            }
+
+            if (currentResponses.settings?.farewell_enabled) {
+                farewellBtn.className = 'btn btn-success btn-sm';
+                farewellBtn.innerHTML = '<i class="fas fa-hand-wave"></i> تفعيل الوداع';
+            } else {
+                farewellBtn.className = 'btn btn-outline-success btn-sm';
+                farewellBtn.innerHTML = '<i class="fas fa-hand-wave"></i> إيقاف الوداع';
+            }
+
+            // تحديث قوائم ردود الترحيب
+            updateResponsesList('bot_developer', 'botDeveloperResponses');
+            updateResponsesList('moderator', 'moderatorResponses');
+            updateResponsesList('vip_user', 'vipUserResponses');
+            updateResponsesList('user', 'userResponses');
+
+            // تحديث قوائم ردود الوداع
+            updateFarewellResponsesList('bot_developer', 'farewellBotDeveloperResponses');
+            updateFarewellResponsesList('moderator', 'farewellModeratorResponses');
+            updateFarewellResponsesList('room_owner', 'farewellRoomOwnerResponses');
+            updateFarewellResponsesList('room_king', 'farewellRoomKingResponses');
+            updateFarewellResponsesList('room_queen', 'farewellRoomQueenResponses');
+            updateFarewellResponsesList('user', 'farewellUserResponses');
+        }
+
+        function updateResponsesList(userType, containerId) {
+            const container = document.getElementById(containerId);
+            const responses = currentResponses.welcome_responses?.[userType] || [];
+            
+            container.innerHTML = '';
+            responses.forEach((response, index) => {
+                const responseDiv = document.createElement('div');
+                responseDiv.className = 'response-item mb-2 p-2 bg-light text-dark rounded';
+                responseDiv.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="flex-grow-1">${response}</span>
+                        <button onclick="removeResponse('${userType}', ${index})" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                container.appendChild(responseDiv);
+            });
+        }
+
+        function updateFarewellResponsesList(userType, containerId) {
+            const container = document.getElementById(containerId);
+            const responses = currentResponses.farewell_messages?.[userType] || [];
+            
+            container.innerHTML = '';
+            responses.forEach((response, index) => {
+                const responseDiv = document.createElement('div');
+                responseDiv.className = 'response-item mb-2 p-2 bg-light text-dark rounded';
+                responseDiv.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="flex-grow-1">${response}</span>
+                        <button onclick="removeFarewellResponse('${userType}', ${index})" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                container.appendChild(responseDiv);
+            });
+        }
+
+        async function addResponse(userType) {
+            let inputId;
+            switch(userType) {
+                case 'bot_developer':
+                    inputId = 'newBotDeveloperResponse';
+                    break;
+                case 'moderator':
+                    inputId = 'newModeratorResponse';
+                    break;
+                case 'vip_user':
+                    inputId = 'newVipUserResponse';
+                    break;
+                case 'user':
+                    inputId = 'newUserResponse';
+                    break;
+                default:
+                    inputId = `new${userType.charAt(0).toUpperCase() + userType.slice(1)}Response`;
+            }
+            
+            const input = document.getElementById(inputId);
+            if (!input) {
+                console.error(`لم يتم العثور على العنصر: ${inputId}`);
+                showToast('خطأ في العثور على حقل النص', 'error');
+                return;
+            }
+            const message = input.value.trim();
+            
+            if (!message) {
+                showToast('يرجى إدخال رسالة', 'warning');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/responses/add', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        user_type: userType,
+                        message: message
+                    })
+                });
+
+                if (response.ok) {
+                    input.value = '';
+                    loadResponses();
+                    showToast('تم إضافة الرسالة بنجاح', 'success');
+                } else {
+                    showToast('خطأ في إضافة الرسالة', 'error');
+                }
+            } catch (error) {
+                showToast('خطأ في الاتصال', 'error');
+            }
+        }
+
+        async function removeResponse(userType, index) {
+            try {
+                const response = await fetch('/api/responses/remove', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        user_type: userType,
+                        index: index
+                    })
+                });
+
+                if (response.ok) {
+                    loadResponses();
+                    showToast('تم حذف الرسالة بنجاح', 'success');
+                } else {
+                    showToast('خطأ في حذف الرسالة', 'error');
+                }
+            } catch (error) {
+                showToast('خطأ في الاتصال', 'error');
+            }
+        }
+
+        async function toggleWelcome() {
+            try {
+                const response = await fetch('/api/responses/toggle-welcome', { method: 'POST' });
+                if (response.ok) {
+                    loadResponses();
+                    showToast('تم تغيير حالة الترحيب', 'success');
+                }
+            } catch (error) {
+                showToast('خطأ في تغيير الإعدادات', 'error');
+            }
+        }
+
+        async function toggleFarewell() {
+            try {
+                const response = await fetch('/api/responses/toggle-farewell', { method: 'POST' });
+                if (response.ok) {
+                    loadResponses();
+                    showToast('تم تغيير حالة الوداع', 'success');
+                }
+            } catch (error) {
+                showToast('خطأ في تغيير الإعدادات', 'error');
+            }
+        }
+
+        async function addFarewellResponse(userType) {
+            let inputId;
+            switch(userType) {
+                case 'bot_developer':
+                    inputId = 'newFarewellBotDeveloperResponse';
+                    break;
+                case 'moderator':
+                    inputId = 'newFarewellModeratorResponse';
+                    break;
+                case 'room_owner':
+                    inputId = 'newFarewellRoomOwnerResponse';
+                    break;
+                case 'room_king':
+                    inputId = 'newFarewellRoomKingResponse';
+                    break;
+                case 'room_queen':
+                    inputId = 'newFarewellRoomQueenResponse';
+                    break;
+                case 'user':
+                    inputId = 'newFarewellUserResponse';
+                    break;
+                default:
+                    inputId = `newFarewell${userType.charAt(0).toUpperCase() + userType.slice(1)}Response`;
+            }
+            
+            const input = document.getElementById(inputId);
+            if (!input) {
+                console.error(`لم يتم العثور على العنصر: ${inputId}`);
+                showToast('خطأ في العثور على حقل النص', 'error');
+                return;
+            }
+            const message = input.value.trim();
+            
+            if (!message) {
+                showToast('يرجى إدخال رسالة وداع', 'warning');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/responses/add-farewell', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        user_type: userType,
+                        message: message
+                    })
+                });
+
+                if (response.ok) {
+                    input.value = '';
+                    loadResponses();
+                    showToast('تم إضافة رسالة الوداع بنجاح', 'success');
+                } else {
+                    showToast('خطأ في إضافة رسالة الوداع', 'error');
+                }
+            } catch (error) {
+                showToast('خطأ في الاتصال', 'error');
+            }
+        }
+
+        async function removeFarewellResponse(userType, index) {
+            try {
+                const response = await fetch('/api/responses/remove-farewell', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        user_type: userType,
+                        index: index
+                    })
+                });
+
+                if (response.ok) {
+                    loadResponses();
+                    showToast('تم حذف رسالة الوداع بنجاح', 'success');
+                } else {
+                    showToast('خطأ في حذف رسالة الوداع', 'error');
+                }
+            } catch (error) {
+                showToast('خطأ في الاتصال', 'error');
+            }
+        }
+
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('responseToast');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastHeader = toast.querySelector('.toast-header strong');
+            
+            toastMessage.textContent = message;
+            
+            // تغيير لون Toast حسب النوع
+            toast.className = 'toast';
+            if (type === 'success') {
+                toast.classList.add('bg-success', 'text-white');
+                toastHeader.textContent = 'نجح العملية';
+            } else if (type === 'error') {
+                toast.classList.add('bg-danger', 'text-white');
+                toastHeader.textContent = 'خطأ';
+            } else if (type === 'warning') {
+                toast.classList.add('bg-warning', 'text-dark');
+                toastHeader.textContent = 'تحذير';
+            } else {
+                toast.classList.add('bg-info', 'text-white');
+                toastHeader.textContent = 'إشعار';
+            }
+            
+            const toastInstance = new bootstrap.Toast(toast);
+            toastInstance.show();
+        }
+    </script>
+</body>
+</html>

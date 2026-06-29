@@ -1,0 +1,98 @@
+{
+  "spawn": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "facing": "FrontRight"
+    },
+    "saved_by": "VECTOR000",
+    "saved_at": "2025-06-20T14:00:00.000000",
+    "description": "تم حفظه بواسطة VECTOR000"
+  },
+  "vip_lounge": {
+    "position": {
+      "type": "Position",
+      "x": 15.0,
+      "y": 10.0,
+      "z": 15.0,
+      "facing": "FrontRight"
+    },
+    "saved_by": "VECTOR000",
+    "saved_at": "2025-06-20T14:52:00.000000",
+    "description": "تم حفظه بواسطة VECTOR000"
+  },
+  "1": {
+    "position": {
+      "type": "Position",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "facing": "FrontLeft"
+    },
+    "saved_by": "VECTOR000",
+    "saved_at": "2025-06-20T22:55:09.349031",
+    "description": "تم حفظه بواسطة VECTOR000"
+  },
+  "6": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 7.5,
+      "facing": "FrontRight"
+    },
+    "saved_by": "VECTOR000",
+    "saved_at": "2025-06-23T11:15:32.194820",
+    "description": "تم حفظه بواسطة VECTOR000"
+  },
+  "7": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 7.5,
+      "facing": "FrontRight"
+    },
+    "saved_by": "VECTOR000",
+    "saved_at": "2025-06-23T11:33:10.648991",
+    "description": "تم حفظه بواسطة VECTOR000"
+  },
+  "٨٨": {
+    "position": {
+      "type": "Position",
+      "x": 19.5,
+      "y": 0.0,
+      "z": 9.5,
+      "facing": "FrontLeft"
+    },
+    "saved_by": "VECTOR000",
+    "saved_at": "2025-06-23T12:58:34.366428",
+    "description": "تم حفظه بواسطة VECTOR000"
+  },
+  "٣٤": {
+    "position": {
+      "type": "Position",
+      "x": 17.0,
+      "y": 0.0,
+      "z": 6.5,
+      "facing": "FrontRight"
+    },
+    "saved_by": "VECTOR000",
+    "saved_at": "2025-06-23T13:00:03.810451",
+    "description": "تم حفظه بواسطة VECTOR000"
+  },
+  "٥0": {
+    "position": {
+      "type": "Position",
+      "x": 17.0,
+      "y": 0.0,
+      "z": 7.0,
+      "facing": "FrontRight"
+    },
+    "saved_by": "VECTOR000",
+    "saved_at": "2025-06-23T13:01:16.682491",
+    "description": "تم حفظه بواسطة VECTOR000"
+  }
+}

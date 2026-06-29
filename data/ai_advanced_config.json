@@ -1,0 +1,88 @@
+
+{
+  "advanced_ai_settings": {
+    "memory_enabled": true,
+    "system_access_enabled": true,
+    "learning_enabled": true,
+    "context_depth": "deep",
+    "response_quality": "high",
+    "personality_adaptation": true
+  },
+  "capabilities": {
+    "read_chat_history": true,
+    "access_user_data": true,
+    "analyze_patterns": true,
+    "learn_preferences": true,
+    "adapt_personality": true,
+    "use_system_knowledge": true
+  },
+  "memory_settings": {
+    "max_conversations_remembered": 100,
+    "max_topics_per_user": 5,
+    "max_personality_traits": 3,
+    "memory_cleanup_interval": 7,
+    "long_term_memory_enabled": true
+  },
+  "response_enhancement": {
+    "use_time_context": true,
+    "use_room_activity": true,
+    "use_user_mood": true,
+    "use_conversation_history": true,
+    "personalization_level": "high"
+  },
+  "learning_parameters": {
+    "learn_from_interactions": true,
+    "adapt_to_user_style": true,
+    "remember_preferences": true,
+    "improve_responses": true,
+    "update_knowledge_base": true
+  }
+}
+{
+  "ai_personality": {
+    "name": "مساعد EDX الذكي",
+    "role": "مساعد بوت متقدم",
+    "personality_traits": [
+      "ذكي ومفيد",
+      "ودود ومتفهم", 
+      "محترف في التعامل",
+      "سريع الاستجابة",
+      "قادر على تنفيذ الأوامر",
+      "يفهم البرمجة والكود"
+    ]
+  },
+  "capabilities": {
+    "command_execution": true,
+    "code_analysis": true,
+    "user_management": true,
+    "system_monitoring": true,
+    "advanced_responses": true,
+    "room_analysis": true,
+    "chat_log_analysis": true,
+    "moderator_detection": true
+  },
+  "response_settings": {
+    "max_length": 250,
+    "use_emojis": true,
+    "formal_tone": false,
+    "include_examples": true,
+    "split_long_messages": true,
+    "response_delay": 1
+  },
+  "permissions": {
+    "execute_user_commands": true,
+    "execute_moderator_commands": true,
+    "access_user_data": true,
+    "analyze_system": true,
+    "read_chat_logs": true,
+    "get_room_info": true
+  },
+  "command_mapping": {
+    "معلومات_الغرفة": "get_room_info",
+    "قائمة_المستخدمين": "get_user_list", 
+    "المشرفين": "get_moderators",
+    "تحليل_السجلات": "analyze_chat_logs",
+    "حالة_النظام": "get_bot_status",
+    "تحليل_الكود": "get_code_analysis"
+  }
+}

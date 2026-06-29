@@ -1,0 +1,22 @@
+{
+  "room_moderators": {
+    "NVuM_1": {
+      "level": "room_moderator",
+      "reason": "مشرف في الغرفة: known_moderator=True",
+      "user_id": "657a06ae5f8a5ec3ff16ec1b",
+      "detected_at": "2025-06-17T20:38:14.640130"
+    }
+  },
+  "room_stats": {
+    "total_users": 48,
+    "active_users": 2,
+    "moderators_count": 1,
+    "last_scan": "2025-06-17T20:38:14.640273",
+    "detection_methods": {
+      "traditional": 1,
+      "advanced": 0,
+      "behavior": 0
+    }
+  },
+  "last_updated": "2025-06-17T20:38:14.640290"
+}

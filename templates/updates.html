@@ -1,0 +1,1335 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔄 إدارة التحديثات المتطورة - بوت Highrise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* تأثيرات الخلفية المتحركة */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(120, 200, 255, 0.3) 0%, transparent 50%);
+            z-index: -1;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* شريط التنقل المحسن */
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* البطاقات المحسنة */
+        .modern-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .modern-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .modern-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.8s;
+        }
+
+        .modern-card:hover::before {
+            left: 100%;
+        }
+
+        .card-header-custom {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+            border: none;
+            padding: 1.5rem;
+            border-radius: 24px 24px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header-custom::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+                        linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%);
+            background-size: 20px 20px;
+            animation: movePattern 20s linear infinite;
+        }
+
+        @keyframes movePattern {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 40px; }
+        }
+
+        .card-title-custom {
+            color: white;
+            font-weight: 700;
+            font-size: 1.4rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* منطقة رفع الملفات المحسنة */
+        .drop-zone-modern {
+            border: 3px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .drop-zone-modern::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: rotate 8s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .drop-zone-modern:hover::before {
+            opacity: 1;
+        }
+
+        .drop-zone-modern:hover,
+        .drop-zone-modern.dragover {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2);
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .drop-zone-icon {
+            font-size: 4rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .drop-zone-text {
+            color: white;
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .drop-zone-subtext {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* معلومات الملف المحسنة */
+        .file-info-modern {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .file-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .file-detail-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .file-detail-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .file-detail-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .file-detail-value {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* الأزرار المحسنة */
+        .btn-modern {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-modern:hover::before {
+            left: 100%;
+        }
+
+        .btn-modern:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+
+        .btn-modern:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        .btn-success-modern {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            box-shadow: 0 4px 20px rgba(40, 167, 69, 0.3);
+        }
+
+        .btn-success-modern:hover {
+            box-shadow: 0 8px 30px rgba(40, 167, 69, 0.4);
+        }
+
+        .btn-warning-modern {
+            background: linear-gradient(135deg, #ffc107, #fd7e14);
+            box-shadow: 0 4px 20px rgba(255, 193, 7, 0.3);
+        }
+
+        .btn-warning-modern:hover {
+            box-shadow: 0 8px 30px rgba(255, 193, 7, 0.4);
+        }
+
+        /* قائمة الملفات المشابهة */
+        .similar-files-container {
+            max-height: 300px;
+            overflow-y: auto;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+        }
+
+        .similar-file-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .similar-file-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+            border-color: #ffd700;
+        }
+
+        .similar-file-item.selected {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+            border-color: #ffd700;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2);
+        }
+
+        /* شريط التقدم المحسن */
+        .progress-modern {
+            height: 8px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-bar-modern {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar-modern::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* منطقة الحالة المحسنة */
+        .status-area-modern {
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3); }
+            50% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+        }
+
+        .alert-success-modern {
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.8), rgba(32, 201, 151, 0.8));
+            color: white;
+            border-color: rgba(40, 167, 69, 0.5);
+        }
+
+        .alert-warning-modern {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.8), rgba(253, 126, 20, 0.8));
+            color: white;
+            border-color: rgba(255, 193, 7, 0.5);
+        }
+
+        .alert-danger-modern {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.8), rgba(255, 99, 71, 0.8));
+            color: white;
+            border-color: rgba(220, 53, 69, 0.5);
+        }
+
+        .alert-info-modern {
+            background: linear-gradient(135deg, rgba(23, 162, 184, 0.8), rgba(102, 126, 234, 0.8));
+            color: white;
+            border-color: rgba(23, 162, 184, 0.5);
+        }
+
+        /* تأثيرات النص */
+        .text-modern {
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-muted-modern {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* تحسينات المدخلات */
+        .form-control-modern {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            color: white;
+            padding: 1rem;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .form-control-modern:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffd700;
+            box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+            color: white;
+        }
+
+        .form-control-modern::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* تأثيرات الأيقونات */
+        .icon-modern {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.5rem;
+            margin-left: 0.5rem;
+        }
+
+        /* تحسينات الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .modern-card {
+                margin-bottom: 1rem;
+            }
+            
+            .drop-zone-modern {
+                padding: 2rem 1rem;
+            }
+            
+            .file-details-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-modern {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* تأثيرات التحميل */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            backdrop-filter: blur(5px);
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-left: 4px solid #ffd700;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* تأثيرات إضافية للتفاعل */
+        .interactive-element {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .interactive-element:hover {
+            transform: translateY(-2px);
+        }
+
+        /* تحسين الخطوط */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p, span, div {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* تحسين القوائم */
+        .list-group-modern {
+            background: transparent;
+        }
+
+        .list-group-item-modern {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            margin-bottom: 0.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .list-group-item-modern:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل المحسن -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-sync-alt me-2"></i>
+                إدارة التحديثات المتطورة
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link text-white interactive-element" href="/">
+                    <i class="fas fa-home me-1"></i>
+                    العودة للرئيسية
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- العنوان الرئيسي -->
+        <div class="text-center mb-5">
+            <h1 class="display-4 mb-3">
+                <i class="fas fa-rocket icon-modern"></i>
+                نظام التحديثات المتطور
+            </h1>
+            <p class="lead text-muted-modern">
+                إدارة شاملة ومتقدمة لتحديثات البوت مع واجهة حديثة وميزات احترافية
+            </p>
+        </div>
+
+        <!-- قسم الميزات الجديدة -->
+        <div class="row mb-5">
+            <!-- خيار إضافة ملف جاهز -->
+            <div class="col-lg-6 mb-4">
+                <div class="modern-card">
+                    <div class="card-header-custom">
+                        <h4 class="card-title-custom">
+                            <i class="fas fa-plus-circle me-2"></i>
+                            إضافة ملف جاهز
+                        </h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <p class="text-muted-modern mb-4">
+                            رفع ملف جديد وإدراجه مباشرة في المشروع
+                        </p>
+                        
+                        <div class="drop-zone-modern" id="addFileDropZone" onclick="document.getElementById('addFileInput').click()">
+                            <i class="fas fa-cloud-upload-alt drop-zone-icon"></i>
+                            <h5 class="drop-zone-text">اسحب الملف هنا أو انقر للاختيار</h5>
+                            <p class="drop-zone-subtext">يدعم جميع أنواع الملفات (Python، HTML، CSS، JavaScript، إلخ)</p>
+                        </div>
+                        
+                        <input type="file" id="addFileInput" style="display: none;" accept="*/*">
+                        
+                        <div id="addFileInfo" class="file-info-modern" style="display: none;">
+                            <h6 class="text-modern mb-3">
+                                <i class="fas fa-file-alt me-2"></i>
+                                معلومات الملف:
+                            </h6>
+                            <div id="addFileDetails" class="file-details-grid"></div>
+                            <div class="mt-3">
+                                <label for="addFilePath" class="form-label text-modern">مسار الملف في المشروع:</label>
+                                <input type="text" class="form-control form-control-modern" id="addFilePath" placeholder="مثال: modules/new_module.py">
+                                <small class="text-muted-modern">اتركه فارغاً لاستخدام اسم الملف الأصلي</small>
+                            </div>
+                            <button class="btn btn-success-modern btn-modern mt-3 w-100" onclick="addFileToProject()">
+                                <i class="fas fa-plus me-2"></i>
+                                إضافة الملف للمشروع
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- خيار تحديث ملف موجود -->
+            <div class="col-lg-6 mb-4">
+                <div class="modern-card">
+                    <div class="card-header-custom">
+                        <h4 class="card-title-custom">
+                            <i class="fas fa-sync-alt me-2"></i>
+                            تحديث ملف موجود
+                        </h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <p class="text-muted-modern mb-4">
+                            استبدال ملف موجود مع حفظ نسخة احتياطية
+                        </p>
+                        
+                        <div class="drop-zone-modern" id="updateFileDropZone" onclick="document.getElementById('updateFileInput').click()">
+                            <i class="fas fa-file-upload drop-zone-icon"></i>
+                            <h5 class="drop-zone-text">اسحب الملف الجديد هنا</h5>
+                            <p class="drop-zone-subtext">سيتم البحث عن ملفات مشابهة تلقائياً</p>
+                        </div>
+                        
+                        <input type="file" id="updateFileInput" style="display: none;" accept="*/*">
+                        
+                        <div id="updateFileInfo" class="file-info-modern" style="display: none;">
+                            <h6 class="text-modern mb-3">
+                                <i class="fas fa-search me-2"></i>
+                                البحث عن ملفات مشابهة:
+                            </h6>
+                            <div id="updateFileDetails" class="file-details-grid"></div>
+                            
+                            <div id="similarFilesContainer" style="display: none;">
+                                <label class="form-label text-modern mt-3">الملفات المشابهة الموجودة:</label>
+                                <div id="similarFilesList" class="similar-files-container"></div>
+                                <small class="text-muted-modern">انقر على ملف لاختياره للاستبدال</small>
+                            </div>
+                            
+                            <div id="selectedFileContainer" style="display: none;" class="mt-3">
+                                <div class="alert alert-info-modern">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    تم اختيار الملف: <span id="selectedFileName"></span>
+                                </div>
+                                <button class="btn btn-warning-modern btn-modern w-100" onclick="updateSelectedFile()">
+                                    <i class="fas fa-sync-alt me-2"></i>
+                                    تحديث الملف المختار
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم التحديثات التقليدية -->
+        <div class="row">
+            <div class="col-12">
+                <div class="modern-card">
+                    <div class="card-header-custom">
+                        <h4 class="card-title-custom">
+                            <i class="fas fa-archive me-2"></i>
+                            التحديثات التقليدية (ملفات ZIP)
+                        </h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <!-- رفع تحديث ZIP -->
+                        <div class="mb-5">
+                            <h5 class="text-modern mb-3">
+                                <i class="fas fa-upload icon-modern"></i>
+                                رفع تحديث جديد
+                            </h5>
+                            <div class="drop-zone-modern" id="zipDropZone" onclick="document.getElementById('zipFileInput').click()">
+                                <i class="fas fa-file-archive drop-zone-icon"></i>
+                                <h5 class="drop-zone-text">اسحب ملف ZIP هنا أو انقر للاختيار</h5>
+                                <p class="drop-zone-subtext">ملفات ZIP فقط مسموحة للتحديثات التقليدية</p>
+                            </div>
+                            <input type="file" id="zipFileInput" style="display: none;" accept=".zip">
+                            
+                            <div id="zipFileInfo" class="file-info-modern" style="display: none;">
+                                <div id="zipFileDetails"></div>
+                                <div class="progress-modern" style="display: none;">
+                                    <div class="progress-bar-modern" role="progressbar" style="width: 0%"></div>
+                                </div>
+                                <button class="btn btn-modern w-100 mt-3" onclick="uploadZipUpdate()">
+                                    <i class="fas fa-rocket me-2"></i>
+                                    رفع وتطبيق التحديث
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- التحديثات المتاحة -->
+                        <div class="mb-5">
+                            <h5 class="text-modern mb-3">
+                                <i class="fas fa-list icon-modern"></i>
+                                التحديثات المتاحة
+                            </h5>
+                            <div id="availableUpdates" class="list-group-modern">
+                                <div class="text-center py-4">
+                                    <div class="loading-spinner mx-auto"></div>
+                                    <p class="text-muted-modern mt-3">جاري تحميل التحديثات...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- سجل التحديثات -->
+                        <div class="mb-4">
+                            <h5 class="text-modern mb-3">
+                                <i class="fas fa-history icon-modern"></i>
+                                سجل التحديثات المطبقة
+                            </h5>
+                            <div id="updateHistory" class="list-group-modern">
+                                <div class="text-center py-4">
+                                    <div class="loading-spinner mx-auto"></div>
+                                    <p class="text-muted-modern mt-3">جاري تحميل السجل...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- منطقة الحالة -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div id="statusArea" class="status-area-modern" style="display: none;">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <span id="statusMessage"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- تأثير التحميل -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="text-center">
+            <div class="loading-spinner mx-auto mb-3"></div>
+            <h5 class="text-white">جاري المعالجة...</h5>
+            <p class="text-muted-modern">يرجى الانتظار</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let selectedFile = null;
+        let selectedTargetFile = null;
+        let addFileData = null;
+        let updateFileData = null;
+
+        // تهيئة عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            setupDragAndDrop();
+            setupFileInputs();
+            loadAvailableUpdates();
+            loadUpdateHistory();
+            addInteractiveEffects();
+        });
+
+        // إضافة تأثيرات تفاعلية
+        function addInteractiveEffects() {
+            // تأثيرات الأزرار
+            document.querySelectorAll('.btn-modern').forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.05)';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // تأثيرات البطاقات
+            document.querySelectorAll('.modern-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        }
+
+        // إعداد السحب والإفلات
+        function setupDragAndDrop() {
+            // منطقة إضافة الملفات
+            const addDropZone = document.getElementById('addFileDropZone');
+            setupDropZone(addDropZone, handleAddFile);
+
+            // منطقة تحديث الملفات
+            const updateDropZone = document.getElementById('updateFileDropZone');
+            setupDropZone(updateDropZone, handleUpdateFile);
+
+            // منطقة ZIP
+            const zipDropZone = document.getElementById('zipDropZone');
+            setupDropZone(zipDropZone, (file) => {
+                if (file.name.endsWith('.zip')) {
+                    handleZipFile(file);
+                } else {
+                    showStatus('يرجى اختيار ملف ZIP فقط', 'error');
+                }
+            });
+        }
+
+        function setupDropZone(dropZone, handler) {
+            dropZone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.classList.add('dragover');
+            });
+            
+            dropZone.addEventListener('dragleave', function(e) {
+                this.classList.remove('dragover');
+            });
+            
+            dropZone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.classList.remove('dragover');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handler(files[0]);
+                }
+            });
+        }
+
+        // إعداد مدخلات الملفات
+        function setupFileInputs() {
+            document.getElementById('addFileInput').addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    handleAddFile(e.target.files[0]);
+                }
+            });
+
+            document.getElementById('updateFileInput').addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    handleUpdateFile(e.target.files[0]);
+                }
+            });
+
+            document.getElementById('zipFileInput').addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    handleZipFile(e.target.files[0]);
+                }
+            });
+        }
+
+        // معالجة ملف الإضافة
+        function handleAddFile(file) {
+            addFileData = file;
+            
+            const fileInfo = document.getElementById('addFileInfo');
+            const fileDetails = document.getElementById('addFileDetails');
+            
+            fileDetails.innerHTML = `
+                <div class="file-detail-item">
+                    <div class="file-detail-label">اسم الملف</div>
+                    <div class="file-detail-value">${file.name}</div>
+                </div>
+                <div class="file-detail-item">
+                    <div class="file-detail-label">الحجم</div>
+                    <div class="file-detail-value">${formatFileSize(file.size)}</div>
+                </div>
+                <div class="file-detail-item">
+                    <div class="file-detail-label">النوع</div>
+                    <div class="file-detail-value">${file.type || 'غير محدد'}</div>
+                </div>
+                <div class="file-detail-item">
+                    <div class="file-detail-label">آخر تعديل</div>
+                    <div class="file-detail-value">${new Date(file.lastModified).toLocaleString('ar')}</div>
+                </div>
+            `;
+            
+            document.getElementById('addFilePath').value = file.name;
+            fileInfo.style.display = 'block';
+            showStatus('تم اختيار الملف للإضافة', 'info');
+        }
+
+        // معالجة ملف التحديث
+        function handleUpdateFile(file) {
+            updateFileData = file;
+            
+            const fileInfo = document.getElementById('updateFileInfo');
+            const fileDetails = document.getElementById('updateFileDetails');
+            
+            fileDetails.innerHTML = `
+                <div class="file-detail-item">
+                    <div class="file-detail-label">اسم الملف</div>
+                    <div class="file-detail-value">${file.name}</div>
+                </div>
+                <div class="file-detail-item">
+                    <div class="file-detail-label">الحجم</div>
+                    <div class="file-detail-value">${formatFileSize(file.size)}</div>
+                </div>
+            `;
+            
+            fileInfo.style.display = 'block';
+            searchSimilarFiles(file.name);
+        }
+
+        // البحث عن ملفات مشابهة
+        async function searchSimilarFiles(fileName) {
+            try {
+                showStatus('جاري البحث عن ملفات مشابهة...', 'info');
+                showLoading(true);
+                
+                const response = await fetch('/api/search-similar-files', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ filename: fileName })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success && data.similar_files.length > 0) {
+                    displaySimilarFiles(data.similar_files);
+                    showStatus(`تم العثور على ${data.similar_files.length} ملف مشابه`, 'success');
+                } else {
+                    showStatus('لم يتم العثور على ملفات مشابهة', 'warning');
+                }
+            } catch (error) {
+                console.error('خطأ في البحث:', error);
+                showStatus('فشل في البحث عن ملفات مشابهة', 'error');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        // عرض الملفات المشابهة
+        function displaySimilarFiles(files) {
+            const container = document.getElementById('similarFilesContainer');
+            const filesList = document.getElementById('similarFilesList');
+            
+            filesList.innerHTML = '';
+            
+            files.forEach(file => {
+                const fileItem = document.createElement('div');
+                fileItem.className = 'similar-file-item';
+                fileItem.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong class="text-modern">${file.name}</strong>
+                            <br>
+                            <small class="text-muted-modern">${file.path}</small>
+                        </div>
+                        <div class="text-end">
+                            <small class="text-muted-modern">الحجم: ${formatFileSize(file.size)}</small>
+                            <br>
+                            <small class="text-warning">تشابه: ${file.similarity}%</small>
+                        </div>
+                    </div>
+                `;
+                
+                fileItem.addEventListener('click', function() {
+                    document.querySelectorAll('.similar-file-item').forEach(item => {
+                        item.classList.remove('selected');
+                    });
+                    
+                    this.classList.add('selected');
+                    selectedTargetFile = file;
+                    
+                    document.getElementById('selectedFileName').textContent = file.name;
+                    document.getElementById('selectedFileContainer').style.display = 'block';
+                });
+                
+                filesList.appendChild(fileItem);
+            });
+            
+            container.style.display = 'block';
+        }
+
+        // إضافة ملف للمشروع
+        async function addFileToProject() {
+            if (!addFileData) {
+                showStatus('لم يتم اختيار ملف', 'error');
+                return;
+            }
+            
+            const filePath = document.getElementById('addFilePath').value.trim();
+            if (!filePath) {
+                showStatus('يرجى تحديد مسار الملف', 'error');
+                return;
+            }
+            
+            const formData = new FormData();
+            formData.append('file', addFileData);
+            formData.append('file_path', filePath);
+            
+            try {
+                showStatus('جاري إضافة الملف...', 'info');
+                showLoading(true);
+                
+                const response = await fetch('/api/add-file-to-project', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showStatus('✅ تم إضافة الملف بنجاح!', 'success');
+                    resetAddFileForm();
+                } else {
+                    showStatus(`❌ فشل في إضافة الملف: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                console.error('خطأ في إضافة الملف:', error);
+                showStatus('❌ خطأ في الاتصال بالخادم', 'error');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        // تحديث الملف المختار
+        async function updateSelectedFile() {
+            if (!updateFileData || !selectedTargetFile) {
+                showStatus('لم يتم اختيار ملف للتحديث', 'error');
+                return;
+            }
+            
+            const formData = new FormData();
+            formData.append('new_file', updateFileData);
+            formData.append('target_file_path', selectedTargetFile.path);
+            
+            try {
+                showStatus('جاري تحديث الملف...', 'info');
+                showLoading(true);
+                
+                const response = await fetch('/api/update-existing-file', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showStatus('✅ تم تحديث الملف بنجاح!', 'success');
+                    if (data.backup_path) {
+                        showStatus(`✅ تم حفظ النسخة الاحتياطية في: ${data.backup_path}`, 'info');
+                    }
+                    resetUpdateFileForm();
+                } else {
+                    showStatus(`❌ فشل في تحديث الملف: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                console.error('خطأ في تحديث الملف:', error);
+                showStatus('❌ خطأ في الاتصال بالخادم', 'error');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        // معالجة ملف ZIP
+        function handleZipFile(file) {
+            if (!file.name.endsWith('.zip')) {
+                showStatus('يرجى اختيار ملف ZIP فقط', 'error');
+                return;
+            }
+            
+            selectedFile = file;
+            
+            const fileInfo = document.getElementById('zipFileInfo');
+            const fileDetails = document.getElementById('zipFileDetails');
+            
+            fileDetails.innerHTML = `
+                <h6 class="text-modern mb-3">
+                    <i class="fas fa-file-archive me-2"></i>
+                    معلومات التحديث:
+                </h6>
+                <div class="file-details-grid">
+                    <div class="file-detail-item">
+                        <div class="file-detail-label">اسم الملف</div>
+                        <div class="file-detail-value">${file.name}</div>
+                    </div>
+                    <div class="file-detail-item">
+                        <div class="file-detail-label">الحجم</div>
+                        <div class="file-detail-value">${formatFileSize(file.size)}</div>
+                    </div>
+                </div>
+            `;
+            
+            fileInfo.style.display = 'block';
+            showStatus('تم اختيار ملف ZIP للتحديث', 'info');
+        }
+
+        // رفع تحديث ZIP
+        async function uploadZipUpdate() {
+            if (!selectedFile) {
+                showStatus('لم يتم اختيار ملف ZIP', 'error');
+                return;
+            }
+            
+            const formData = new FormData();
+            formData.append('update_file', selectedFile);
+            
+            try {
+                showStatus('جاري رفع وتطبيق التحديث...', 'info');
+                showLoading(true);
+                showProgress(0);
+                
+                const response = await fetch('/api/apply-local-update', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                showProgress(100);
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showStatus('✅ تم تطبيق التحديث بنجاح!', 'success');
+                    if (data.analysis) {
+                        displayUpdateAnalysis(data.analysis);
+                    }
+                    loadUpdateHistory();
+                } else {
+                    showStatus(`❌ فشل في تطبيق التحديث: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                console.error('خطأ في رفع التحديث:', error);
+                showStatus('❌ خطأ في رفع التحديث', 'error');
+            } finally {
+                showLoading(false);
+                hideProgress();
+            }
+        }
+
+        // تحميل التحديثات المتاحة
+        async function loadAvailableUpdates() {
+            try {
+                const response = await fetch('/api/check-updates');
+                const data = await response.json();
+                
+                const container = document.getElementById('availableUpdates');
+                
+                if (data.success && data.updates.length > 0) {
+                    container.innerHTML = data.updates.map(update => `
+                        <div class="list-group-item-modern">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-modern mb-1">${update.title || 'تحديث جديد'}</h6>
+                                    <p class="text-muted-modern mb-0">${update.description || 'لا يوجد وصف'}</p>
+                                </div>
+                                <button class="btn btn-modern" onclick="applyUpdate('${update.id}')">
+                                    <i class="fas fa-download me-1"></i>
+                                    تطبيق
+                                </button>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    container.innerHTML = `
+                        <div class="text-center py-4">
+                            <i class="fas fa-check-circle text-success" style="font-size: 3rem;"></i>
+                            <h5 class="text-modern mt-3">لا توجد تحديثات متاحة</h5>
+                            <p class="text-muted-modern">نظامك محدث إلى أحدث إصدار</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('خطأ في تحميل التحديثات:', error);
+                document.getElementById('availableUpdates').innerHTML = `
+                    <div class="text-center py-4">
+                        <i class="fas fa-exclamation-triangle text-warning" style="font-size: 3rem;"></i>
+                        <h5 class="text-modern mt-3">فشل في تحميل التحديثات</h5>
+                        <p class="text-muted-modern">يرجى المحاولة مرة أخرى</p>
+                    </div>
+                `;
+            }
+        }
+
+        // تحميل سجل التحديثات
+        async function loadUpdateHistory() {
+            try {
+                const response = await fetch('/api/system-info');
+                const data = await response.json();
+                
+                const container = document.getElementById('updateHistory');
+                
+                if (data.success && data.system_info.installed_updates) {
+                    const updates = data.system_info.installed_updates;
+                    
+                    container.innerHTML = updates.map(update => `
+                        <div class="list-group-item-modern">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-modern mb-1">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        ${update.filename || update.id}
+                                    </h6>
+                                    <small class="text-muted-modern">
+                                        <i class="fas fa-clock me-1"></i>
+                                        ${new Date(update.applied_date).toLocaleString('ar')}
+                                    </small>
+                                </div>
+                                <span class="badge bg-success">مطبق</span>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    container.innerHTML = `
+                        <div class="text-center py-4">
+                            <i class="fas fa-history text-muted" style="font-size: 3rem;"></i>
+                            <h5 class="text-modern mt-3">لا يوجد سجل تحديثات</h5>
+                            <p class="text-muted-modern">لم يتم تطبيق أي تحديثات بعد</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('خطأ في تحميل السجل:', error);
+                document.getElementById('updateHistory').innerHTML = `
+                    <div class="text-center py-4">
+                        <i class="fas fa-exclamation-triangle text-warning" style="font-size: 3rem;"></i>
+                        <h5 class="text-modern mt-3">فشل في تحميل السجل</h5>
+                        <p class="text-muted-modern">يرجى المحاولة مرة أخرى</p>
+                    </div>
+                `;
+            }
+        }
+
+        // تطبيق تحديث
+        async function applyUpdate(updateId) {
+            try {
+                showStatus('جاري تطبيق التحديث...', 'info');
+                showLoading(true);
+                
+                const response = await fetch('/api/apply-update', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ update_id: updateId })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showStatus('✅ تم تطبيق التحديث بنجاح!', 'success');
+                    loadAvailableUpdates();
+                    loadUpdateHistory();
+                } else {
+                    showStatus(`❌ فشل في تطبيق التحديث: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                console.error('خطأ في تطبيق التحديث:', error);
+                showStatus('❌ خطأ في تطبيق التحديث', 'error');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        // دوال مساعدة
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 بايت';
+            const k = 1024;
+            const sizes = ['بايت', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function showStatus(message, type) {
+            const statusArea = document.getElementById('statusArea');
+            const statusMessage = document.getElementById('statusMessage');
+            
+            statusArea.className = `status-area-modern alert-${type === 'error' ? 'danger' : type === 'success' ? 'success' : type === 'warning' ? 'warning' : 'info'}-modern`;
+            statusMessage.textContent = message;
+            statusArea.style.display = 'block';
+            
+            if (type !== 'error') {
+                setTimeout(() => {
+                    statusArea.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+        function showLoading(show) {
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            loadingOverlay.style.display = show ? 'flex' : 'none';
+        }
+
+        function showProgress(percent) {
+            const progress = document.querySelector('.progress-modern');
+            const progressBar = document.querySelector('.progress-bar-modern');
+            
+            if (progress && progressBar) {
+                progress.style.display = 'block';
+                progressBar.style.width = percent + '%';
+            }
+        }
+
+        function hideProgress() {
+            const progress = document.querySelector('.progress-modern');
+            if (progress) {
+                progress.style.display = 'none';
+            }
+        }
+
+        function resetAddFileForm() {
+            document.getElementById('addFileInfo').style.display = 'none';
+            document.getElementById('addFilePath').value = '';
+            addFileData = null;
+        }
+
+        function resetUpdateFileForm() {
+            document.getElementById('updateFileInfo').style.display = 'none';
+            document.getElementById('similarFilesContainer').style.display = 'none';
+            document.getElementById('selectedFileContainer').style.display = 'none';
+            updateFileData = null;
+            selectedTargetFile = null;
+        }
+
+        function displayUpdateAnalysis(analysis) {
+            // يمكن إضافة نافذة منبثقة لعرض تحليل التحديث
+            console.log('تحليل التحديث:', analysis);
+        }
+    </script>
+</body>
+</html>

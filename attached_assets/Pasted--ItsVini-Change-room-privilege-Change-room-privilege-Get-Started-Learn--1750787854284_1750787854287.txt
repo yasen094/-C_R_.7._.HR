@@ -1,0 +1,150 @@
+🤖
+ItsVini
+
+👨🏼‍🔧 Change_room_privilege
+👨🏼‍🔧 Change_room_privilege
+👨🏼‍💻
+Get Started - Learn How To Make Your Bot!
+Guides
+Guides
+Code Snippets
+Code Snippets
+⬇️
+Get methods
+⬆️
+Post methods
+🌐
+Web API
+🔗
+Useful links
+👕
+List of all currently Free Items
+🕺🏼
+List of Emotes
+📝
+Highrise Bot SDK Changelog
+Added on version 23.1.0b5
+change_room_privilege(self, user_id: str, permissions: RoomPermissions ) -> None:
+Change the room privilege for given user_id.
+⚙️ Use cases
+Here’s an example on how to promote an user using a “promote <@user> <role>” command on chat:
+async def on_chat(self, user: User, message: str) -> None:
+        if message.startswith("promote"):
+            if user.username != "ItsVini":
+                await self.highrise.chat("You do not have permission to use this command.")
+                return
+            parts = message.split()
+            if len(parts) != 3:
+                await self.highrise.chat("Invalid promote command format.")
+                return
+            command, username, role = parts
+            if "@" not in username:
+                username = username
+            else:
+                username = username[1:]
+            if role.lower() not in ["moderator", "designer"]:
+                await self.highrise.chat("Invalid role, please specify a valid role.")
+                return
+            #check if user is in room
+            room_users = (await self.highrise.get_room_users()).content
+            for room_user, pos in room_users:
+                if room_user.username.lower() == username.lower():
+                    user_id = room_user.id
+                    break
+            if "user_id" not in locals():
+                await self.highrise.chat("User not found, please specify a valid user and coordinate")
+                return
+            #promote user
+            permissions = (await self.highrise.get_room_privilege(user_id))
+            setattr(permissions, role.lower(), True)
+            try:
+                await self.highrise.change_room_privilege(user_id, permissions)
+                await self.highrise.chat(f"{username} has been promoted to {role}.")
+            except Exception as e:
+                await self.highrise.chat(f"Error: {e}")
+                return
+            
+        if message.startswith("demote"):
+            if user.username != "ItsVini":
+                await self.highrise.chat("You do not have permission to use this command.")
+                return
+            parts = message.split()
+            if len(parts) != 3:
+                await self.highrise.chat("Invalid demote command format.")
+                return
+            command, username, role = parts
+            if "@" not in username:
+                username = username
+            else:
+                username = username[1:]
+            if role.lower() not in ["moderator", "designer"]:
+                await self.highrise.chat("Invalid role, please specify a valid role.")
+                return
+            #check if user is in room
+            room_users = (await self.highrise.get_room_users()).content
+            for room_user, pos in room_users:
+                if room_user.username.lower() == username.lower():
+                    user_id = room_user.id
+                    break
+            if "user_id" not in locals():
+                await self.highrise.chat("User not found, please specify a valid user and coordinate")
+                return
+            #promote user
+            permissions = (await self.highrise.get_room_privilege(user_id))
+            setattr(permissions, role.lower(), False)
+            try:
+                await self.highrise.change_room_privilege(user_id, permissions)
+                await self.highrise.chat(f"{username} has been demoted from {role}.")
+            except Exception as e:
+                await self.highrise.chat(f"Error: {e}")
+                return
+Here’s an step by step explanation on how this code works:
+async def on_chat(self, user: User, message: str) -> None::
+This is an asynchronous function called on_chat.
+It takes three parameters: self, user, and message.
+self is a reference to the instance of the class this method belongs to.
+user is an object representing the user who sent the chat message.
+message is a string representing the chat message sent by the user.
+if message.startswith("promote"):
+The function checks if the chat message starts with the string "promote". This seems to be a command for promoting users.
+if user.username != "ItsVini":
+If the user who sent the message is not named "ItsVini", it means they do not have permission to use the "promote" command.
+In that case, the function sends a message to the chat using self.highrise.chat() informing the user that they don't have permission and then returns, ending the function.
+parts = message.split():
+The function splits the message into individual words and stores them in the list parts.
+if len(parts) != 3:
+If there are not exactly three words in the message (excluding the "promote" command itself), it means the promote command format is invalid.
+The function sends a message to the chat informing the user of the invalid format and then returns, ending the function.
+command, username, role = parts:
+The function unpacks the three words from the parts list and assigns them to three variables: command, username, and role.
+if "@" not in username::
+The code checks if the username provided is prefixed with "@"; if it is not, it means the username doesn't have the "@" symbol and is stored as it is.
+else::
+If the username starts with "@", the code removes the "@" symbol from the username using username = username[1:].
+if role.lower() not in ["moderator", "designer"]:
+The code checks if the role provided is not one of the allowed roles: "moderator" or "designer".
+If the role is invalid, the function sends a message to the chat asking the user to specify a valid role and then returns, ending the function.
+(await self.highrise.get_room_users()).content:
+The code calls an asynchronous method get_room_users() on self.highrise to fetch a list of users in the room where this chat event occurred.
+The result is awaited using await.
+The method seems to return some kind of response object, and content appears to be the actual list of room users.
+for room_user, pos in room_users:
+The code iterates through the list of room users and their corresponding positions (positions are not used in this code snippet).
+if room_user.username.lower() == username.lower():
+For each user in the room, the code checks if their username (converted to lowercase) matches the provided username (also converted to lowercase).
+If there's a match, it means the user with the specified username is found in the room, and their user_id is stored in a variable.
+if "user_id" not in locals():
+After the loop, if there is no user_id variable defined, it means the user with the specified username was not found in the room.
+The function sends a message to the chat asking the user to specify a valid user and coordinate (though there's no coordinate mentioned in the code snippet), and then returns, ending the function.
+(await self.highrise.get_room_privilege(user_id)):
+The code calls an asynchronous method get_room_privilege(user_id) on self.highrise to fetch the privileges of the user with the specified user_id.
+The result is awaited using await.
+It seems to return some kind of object representing the user's privileges.
+setattr(permissions, role.lower(), True):
+The code sets an attribute of the permissions object based on the role.lower() value.
+For example, if role is "moderator", it sets permissions.moderator to True, or if role is "designer", it sets permissions.designer to True.
+await self.highrise.change_room_privilege(user_id, permissions):
+The code calls an asynchronous method change_room_privilege(user_id, permissions) on self.highrise.
+It seems like this method is used to update the privileges of the user with the specified user_id based on the permissions object.
+except Exception as e::
+If there is an exception raised during the privilege update, the code catches it and sends a message to the chat displaying the error message.

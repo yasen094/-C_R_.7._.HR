@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant - Google Gemini</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css">
+    <style>
+        .ai-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+        }
+
+        .ai-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .ai-header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ffd700, #ffb347);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ai-chat-container {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 25px;
+            height: 75vh;
+        }
+
+        .chat-area {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.2);
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            padding: 15px 20px;
+            border-radius: 15px;
+            max-width: 85%;
+            word-wrap: break-word;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .user-message {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .ai-message {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            margin-right: auto;
+        }
+
+        .system-message {
+            background: linear-gradient(135deg, #ffc107 0%, #ff8c00 100%);
+            color: #333;
+            text-align: center;
+            max-width: 100%;
+            font-weight: 600;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border-radius: 12px;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            overflow: hidden;
+            margin: 15px 0;
+            position: relative;
+            border: 1px solid #333;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .code-header {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            padding: 12px 20px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-title {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .apply-code-btn {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+        }
+
+        .apply-code-btn:hover {
+            background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        .apply-code-btn:active {
+            transform: translateY(0);
+        }
+
+        .apply-code-btn.applied {
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+            cursor: not-allowed;
+        }
+
+        .code-content {
+            padding: 0;
+            position: relative;
+        }
+
+        .line-numbers-rows {
+            position: absolute;
+            pointer-events: none;
+            top: 0;
+            font-size: 100%;
+            left: -3.8em;
+            width: 3em;
+            letter-spacing: -1px;
+            border-right: 1px solid #555;
+            user-select: none;
+            background: #2a2a2a;
+        }
+
+        .line-numbers-rows > span {
+            pointer-events: none;
+            display: block;
+            counter-increment: linenumber;
+            color: #666;
+            padding-right: 0.8em;
+            text-align: right;
+        }
+
+        .line-numbers-rows > span:before {
+            content: counter(linenumber);
+        }
+
+        pre[class*="language-"].line-numbers {
+            position: relative;
+            padding-left: 4.5em;
+            counter-reset: linenumber;
+        }
+
+        pre[class*="language-"].line-numbers > code {
+            position: relative;
+            white-space: inherit;
+        }
+
+        .chat-input-area {
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .input-group {
+            display: flex;
+            gap: 15px;
+            align-items: flex-end;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            outline: none;
+            font-size: 16px;
+            resize: none;
+            min-height: 50px;
+            max-height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .chat-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .chat-input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .send-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .send-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .sidebar {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+        }
+
+        .sidebar h3 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            text-align: center;
+        }
+
+        .quick-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .quick-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .quick-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .capabilities {
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.2), rgba(32, 201, 151, 0.2));
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            border: 1px solid rgba(40, 167, 69, 0.3);
+        }
+
+        .capabilities h4 {
+            color: #20c997;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .capabilities ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .capabilities li {
+            padding: 8px 0;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .capabilities li:before {
+            content: "✓ ";
+            color: #20c997;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .typing-indicator {
+            display: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+            backdrop-filter: blur(10px);
+        }
+
+        .typing-dots {
+            display: inline-flex;
+            gap: 3px;
+            margin-left: 10px;
+        }
+
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            background: #667eea;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+            40% {
+                transform: scale(1);
+            }
+        }
+
+        .file-path {
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-family: 'Fira Code', monospace;
+            margin: 8px 0;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .success-notification {
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.2), rgba(32, 201, 151, 0.2));
+            border: 1px solid rgba(40, 167, 69, 0.5);
+            color: #20c997;
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin: 12px 0;
+            font-weight: 500;
+        }
+
+        .error-notification {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.2), rgba(255, 99, 132, 0.2));
+            border: 1px solid rgba(220, 53, 69, 0.5);
+            color: #ff6384;
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin: 12px 0;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .ai-chat-container {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .sidebar {
+                order: -1;
+            }
+
+            .ai-header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* تحسينات إضافية للكود */
+        .token.comment {
+            color: #6a9955;
+        }
+
+        .token.string {
+            color: #ce9178;
+        }
+
+        .token.keyword {
+            color: #569cd6;
+        }
+
+        .token.function {
+            color: #dcdcaa;
+        }
+
+        .token.number {
+            color: #b5cea8;
+        }
+
+        .token.operator {
+            color: #d4d4d4;
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+        }
+
+        /* أسلوب النوافذ المنبثقة */
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            max-width: 600px;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .close {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close:hover {
+            opacity: 0.7;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ai-container">
+        <div class="ai-header">
+            <h1>🤖 AI Assistant Pro - Google Gemini</h1>
+            <p>مساعد ذكي متطور مع محرر كود متقدم وأرقام أسطر</p>
+        </div>
+
+        <div class="ai-chat-container">
+            <div class="chat-area">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message system-message">
+                        <strong>🚀 مرحباً بك في AI Assistant Pro</strong><br>
+                        أنا هنا لمساعدتك في إنشاء الأوامر، إصلاح الأخطاء، وتطوير البوت باستخدام Google Gemini AI
+                        <br><br>
+                        <strong>✨ الميزات الجديدة:</strong>
+                        <ul style="text-align: right; margin: 10px 0;">
+                            <li>🔢 أرقام الأسطر في الكود</li>
+                            <li>🎨 تصميم محسن ومتطور</li>
+                            <li>⚡ أزرار تطبيق سريعة</li>
+                            <li>🌙 ثيم داكن احترافي</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    AI يكتب...
+                </div>
+
+                <div class="chat-input-area">
+                    <div class="input-group">
+                        <textarea 
+                            class="chat-input" 
+                            id="chatInput" 
+                            placeholder="اطلب مني أي شيء... مثل: أنشئ أمر جديد للرقص، أصلح خطأ في الكود، أضف ميزة جديدة..."
+                            rows="2"
+                        ></textarea>
+                        <button class="send-btn" id="sendBtn">إرسال</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <h3>🎯 إجراءات سريعة</h3>
+                <div class="quick-actions">
+                    <div class="quick-btn" onclick="sendQuickMessage('أنشئ أمر جديد للرقص')">
+                        🕺 إنشاء أمر رقص
+                    </div>
+                    <div class="quick-btn" onclick="sendQuickMessage('أصلح الأخطاء في الكود')">
+                        🔧 إصلاح الأخطاء
+                    </div>
+                    <div class="quick-btn" onclick="sendQuickMessage('أضف ميزة جديدة للبوت')">
+                        ⭐ إضافة ميزة جديدة
+                    </div>
+                    <div class="quick-btn" onclick="sendQuickMessage('حسّن أداء البوت')">
+                        ⚡ تحسين الأداء
+                    </div>
+                    <div class="quick-btn" onclick="sendQuickMessage('اشرح لي كيف يعمل هذا الكود')">
+                        📖 شرح الكود
+                    </div>
+                    <div class="quick-btn" onclick="sendQuickMessage('أنشئ واجهة ويب جديدة')">
+                        🌐 واجهة ويب جديدة
+                    </div>
+                </div>
+
+                <div class="capabilities">
+                    <h4>🎯 قدراتي المتقدمة</h4>
+                    <ul>
+                        <li>إنشاء أوامر مخصصة</li>
+                        <li>إصلاح الأخطاء تلقائياً</li>
+                        <li>تطوير ميزات جديدة</li>
+                        <li>تحسين الأداء</li>
+                        <li>شرح الكود بالتفصيل</li>
+                        <li>إنشاء واجهات ويب</li>
+                        <li>تطبيق التغييرات مباشرة</li>
+                        <li>النسخ الاحتياطي التلقائي</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 25px; text-align: center;">
+                    <button class="quick-btn" onclick="clearChat()" style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white;">
+                        🗑️ مسح المحادثة
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let conversationHistory = [];
+        let pendingCodeChanges = {};
+
+        // إعداد مفاتيح الاختصار
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatInput = document.getElementById('chatInput');
+            const sendBtn = document.getElementById('sendBtn');
+
+            chatInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+
+            sendBtn.addEventListener('click', sendMessage);
+        });
+
+        function sendQuickMessage(message) {
+            document.getElementById('chatInput').value = message;
+            sendMessage();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            // إضافة رسالة المستخدم
+            addMessage('user', message);
+            input.value = '';
+
+            // إظهار مؤشر الكتابة
+            showTypingIndicator();
+
+            // إضافة إلى تاريخ المحادثة
+            conversationHistory.push({
+                role: 'user',
+                content: message
+            });
+
+            // إرسال إلى AI
+            fetch('/api/ai-assistant/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: message,
+                    history: conversationHistory.slice(-10) // آخر 10 رسائل للسياق
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                hideTypingIndicator();
+
+                if (data.success) {
+                    addMessage('ai', data.response, data.code_changes, data.applied_changes, data.change_id);
+
+                    // إضافة رد AI إلى التاريخ
+                    conversationHistory.push({
+                        role: 'assistant',
+                        content: data.response
+                    });
+
+                    // حفظ التغييرات المعلقة
+                    if (data.change_id && data.code_changes) {
+                        pendingCodeChanges[data.change_id] = data.code_changes;
+                    }
+
+                    // إظهار إشعار النجاح إذا تم تطبيق تغييرات
+                    if (data.applied_changes && data.applied_changes.length > 0) {
+                        showNotification('success', `تم تطبيق ${data.applied_changes.length} تغيير بنجاح`);
+                    }
+                } else {
+                    addMessage('system', 'خطأ: ' + (data.error || 'حدث خطأ غير متوقع'));
+                    showNotification('error', data.error || 'حدث خطأ في الاتصال');
+                }
+            })
+            .catch(error => {
+                hideTypingIndicator();
+                console.error('Error:', error);
+                addMessage('system', 'خطأ في الاتصال بـ AI Assistant');
+                showNotification('error', 'فشل في الاتصال بالخادم');
+            });
+        }
+
+        function addMessage(type, content, codeChanges = null, appliedChanges = null, changeId = null) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+
+            let className = 'message ';
+            switch(type) {
+                case 'user':
+                    className += 'user-message';
+                    break;
+                case 'ai':
+                    className += 'ai-message';
+                    break;
+                case 'system':
+                    className += 'system-message';
+                    break;
+            }
+
+            messageDiv.className = className;
+
+            let messageHTML = content.replace(/\n/g, '<br>');
+
+            // إضافة كتل الكود إذا وجدت
+            if (codeChanges && codeChanges.length > 0) {
+                messageHTML += '<br><br><strong>💻 تغييرات الكود:</strong>';
+                codeChanges.forEach((change, index) => {
+                    const uniqueId = `code-${Date.now()}-${index}`;
+                    messageHTML += `
+                        <div class="file-path">📁 ${change.file_path}</div>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">${change.description || 'تغيير الكود'}</span>
+                                <button class="apply-code-btn" onclick="applyCodeChange('${changeId}', '${change.file_path}', ${index}, this)">
+                                    ⚡ تطبيق التغيير
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre class="line-numbers"><code class="language-python" id="${uniqueId}">${escapeHtml(change.content)}</code></pre>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            // إضافة التغييرات المطبقة
+            if (appliedChanges && appliedChanges.length > 0) {
+                messageHTML += '<br><br><strong>✅ تم تطبيق التغييرات على:</strong><br>';
+                appliedChanges.forEach(change => {
+                    messageHTML += `<span class="file-path">✓ ${change}</span><br>`;
+                });
+            }
+
+            messageDiv.innerHTML = messageHTML;
+            messagesContainer.appendChild(messageDiv);
+
+            // تطبيق تلوين الكود
+            setTimeout(() => {
+                if (typeof Prism !== 'undefined') {
+                    Prism.highlightAllUnder(messageDiv);
+                }
+            }, 100);
+
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function applyCodeChange(changeId, filePath, changeIndex, button) {
+            if (!changeId || !pendingCodeChanges[changeId]) {
+                showNotification('error', 'التغيير غير متاح للتطبيق');
+                return;
+            }
+
+            const change = pendingCodeChanges[changeId][changeIndex];
+            if (!change) {
+                showNotification('error', 'التغيير المحدد غير موجود');
+                return;
+            }
+
+            // تعطيل الزر أثناء التطبيق
+            button.disabled = true;
+            button.textContent = '⏳ جاري التطبيق...';
+
+            fetch('/api/ai-assistant/apply-code', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    change_id: changeId,
+                    file_path: filePath,
+                    change_index: changeIndex
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNotification('success', `تم تطبيق التغيير على ${filePath}`);
+                    button.textContent = '✅ تم التطبيق';
+                    button.className = 'apply-code-btn applied';
+                } else {
+                    showNotification('error', `فشل في تطبيق التغيير: ${data.error}`);
+                    button.disabled = false;
+                    button.textContent = '⚡ تطبيق التغيير';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('error', 'خطأ في تطبيق التغيير');
+                button.disabled = false;
+                button.textContent = '⚡ تطبيق التغيير';
+            });
+        }
+
+        function showTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'block';
+            document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'none';
+        }
+
+        function clearChat() {
+            if (confirm('هل أنت متأكد من مسح المحادثة؟')) {
+                document.getElementById('chatMessages').innerHTML = `
+                    <div class="message system-message">
+                        <strong>🚀 مرحباً بك في AI Assistant Pro</strong><br>
+                        أنا هنا لمساعدتك في إنشاء الأوامر، إصلاح الأخطاء، وتطوير البوت باستخدام Google Gemini AI
+                        <br><br>
+                        <strong>✨ الميزات الجديدة:</strong>
+                        <ul style="text-align: right; margin: 10px 0;">
+                            <li>🔢 أرقام الأسطر في الكود</li>
+                            <li>🎨 تصميم محسن ومتطور</li>
+                            <li>⚡ أزرار تطبيق سريعة</li>
+                            <li>🌙 ثيم داكن احترافي</li>
+                        </ul>
+                    </div>
+                `;
+                conversationHistory = [];
+                pendingCodeChanges = {};
+                showNotification('success', 'تم مسح المحادثة');
+            }
+        }
+
+        // وظائف قراءة الملفات
+        function openFileReader() {
+            document.getElementById('fileReaderModal').style.display = 'block';
+        }
+
+        function closeFileReader() {
+            document.getElementById('fileReaderModal').style.display = 'none';
+        }
+
+        function readFileWithLines() {
+            const filePath = document.getElementById('filePathInput').value.trim();
+            if (!filePath) {
+                showNotification('error', 'يرجى إدخال مسار الملف');
+                return;
+            }
+
+            const contentArea = document.getElementById('fileContentArea');
+            contentArea.innerHTML = '🔄 جاري قراءة الملف...';
+
+            fetch('/api/ai-assistant/read-file', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    file_path: filePath
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    contentArea.innerHTML = data.content;
+                    showNotification('success', `تم تحميل ${data.total_lines} سطر من ${filePath}`);
+                } else {
+                    contentArea.innerHTML = `❌ خطأ: ${data.error}`;
+                    showNotification('error', data.error);
+                }
+            })
+            .catch(error => {
+                contentArea.innerHTML = `❌ خطأ في قراءة الملف: ${error}`;
+                showNotification('error', 'خطأ في قراءة الملف');
+            });
+        }
+
+        // وظائف البحث في الكود
+        function openCodeSearch() {
+            document.getElementById('codeSearchModal').style.display = 'block';
+        }
+
+        function closeCodeSearch() {
+            document.getElementById('codeSearchModal').style.display = 'none';
+        }
+
+        function searchInCode() {
+            const filePath = document.getElementById('searchFilePath').value.trim();
+            const searchText = document.getElementById('searchText').value.trim();
+
+            if (!filePath || !searchText) {
+                showNotification('error', 'يرجى إدخال مسار الملف ونص البحث');
+                return;
+            }
+
+            const resultsArea = document.getElementById('searchResultsArea');
+            resultsArea.innerHTML = '🔍 جاري البحث...';
+
+            fetch('/api/ai-assistant/search-code', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    file_path: filePath,
+                    search_text: searchText
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    if (data.total_matches > 0) {
+                        let html = `<h4>📊 تم العثور على ${data.total_matches} نتيجة:</h4>`;
+                        data.found_lines.forEach(result => {
+                            html += `<div style="margin: 10px 0; padding: 10px; background: white; border-left: 3px solid #007bff; border-radius: 4px;">
+                                <strong>السطر ${result.line_number}:</strong><br>
+                                <code style="background: #f8f9fa; padding: 5px; border-radius: 3px; display: block; margin-top: 5px;">${result.content}</code>
+                            </div>`;
+                        });
+                        resultsArea.innerHTML = html;
+                        showNotification('success', `تم العثور على ${data.total_matches} نتيجة`);
+                    } else {
+                        resultsArea.innerHTML = '🔍 لم يتم العثور على نتائج مطابقة';
+                        showNotification('info', 'لم يتم العثور على نتائج');
+                    }
+                } else {
+                    resultsArea.innerHTML = `❌ خطأ: ${data.error}`;
+                    showNotification('error', data.error);
+                }
+            })
+            .catch(error => {
+                resultsArea.innerHTML = `❌ خطأ في البحث: ${error}`;
+                showNotification('error', 'خطأ في البحث');
+            });
+        }
+
+        function showNotification(type, message) {
+            const notification = document.createElement('div');
+            notification.className = type === 'success' ? 'success-notification' : 'error-notification';
+            notification.textContent = message;
+            notification.style.position = 'fixed';
+            notification.style.top = '20px';
+            notification.style.right = '20px';
+            notification.style.zIndex = '10000';
+            notification.style.minWidth = '300px';
+
+            document.body.appendChild(notification);
+
+            // إزالة الإشعار بعد 4 ثوان
+            setTimeout(() => {
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
+            }, 4000);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // تحديث الحالة كل 30 ثانية
+        setInterval(() => {
+            fetch('/api/status')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('🤖 AI Assistant Pro نشط ومتصل');
+                })
+                .catch(error => {
+                    console.warn('⚠️ مشكلة في الاتصال بالخادم');
+                });
+        }, 30000);
+
+        console.log('🤖 AI Assistant Pro محمل وجاهز للعمل مع أرقام الأسطر!');
+    </script>
+
+    <!-- نوافذ منبثقة -->
+    <div id="fileReaderModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>فتح ملف</h3>
+                <span class="close" onclick="closeFileReader()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <label for="filePathInput">مسار الملف:</label>
+                <input type="text" id="filePathInput" class="chat-input" placeholder="أدخل مسار الملف هنا">
+                <button onclick="readFileWithLines()" class="send-btn">قراءة الملف</button>
+                <div id="fileContentArea" style="margin-top: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background: #f9f9f9;">
+                    محتوى الملف سيظهر هنا.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="codeSearchModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>البحث في الكود</h3>
+                <span class="close" onclick="closeCodeSearch()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <label for="searchFilePath">مسار الملف:</label>
+                <input type="text" id="searchFilePath" class="chat-input" placeholder="أدخل مسار الملف">
+                <label for="searchText">نص البحث:</label>
+                <input type="text" id="searchText" class="chat-input" placeholder="أدخل نص البحث">
+                <button onclick="searchInCode()" class="send-btn">بحث</button>
+                <div id="searchResultsArea" style="margin-top: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background: #f9f9f9;">
+                    نتائج البحث ستظهر هنا.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

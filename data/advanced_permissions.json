@@ -1,0 +1,57 @@
+{
+  "roles": {
+    "owner": {
+      "name": "مالك البوت",
+      "permissions": [
+        "*"
+      ],
+      "level": 100
+    },
+    "admin": {
+      "name": "مدير",
+      "permissions": [
+        "moderate",
+        "kick",
+        "ban",
+        "mute",
+        "teleport",
+        "manage_users",
+        "grant_roles",
+        "revoke_roles"
+      ],
+      "level": 90
+    },
+    "moderator": {
+      "name": "مشرف",
+      "permissions": [
+        "moderate",
+        "teleport",
+        "manage_basic",
+        "use_ai",
+        "follow_users"
+      ],
+      "level": 50
+    },
+    "vip": {
+      "name": "عضو مميز",
+      "permissions": [
+        "use_ai",
+        "advanced_emotes",
+        "vip_areas"
+      ],
+      "level": 30
+    },
+    "user": {
+      "name": "مستخدم عادي",
+      "permissions": [
+        "basic_commands",
+        "emotes",
+        "chat"
+      ],
+      "level": 10
+    }
+  },
+  "user_roles": {},
+  "custom_permissions": {},
+  "permission_history": []
+}

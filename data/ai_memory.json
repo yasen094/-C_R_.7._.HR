@@ -1,0 +1,55 @@
+{
+  "VECTOR000": {
+    "first_interaction": "2025-07-04T21:35:36.532641",
+    "total_messages": 60,
+    "favorite_topics": [
+      "life"
+    ],
+    "personality_traits": [
+      "إيجابي"
+    ],
+    "interaction_summary": "يحب الحديث عن: life | الشخصية: إيجابي",
+    "last_interaction": "2025-07-10T14:00:18.434432"
+  },
+  "yay81111": {
+    "first_interaction": "2025-07-04T23:06:22.805335",
+    "total_messages": 9,
+    "favorite_topics": [
+      "entertainment",
+      "relationships"
+    ],
+    "personality_traits": [],
+    "interaction_summary": "",
+    "last_interaction": "2025-07-04T23:29:45.332732"
+  },
+  "Abu_Nasser_711": {
+    "first_interaction": "2025-07-05T01:49:57.054620",
+    "total_messages": 7,
+    "favorite_topics": [
+      "relationships"
+    ],
+    "personality_traits": [
+      "إيجابي"
+    ],
+    "interaction_summary": "",
+    "last_interaction": "2025-07-18T14:02:51.841579"
+  },
+  "omar12177": {
+    "first_interaction": "2025-07-11T15:32:52.004005",
+    "total_messages": 6,
+    "favorite_topics": [
+      "technology"
+    ],
+    "personality_traits": [],
+    "interaction_summary": "",
+    "last_interaction": "2025-07-11T15:47:00.920014"
+  },
+  "4.SO": {
+    "first_interaction": "2026-06-29T20:05:14.755405",
+    "total_messages": 1,
+    "favorite_topics": [],
+    "personality_traits": [],
+    "interaction_summary": "",
+    "last_interaction": "2026-06-29T20:05:14.755408"
+  }
+}
